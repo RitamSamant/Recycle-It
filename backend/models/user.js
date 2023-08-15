@@ -1,3 +1,6 @@
+//JUST USER FOR DIGITAL WAREHOUSE. JUST B2B
+//SHOW WISHLIST AND ORDERED IN DIGITAL WAREHOUSE
+
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({

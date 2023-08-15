@@ -1,3 +1,6 @@
+//BIG BUISNESS B2B
+//CHOOSE A WEEKLY DAY AND A SHIFT
+//SHOW WISHLIST AND ORDERED IN DASHBOARD
 const mongoose = require("mongoose");
 
 const organizatonData = new mongoose.Schema({

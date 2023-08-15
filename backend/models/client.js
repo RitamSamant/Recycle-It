@@ -1,3 +1,6 @@
+//EVERYDAY HOUSEHOLDS OR SMALL BUISNESS B2C/B2B
+//JUST CHOOSE A SHIFT
+//SHOW WISHLIST AND ORDERED IN DASHBOARD
 const mongoose = require("mongoose");
 
 const orderData = new mongoose.Schema({
