@@ -152,7 +152,7 @@ const PreviousOrdersPage = () => {
       <div className="p-8 w-full">
         <div className="flex justify-between">
           <h2 className="text-3xl font-odesans-semibold text-white my-auto">
-            Previous Orders
+            Total Waste Bought
           </h2>
           <Link href="/admin/notifications">
             <Image src={bell} alt="" className="w-10 h-10 my-auto"/>
@@ -179,7 +179,7 @@ const PreviousOrdersPage = () => {
           {previousOrders.map((order) => (
             <div
               key={order.id}
-              className="bg-white/10 border-2 border-white/10 hover:border-white/30 transition duration-500 cursor pointer py-4 rounded-md flex space-x-4 cursor-pointer shadow-lg"
+              className="bg-white/10 border-2 border-white/10 hover:border-white/30 transition duration-500 cursor pointer py-4 shadow-md rounded-md flex space-x-4 cursor-pointer"
             >
               <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
                 {order.id}
