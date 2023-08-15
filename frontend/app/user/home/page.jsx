@@ -37,7 +37,7 @@ const DashboardPage = () => {
         backgroundColor: 'rgba(75,192,192,0.4)',
         borderColor: 'rgba(75,192,192,1)',
         borderWidth: 2,
-        data: [65, 59, 80, 81, 56],
+        data: [55, 49, 70, 61, 56],
       },
     ],
   };
@@ -53,7 +53,7 @@ const DashboardPage = () => {
         backgroundColor: [ 'rgba(75,192,192,0.4)','#000080',' #FF1493','#964B00','rgba(75,192,192,0.4)'],
         borderColor: 'rgba(75,192,192,1)',
         borderWidth: 2,
-        data: [45, 39, 70, 61, 56],
+        data: [55, 79, 70, 41, 86],
       },
     ],
   };
@@ -69,7 +69,7 @@ const DashboardPage = () => {
         backgroundColor: 'rgba(75,192,192,0.4)',
         borderColor: 'rgba(75,192,192,1)',
         borderWidth: 2,
-        data: [85, 59, 90, 95, 86],
+        data: [65, 59, 90, 65, 86],
       },
     ],
   };
