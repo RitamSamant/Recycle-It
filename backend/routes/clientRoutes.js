@@ -20,7 +20,7 @@ router.post(
 );
 
 router.get(
-  "/products/orderedItems",
+  "/dashboard/orderedItems",
   authentication,
   warehouseController.orderedHistory2
 );
@@ -32,7 +32,7 @@ router.post(
 );
 
 router.get(
-  "/products/wishlistedProduct",
+  "/dashboard/wishlistedProduct",
   authentication,
   warehouseController.wishlistedItems2
 );
