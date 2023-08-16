@@ -1,121 +1,19 @@
+"use client";
+
 import React from "react";
 import photo from "../../../../public/images/dashboard/sagittarius.png";
 import Image from "next/image";
 import left from "../../../../public/images/dashboard/left-arrow.svg";
 import Link from "next/link";
 import bell from "../../../../public/images/dashboard/bell.svg";
+import { useState } from "react";
 
 const PreviousOrdersPage = () => {
-  const previousOrders = [
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-  ];
+  const [value, onChange] = useState(new Date());
 
   return (
-    <div className="flex panel scroll">
+    <div className="flex panel scroll overscroll-none h-screen">
+      {/* Sidebar */}
       <div className="w-60 border-r-2 flex justify-center pt-8 border-white/10">
         <div className="text-white mb-4">
           <Link href="/admin/home" className="flex">
@@ -149,8 +47,8 @@ const PreviousOrdersPage = () => {
       </div>
 
       {/* Main */}
-      <div className="p-8 w-full">
-        <div className="flex justify-between">
+      <div className="w-full">
+        <div className="flex justify-between border-b-2 border-white/10 p-5">
           <h2 className="text-3xl font-odesans-semibold text-white my-auto">
             Previous Orders
           </h2>
@@ -158,50 +56,20 @@ const PreviousOrdersPage = () => {
             <Image src={bell} alt="" className="w-10 h-10 my-auto"/>
           </Link>
         </div>
-        <div className="flex space-x-4 mt-10">
-          <div className="w-1/4 text-xl text-left ml-4 text-white font-garamond-regular">
-            Id
-          </div>
-          <div className="w-1/4 text-xl text-left ml-4 text-white font-garamond-regular">
-            Items
-          </div>
-          <div className="w-1/4 text-xl text-left ml-4 text-white font-garamond-regular">
-            Date
-          </div>
-          <div className="w-1/4 text-xl text-left ml-4 text-white font-garamond-regular">
-            Price
-          </div>
-          <div className="w-1/4 text-xl text-left ml-4 text-white font-garamond-regular">
-            Status
-          </div>
-        </div>
-        <div className="mt-2 space-y-4 h-screen overflow-y-scroll scroll">
-          {previousOrders.map((order) => (
-            <div
-              key={order.id}
-              className="bg-white/10 border-2 border-white/10 hover:border-white/30 transition duration-500 cursor pointer py-4 rounded-md flex space-x-4 cursor-pointer shadow-lg"
-            >
-              <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
-                {order.id}
-              </div>
-              <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
-                {order.items}
-              </div>
-              <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
-                {order.date}
-              </div>
-              <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
-                ${order.price}
-              </div>
-              <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
-                {order.status}
-              </div>
-            </div>
-          ))}
-        </div>
+
       </div>
     </div>
   );
 };
 
 export default PreviousOrdersPage;
+
+let colStartClasses = [
+  "",
+  "col-start-2",
+  "col-start-3",
+  "col-start-4",
+  "col-start-5",
+  "col-start-6",
+  "col-start-7",
+];

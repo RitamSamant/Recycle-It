@@ -3,6 +3,9 @@ import './globals.css'
 export const metadata = {
   title: 'Recyclit',
   description: 'Recycle IT',
+  icons: {
+    icon: './logo.svg',
+  },
 }
 
 export default function RootLayout({ children }) {
