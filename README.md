@@ -32,7 +32,8 @@ Our innovative project focuses on addressing the issue of non-biodegradable wast
 - MongoDB
 - JWT
 </br>
-
+## 📜 API Documentation
+</br>
 ## ⚽ Team dotSlashByte
 - [Ritam Samanta](https://github.com/RitamSamant)
 - [Anurag Das](https://github.com/oeuvars)
