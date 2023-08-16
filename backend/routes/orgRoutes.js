@@ -11,6 +11,7 @@ router.post("dashboard/claim", authentication, orgController.overall);
 
 router.get("/products", authentication, warehouseController.getProducts);
 
+
 router.post(
   "/products/:productid",
   authentication,

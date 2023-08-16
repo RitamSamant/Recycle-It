@@ -27,6 +27,7 @@ const registerOrg = async (req, res) => {
   }
 };
 
+
 const orgLogin = async (req, res) => {
   const { buisnessEmail, password } = req.body;
   const org = await Organization.findOne({ buisnessEmail, password });
