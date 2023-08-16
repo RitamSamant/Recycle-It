@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import left from "../../../../public/images/dashboard/left-arrow.svg";
 import cart from "../../../../public/images/dashboard/cart.svg";
@@ -17,32 +17,53 @@ import { useRouter } from "next/navigation";
 import cross from "../../../../public/images/dashboard/cross.svg";
 import trash from "../../../../public/images/dashboard/trash.svg";
 import { Toaster, toast } from "react-hot-toast";
+import axios from "axios";
 
 const ProductDetailsPage = () => {
+  const [data,Setdata] = useState('')
   const router = useRouter();
-  const options = [
-    {
-      header: "Metal",
-      images: [metal1, metal2, metal3],
-      description: "All Recyclable metals",
-      price: 19.99,
-    },
-    {
-      header: "Plastic",
-      images: [plastic1, plastic2, plastic3],
-      description: "Bio-degradable plastics",
-      price: 9.99,
-    },
-    {
-      header: "Cloths",
-      images: [cloth1, cloth2, cloth3],
-      description: "All cloth scrap",
-      price: 29.99,
-    },
-  ];
+  // const options = [
+  //   {
+  //     header: "Metal",
+  //     images: [metal1, metal2, metal3],
+  //     description: "All Recyclable metals",
+  //     price: 19.99,
+  //   },
+  //   {
+  //     header: "Plastic",
+  //     images: [plastic1, plastic2, plastic3],
+  //     description: "Bio-degradable plastics",
+  //     price: 9.99,
+  //   },
+  //   {
+  //     header: "Cloths",
+  //     images: [cloth1, cloth2, cloth3],
+  //     description: "All cloth scrap",
+  //     price: 29.99,
+  //   },
+  // ];
+  const getProductData = async ()=>{
+    try {
+      
+      const token = localStorage.getItem('token')
+      const response = await axios.get('http://localhost:5000/org/products',{
+        headers : {
+          Authorization : `Bearer ${token}`
+        }
+      })
+      let Data = response.data.products
+      Setdata(Data)
+      console.log(data[0].img);
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
-  const [selectedOption, setSelectedOption] = useState(options[0]);
-  const [selectedImage, setSelectedImage] = useState(selectedOption.images[0]);
+  useEffect(()=>{
+    getProductData()
+  },[])
+
+  const [selectedImage, setSelectedImage] = useState('data[0].img');
   const [cartItems, setCartItems] = useState([]);
   const [cartModalOpen, setCartModalOpen] = useState(false);
   const [selectedQuantity, setSelectedQuantity] = useState(1);
@@ -116,7 +137,8 @@ const ProductDetailsPage = () => {
         <button onClick={() => setCartModalOpen(true)}>
           <Image src={cart} alt="" className="w-10 h-10 my-auto" />
         </button>
-      </div>
+       </div>
+        {/* cart */}
       <div className="flex flex-col items-end">
         {cartModalOpen && (
           <div className="text-white backdrop-blur-sm absolute mr-5 mt-2 font-space-grostek">
@@ -176,22 +198,35 @@ const ProductDetailsPage = () => {
       <div className="flex justify-between py-16 px-72 text-white font-space-grostek my-auto">
         {/* Options */}
         <div className="flex flex-col">
-          {/* Product Details */}
-          <Image
-            height={700}
-            width={700}
-            src={selectedImage.src}
+
+                <img src={data[0].img} alt="" />
+          {/* {data ? data.map((items,index)=>{
+              return (
+                <>
+            <img height={700}
+            width={700} src={items[0].img}
             alt="Selected Product"
             className=" mb-4 border border-gray-300 rounded-2xl h-[25rem] w-[40rem] object-cover"
-          />
+          /> 
+                </>
+              )
+          }):""} */}
+          {/* Product Details */}
+          {/* <Image
+            height={700}
+            width={700}
+            src={data[0].img}
+            alt="Selected Product"
+            className=" mb-4 border border-gray-300 rounded-2xl h-[25rem] w-[40rem] object-cover"
+          /> */}
           {/* Thumbnails */}
           <div className="flex gap-3">
-            {selectedOption.images.map((image, index) => (
+            {/* {data ? data.map((data, index) => (
               <Image
                 height={100}
                 width={100}
                 key={index}
-                src={image.src}
+                src={data.img}
                 alt={`Thumbnail ${index}`}
                 className={`mb-2 cursor-pointer object-cover  ${
                   selectedImage === image
@@ -199,19 +234,19 @@ const ProductDetailsPage = () => {
                     : "border-2 border-white/20 rounded-2xl w-28 h-20"
                 }`}
                 onClick={() => handleThumbnailClick(image)}
-              />
-            ))}
+              /> 
+            )):'Loading'} */}
           </div>
         </div>
 
         {/* Description */}
         <div className="mt-10 px-4">
-          <h2 className="text-4xl font-odesans-semibold mb-2">
+          {/* <h2 className="text-4xl font-odesans-semibold mb-2">
             {selectedOption.header}
-          </h2>
-          <p className="text-gray-600 mb-4">{selectedOption.description}</p>
+          </h2> */}
+          {/* <p className="text-gray-600 mb-4">{selectedOption.description}</p> */}
           <div className="flex justify-left gap-2">
-            {options.map((option, index) => {
+            {/* {options.map((option, index) => {
               return (
                 <div
                   key={index}
@@ -219,13 +254,13 @@ const ProductDetailsPage = () => {
                     selectedOption === option
                       ? "bg-white/20 border-white/50 border-2"
                       : "bg-white/10 border-white/10 border-2"
-                  }`}
+                  }`} 
                   onClick={() => handleOptionClick(option)}
                 >
                   {option.header}
                 </div>
               );
-            })}
+            })}*/}
           </div>
           <div className="flex flex-col mt-10 gap-5">
             <input
@@ -234,9 +269,9 @@ const ProductDetailsPage = () => {
               value={selectedQuantity}
               onChange={(e) => setSelectedQuantity(Number(e.target.value))}
             />
-            <span className="text-5xl w-40">
+            {/* <span className="text-5xl w-40">
               ${selectedOption.price.toFixed(2)}
-            </span>
+            </span> */}
           </div>
           <Toaster position="bottom-right" reverseOrder={false} />
           <button
