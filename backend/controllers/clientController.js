@@ -44,20 +44,6 @@ async function calculatePrice(weight, pricePerUnit) {
   });
 }
 
-const overall = async (req, res) => {
-  try {
-    const { weight } = req.body;
-    const pricePerKilogram = 25;
-
-    const totalPrice = await calculatePrice(weight, pricePerKilogram);
-    res.json({
-      message: `The total price for ${weight} kg is ${totalPrice} INR.`,
-    });
-  } catch (error) {
-    res.status(403).json({ message: "an error occured" });
-  }
-};
-
 const overallPrice = async (req, res) => {
   const clientId = req.body.clientId;
   const newOrder = req.body.order;
