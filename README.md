@@ -22,7 +22,7 @@ Our innovative project focuses on addressing the issue of non-biodegradable wast
 <img src="https://github.com/RitamSamant/Recycle-It/blob/main/src/overview.png"/>
 </br>
 
-## 📜 Tech Stack
+## 🖥️ Tech Stack
 #### Frontend
 - NextJS
 
