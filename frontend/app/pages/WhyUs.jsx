@@ -6,8 +6,8 @@ const WhyUs = () => {
   return (
     <div>
       <div className="py-20">
-        <div className="w-5/6 mx-auto text-center">
-          <h2 className="text-5xl font-odesans-semibold mb-8 text-right">
+        <div className="phone:w-11/12 lg:w-5/6 mx-auto text-center">
+          <h2 className="phone:text-3xl lg:text-5xl font-odesans-semibold mb-8 text-right">
             Why Choose Us
           </h2>
           <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12 justify-between">
@@ -20,9 +20,12 @@ const WhyUs = () => {
                 className="rounded-lg shadow-md"
               />
             </div>
-            <div className="flex gap-5">
-              <p className="text-3xl font-odesans-semibold text-purple-500 my-auto">What Sets Up Apart</p>
-              <ul className="font-garamond-regular text-xl flex flex-col gap-3 text-right border-l-4 border-purple-200 pl-5">
+            <div className="lg:flex gap-5">
+              <p className="text-3xl font-odesans-semibold text-purple-500 my-auto">
+                What Sets Up Apart
+              </p>
+              <ul className="lg:p-5 phone:mt-10 lg:mt-0 font-garamond-regular lg:text-xl flex flex-col gap-3 phone:text-center lg:text-right lg:border-l-4 lg:border-purple-200 lg:pl-5">
+
                 <li>Experienced team dedicated to recycling excellence.</li>
                 <li>
                   State-of-the-art recycling facilities for optimal efficiency.

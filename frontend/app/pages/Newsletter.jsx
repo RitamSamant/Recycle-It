@@ -16,7 +16,6 @@ const Newsletter = () => {
   const handleSubscribe = (e) => {
     e.preventDefault();
     if (email) {
-      // Here you can implement your logic to handle the subscription
       console.log(`Subscribed with email: ${email}`);
       setEmail("");
     }
@@ -57,30 +56,30 @@ const Newsletter = () => {
   ]
 
   return (
-    <div className="mx-auto flex justify-between py-16 w-11/12">
-      <div className="w-1/2 border-r-[2px] border-lime-200 h-[24rem]">
-        <h1 className="font-odesans-semibold text-5xl px-10">
+    <div className="mx-auto lg:flex justify-between py-16 lg:w-5/6 overflow-x-hidden">
+      <div className="lg:w-1/2 lg:border-r-[2px] lg:border-lime-200 lg:h-[24rem]">
+        <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl lg:px-10 phone:px-5">
           Our Free Newsletter is <br /> Launching Soon!
         </h1>
-        <p className="text-xl font-space-grostek mt-5 px-10">
+        <p className="phone:text-sm lg:text-xl font-space-grostek mt-5 lg:px-10 phone:px-5">
           Get the earliest access about our new products.
         </p>
-        <hr className="border border-lime-200 rounded-full mt-10" />
+        <hr className="border border-lime-200 rounded-full phone:mt-7 lg:mt-10 " />
         <div className="flex justify-center px-10 font-space-grostek mt-10">
         <div className="flex gap-16">
           <div className="flex flex-col gap-5">
             {features.slice(0, 3).map((feature, index) => (
               <div key={index} className="flex gap-3">
-                <Image src={feature.image} alt="" className="w-7 h-7" />
-                <p className="my-auto text-lg text-emerald-950">{feature.name}</p>
+                <Image src={feature.image} alt="" className="phone:w-5 phone:h-5 lg:w-7 lg:h-7" />
+                <p className="my-auto lg:text-lg text-emerald-950">{feature.name}</p>
               </div>
             ))}
           </div>
           <div className="flex flex-col gap-5">
             {features.slice(3).map((feature, index) => (
               <div key={index} className="flex gap-3">
-                <Image src={feature.image} alt="" className="w-7 h-7" />
-                <p className="my-auto text-lg text-emerald-950">{feature.name}</p>
+                <Image src={feature.image} alt="" className="phone:w-5 phone:h-5 lg:w-7 lg:h-7" />
+                <p className="my-auto lg:text-lg text-emerald-950">{feature.name}</p>
               </div>
             ))}
           </div>
@@ -88,16 +87,16 @@ const Newsletter = () => {
         </div>
       </div>
 
-      <div className="mx-auto my-auto relative">
-        <div className="absolute -top-20 left-[5rem] -z-10 w-96 h-96 bg-lime-300 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob"></div>
-        <div className="absolute -top-16 right-[5rem] -z-10 w-96 h-96 bg-green-300 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob"></div>
-        <h2 className="text-5xl font-odesans-semibold mb-4 text-teal-950">
+      <div className="mx-auto my-auto relative phone:mt-16 lg:mt-0">
+        <div className="absolute -top-20 left-[5rem] -z-10 phone:w-72 phone:h-72 lg:w-96 lg:h-96 bg-lime-300 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob"></div>
+        <div className="absolute -top-16 right-[5rem] -z-10 phone:w-72 phone:h-72 lg:w-96 lg:h-96 bg-green-300 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob"></div>
+        <h2 className="phone:text-3xl lg:text-5xl font-odesans-semibold mb-4 text-teal-950 phone:px-5 lg:px-0">
           Subscribe
         </h2>
-        <p className="mb-4 font-garamond-regular text-xl">
+        <p className="mb-4 font-garamond-regular phone:text-lg lg:text-xl phone:px-5 lg:px-0">
           Stay updated with our latest news and offers.
         </p>
-        <form onSubmit={handleSubscribe} className="grid">
+        <form onSubmit={handleSubscribe} className="grid phone:px-5 lg:px-0">
           <input
             type="email"
             placeholder="Enter your email"
