@@ -1,5 +1,5 @@
-<div align="center">
+<p align="center">
   
 <h1>Recycle-It</h1>
 
-</div>
+</p>
