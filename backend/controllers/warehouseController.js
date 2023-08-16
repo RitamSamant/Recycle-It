@@ -1,10 +1,11 @@
 const User = require("../models/user");
 const Client = require("../models/client");
 const Product = require("../models/products");
+const Org = require("../models/organization");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-//for direct warehouse user
+//for direct warehouse user or small buisness
 const register = async (req, res) => {
   const { email, password, phone, address, pincode, username } = req.body;
 
@@ -107,6 +108,7 @@ const wishlistedItems = async (req, res) => {
 };
 
 //for existing clients
+
 const orderProduct2 = async (req, res) => {
   const product = await Product.findById(req.params.productid);
   console.log(product);
@@ -167,7 +169,70 @@ const wishlistedItems2 = async (req, res) => {
   }
 };
 
+//for companies and organizations
+
+const orderProduct3 = async (req, res) => {
+  const product = await Product.findById(req.params.productid);
+  console.log(product);
+  if (product) {
+    const org = await Org.findOne({ email: req.org.email });
+    if (org) {
+      org.orderforOrg.push(product);
+      await org.save();
+      res.json({ message: "product ordered successfully" });
+    } else {
+      res.status(403).json({ message: "Organization not found" });
+    }
+  } else {
+    res.status(404).json({ message: "product not found" });
+  }
+};
+
+const orderedHistory3 = async (req, res) => {
+  try {
+    const org = await Org.findOne({ email: req.org.email }).populate(
+      "orderforOrg"
+    );
+    if (org) {
+      res.status(200).json({ orderforOrg: org.orderforOrg || [] });
+    } else {
+      res.status(404).json("Organization not find");
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
+const addinWishlist3 = async (req, res) => {
+  const product = await Product.findById(req.params.productid);
+  console.log(product);
+  if (product) {
+    const org = await Org.findOne({ email: req.org.email });
+    if (org) {
+      org.wishlistforOrg.push(product);
+      await org.save();
+      res.json({ message: "Product is in your wishlist" });
+    } else {
+      res.status(403).json({ message: "Organization not found" });
+    }
+  } else {
+    res.status(404).json({ message: "product not found" });
+  }
+};
+
+const wishlistedItems3 = async (req, res) => {
+  const org = await Org.findOne({ email: req.org.email }).populate(
+    "wishlistforOrg"
+  );
+  if (org) {
+    res.json({ wishlistforOrg: org.wishlistforOrg || [] });
+  } else {
+    res.status(403).json({ message: "Org not found" });
+  }
+};
+
 module.exports = {
+  //api for direct user or small buisness(not a plastic doner)
   register,
   login,
   getProducts,
@@ -175,8 +240,14 @@ module.exports = {
   orderedHistory,
   addinWishlist,
   wishlistedItems,
+  //api for existing clients (i.e.-user or small buisness who donates plastics)
   orderProduct2,
   orderedHistory2,
   addinWishlist2,
   wishlistedItems2,
+  //api for existing Organizations (i.e.-Big organizations or Company who donates plastics)
+  orderProduct3,
+  orderedHistory3,
+  addinWishlist3,
+  wishlistedItems3,
 };

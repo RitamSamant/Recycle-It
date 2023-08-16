@@ -9,12 +9,10 @@ app.use(express.json());
 
 const port = process.env.PORT;
 
-//B2C
 app.get("/", (req, res) => res.send("this is dashboard!"));
 app.use("/client", require("./routes/clientRoutes"));
 app.use("/org", require("./routes/orgRoutes"));
 
-//B2B
 app.use("/digitalWarehouse/user", require("./routes/userRoutes"));
 
 mongoose

@@ -9,6 +9,18 @@ const organizatonData = new mongoose.Schema({
   password: { type: String },
   address: { type: String },
   buisnessBankAccount: { type: Number },
+  orderforOrg: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "plasticProducts",
+    },
+  ],
+  wishlistforOrg: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "plasticProducts",
+    },
+  ],
 });
 const Organization = mongoose.model("Organization", organizatonData);
 module.exports = Organization;
