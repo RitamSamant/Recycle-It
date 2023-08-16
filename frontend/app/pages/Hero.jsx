@@ -18,7 +18,7 @@ const Hero = () => {
           <div className="absolute -top-16 -right-10 w-72 h-72 bg-rose-400 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000"></div>
           <div className="absolute -top-16 right-32 w-[15rem] h-[17rem] bg-amber-300 rounded-xl mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div> */}
           <h1 className="font-odesans-semibold phone:text-3xl lg:text-6xl text-center">
-            Recyclit
+            Recycle It
           </h1>
           <p className="font-garamond-regular phone:text-base lg:text-xl phone:w-[15rem] lg:w-[30rem] text-center">
             Championing A Greener Future by Embracing Recycling and Harnessing

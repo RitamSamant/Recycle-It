@@ -15,7 +15,7 @@ const Navbar = () => {
             <div className="flex gap-2">
               <Image src={logo} alt="" className="w-10 h-10" />
               <h1 className="my-auto text-xl text-fuchsia-600 font-bold">
-                Recyclit
+                Recycle It
               </h1>
             </div>
             <h1 className="my-auto">Work Flow</h1>
@@ -29,7 +29,7 @@ const Navbar = () => {
               <div className="flex gap-2">
                 <Image src={logo} alt="" className="w-9 h-19" />
                 <h1 className="my-auto text-lg text-fuchsia-600 font-bold">
-                  Recyclit
+                  Recycle It
                 </h1>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" fill="#8055F7" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-9 h-9 my-auto text-purple-500">
