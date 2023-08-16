@@ -25,6 +25,9 @@ Our innovative project focuses on addressing the issue of non-biodegradable wast
 ## 🖥️ Tech Stack
 #### Frontend
 - NextJS
+- Tailwind CSS
+- ChartJS
+- HeadlessUI
 
 #### Backend
 - NodeJS
