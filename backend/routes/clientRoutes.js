@@ -9,7 +9,7 @@ router.post("/register", clientController.clientRegister);
 
 router.post("/login", clientController.clientLogin);
 
-router.post("/claim", authentication, clientController.claimedAmount);
+router.post("/dashboard/claim", authentication, clientController.claimedAmount);
 
 router.get(
   "/dashboard/products",
