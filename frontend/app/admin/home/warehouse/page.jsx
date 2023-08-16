@@ -17,33 +17,52 @@ import { useRouter } from "next/navigation";
 import cross from "../../../../public/images/dashboard/cross.svg";
 import trash from "../../../../public/images/dashboard/trash.svg";
 import { Toaster, toast } from "react-hot-toast";
-import Stripe from "stripe";
+import axios from "axios";
 
 const ProductDetailsPage = () => {
   const router = useRouter();
-  const options = [
-    {
-      header: "Metal",
-      images: [metal1, metal2, metal3],
-      description: "All Recyclable metals",
-      price: 19,
-    },
-    {
-      header: "Plastic",
-      images: [plastic1, plastic2, plastic3],
-      description: "Bio-degradable plastics",
-      price: 9,
-    },
-    {
-      header: "Cloths",
-      images: [cloth1, cloth2, cloth3],
-      description: "All cloth scrap",
-      price: 29,
-    },
-  ];
+  // const options = [
+  //   {
+  //     header: "Metal",
+  //     images: [metal1, metal2, metal3],
+  //     description: "All Recyclable metals",
+  //     price: 19.99,
+  //   },
+  //   {
+  //     header: "Plastic",
+  //     images: [plastic1, plastic2, plastic3],
+  //     description: "Bio-degradable plastics",
+  //     price: 9.99,
+  //   },
+  //   {
+  //     header: "Cloths",
+  //     images: [cloth1, cloth2, cloth3],
+  //     description: "All cloth scrap",
+  //     price: 29.99,
+  //   },
+  // ];
+  const getProductData = async ()=>{
+    try {
 
-  const [selectedOption, setSelectedOption] = useState(options[0]);
-  const [selectedImage, setSelectedImage] = useState(selectedOption.images[0]);
+      const token = localStorage.getItem('token')
+      const response = await axios.get('http://localhost:5000/org/products',{
+        headers : {
+          Authorization : `Bearer ${token}`
+        }
+      })
+      let Data = response.data.products
+      Setdata(Data)
+      console.log(data[0].img);
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  useEffect(()=>{
+    getProductData()
+  },[])
+
+  const [selectedImage, setSelectedImage] = useState('data[0].img');
   const [cartItems, setCartItems] = useState([]);
   const [cartModalOpen, setCartModalOpen] = useState(false);
   const [selectedQuantity, setSelectedQuantity] = useState(1);
@@ -146,7 +165,8 @@ const ProductDetailsPage = () => {
         <button onClick={() => setCartModalOpen(true)}>
           <Image src={cart} alt="" className="w-10 h-10 my-auto" />
         </button>
-      </div>
+       </div>
+        {/* cart */}
       <div className="flex flex-col items-end">
         {cartModalOpen && (
           <div className="text-white backdrop-blur-sm absolute mr-5 mt-2 font-space-grostek">
