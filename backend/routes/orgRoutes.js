@@ -7,7 +7,7 @@ const warehouseController = require("../controllers/warehouseController");
 
 router.post("/register", orgController.registerOrg);
 router.post("/login", orgController.orgLogin);
-router.post("/claim", authentication, orgController.overall);
+router.post("dashboard/claim", authentication, orgController.overall);
 
 router.get("/products", authentication, warehouseController.getProducts);
 
