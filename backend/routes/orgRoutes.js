@@ -9,8 +9,11 @@ router.post("/register", orgController.registerOrg);
 router.post("/login", orgController.orgLogin);
 router.post("dashboard/claim", authentication, orgController.overall);
 
-router.get("/products", authentication, warehouseController.getProducts);
-
+router.get(
+  "dashboard/products",
+  authentication,
+  warehouseController.getProducts
+);
 
 router.post(
   "/products/:productid",

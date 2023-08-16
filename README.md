@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src ="https://github.com/RitamSamant/Recycle-It/blob/main/src/recycle.png" width=250 height=250>
+<img src ="https://github.com/RitamSamant/Recycle-It/blob/main/frontend/public/images/logos/watering-can.png" width=300 height=300>
 
 # Recycle It/Switch 2 Sustainability
 
