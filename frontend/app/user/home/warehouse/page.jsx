@@ -12,8 +12,7 @@ const PreviousOrdersPage = () => {
   const [value, onChange] = useState(new Date());
 
   return (
-    <div className="flex panel scroll overscroll-none h-screen">
-      {/* Sidebar */}
+    <div className="flex panel scroll">
       <div className="w-60 border-r-2 flex justify-center pt-8 border-white/10">
         <div className="text-white mb-4">
           <Link href="/admin/home" className="flex">
@@ -47,13 +46,13 @@ const PreviousOrdersPage = () => {
       </div>
 
       {/* Main */}
-      <div className="w-full">
-        <div className="flex justify-between border-b-2 border-white/10 p-5">
+      <div className="p-8 w-full">
+        <div className="flex justify-between">
           <h2 className="text-3xl font-odesans-semibold text-white my-auto">
-            Previous Orders
+            Book A Date & Time
           </h2>
           <Link href="/admin/notifications">
-            <Image src={bell} alt="" className="w-10 h-10 my-auto"/>
+            <Image src={bell} alt="" className="w-10 h-10 my-auto" />
           </Link>
         </div>
 
@@ -63,13 +62,3 @@ const PreviousOrdersPage = () => {
 };
 
 export default PreviousOrdersPage;
-
-let colStartClasses = [
-  "",
-  "col-start-2",
-  "col-start-3",
-  "col-start-4",
-  "col-start-5",
-  "col-start-6",
-  "col-start-7",
-];
