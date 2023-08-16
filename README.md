@@ -15,4 +15,4 @@ Our innovative project focuses on addressing the issue of non-biodegradable wast
 </br>
 ## 📽️ Prototype Overview and Design
 ### Overview
-<img src="https://github.com/RitamSamant/Recycle-It/blob/main/src/Screenshot%202023-08-16%20162225.png"/>
+<img src="https://github.com/RitamSamant/Recycle-It/blob/main/src/overview.png"/>
