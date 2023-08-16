@@ -37,8 +37,8 @@ const ourSponsors = [
 const Sponsors = () => {
   return (
     <div className="w-full bg-[#FFD966]/90">
-      <div className="w-5/6 mx-auto py-16">
-        <h1 className="text-5xl font-odesans-semibold mb-8">Our Sponsors</h1>
+      <div className="w-5/6 mx-auto phone:py-5 lg:py-16">
+        <h1 className="phone:text-3xl lg:text-5xl font-odesans-semibold mb-8">Our Sponsors</h1>
         <div className="overflow-hidden">
         <div
             className="conveyor-container flex space-x-4 conveyorContainer"

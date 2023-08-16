@@ -45,9 +45,9 @@ const Reviews = () => {
         {selectedTestimonial !== null && (
           <div className="flex text-xl font-garamond-regular transition duration-500 ease-in-out">
             <div className='text-center mx-auto'>
-               <p className="text-black mb-2 w-2/3 mx-auto text-2xl">{Testimonials[selectedTestimonial - 1].comment}</p>
-               <p className="font-odesans-semibold text-3xl mt-7 text-emerald-600">{Testimonials[selectedTestimonial - 1].name}</p>
-               <p className="text-black">{Testimonials[selectedTestimonial - 1].occupation}</p>
+               <p className="text-black mb-2 w-2/3 mx-auto phone:text-xl lg:text-2xl">{Testimonials[selectedTestimonial - 1].comment}</p>
+               <p className="font-odesans-semibold phone:text-2xl lg:text-3xl mt-7 text-emerald-600">{Testimonials[selectedTestimonial - 1].name}</p>
+               <p className="text-black phone:text-sm lg:text-base">{Testimonials[selectedTestimonial - 1].occupation}</p>
             </div>
           </div>
         )}
@@ -56,7 +56,7 @@ const Reviews = () => {
             <button key={index} onClick={() => handleButtonClick(testimonial.id)} className={selectedTestimonial === (index+1) ? "bg-yellow-50 rounded-full min-w-[20px] min-h-[20px] transition duration-500 ease-in-out border-2 border-red-500" : "bg-yellow-50 rounded-full min-w-[20px] min-h-[20px] transition duration-500 ease-in-out" }></button>
          ))}
         </div>
-        <Image src={twitter} alt='' className='w-16 h-16 mx-auto'/>
+        <Image src={twitter} alt='' className='phone:w-9 phone:h-9 lg:w-16 lg:h-16 mx-auto'/>
       </div>
     </div>
   );
