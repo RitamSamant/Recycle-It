@@ -1,15 +1,24 @@
 "use client"
 
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'
+import axios from 'axios';
 
 const LoginPage = () => {
+  const [user,Setuser] = useState({
+    email : "",
+    password : ""
+  })
+  
   const router = useRouter();
-
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    router.push('/admin/home')
+    const res = await axios.post('http://localhost:5000/client/login',user)
+    const newToken = res.data.token;
+    localStorage.setItem('token', newToken);
+    console.log(res.data)
+    router.push('/client/home')
   }
 
   return (
@@ -18,15 +27,16 @@ const LoginPage = () => {
         <h2 className="text-fuchsia-800 font-odesans-semibold text-4xl mb-4 text-center">Log In</h2>
         <form>
           <div className="mb-4">
-            <label htmlFor="username" className="block font-space-grostek mb-1">
-              Username:
+            <label htmlFor="email" className="block font-space-grostek mb-1">
+              Email:
             </label>
             <input
-              type="text"
-              id="username"
-              name="username"
+              type="email"
+              id="email"
+              name="email"
               className="w-full px-3 py-2 border rounded-md bg-white/40 text-black outline-none font-space-grostek"
               required
+              onChange={(e)=>{Setuser({...user,email:e.target.value})}}
             />
           </div>
           <div className="mb-4">
@@ -39,6 +49,7 @@ const LoginPage = () => {
               name="password"
               className="w-full px-3 py-2 border rounded-md bg-white/40 text-black outline-none font-space-grostek"
               required
+              onChange={(e)=>{Setuser({...user,password:e.target.value})}}
             />
           </div>
           <div>

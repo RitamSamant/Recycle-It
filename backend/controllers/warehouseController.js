@@ -117,6 +117,7 @@ const orderProduct2 = async (req, res) => {
     if (user) {
       user.orderforclient.push(product);
       await user.save();
+
       res.json({ message: "product ordered successfully" });
     } else {
       res.status(403).json({ message: "User not found" });
@@ -132,6 +133,7 @@ const orderedHistory2 = async (req, res) => {
       "orderforclient"
     );
     if (user) {
+      
       res.status(200).json({ orderforclient: user.orderforclient || [] });
     } else {
       res.status(404).json("User not find");
