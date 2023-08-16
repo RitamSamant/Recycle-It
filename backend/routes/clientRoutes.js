@@ -11,7 +11,11 @@ router.post("/login", clientController.clientLogin);
 
 router.post("/claim", authentication, clientController.claimedAmount);
 
-router.get("/products", authentication, warehouseController.getProducts);
+router.get(
+  "/dashboard/products",
+  authentication,
+  warehouseController.getProducts
+);
 
 router.post(
   "/products/:productid",

@@ -16,7 +16,7 @@ app.use("/client", require("./routes/clientRoutes"));
 app.use("/org", require("./routes/orgRoutes"));
 
 //direct recycled product buyer (user/small buisness)
-app.use("/digitalWarehouse/user", require("./routes/userRoutes"));
+app.use("/user", require("./routes/userRoutes"));
 
 mongoose
   .connect(process.env.MONGO_URI, {
