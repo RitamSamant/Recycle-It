@@ -24,7 +24,8 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.1",
-    "react-ios-time-picker": "^0.2.2"
+    "react-ios-time-picker": "^0.2.2",
+    "stripe": "^12.18.0"
   },
   "devDependencies": {
     "@types/node": "20.4.10",

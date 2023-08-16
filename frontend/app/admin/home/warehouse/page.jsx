@@ -16,6 +16,7 @@ import { useRouter } from "next/navigation";
 import cross from "../../../../public/images/dashboard/cross.svg";
 import trash from "../../../../public/images/dashboard/trash.svg";
 import { Toaster, toast } from "react-hot-toast";
+import Stripe from "stripe";
 
 const ProductDetailsPage = () => {
   const router = useRouter();
@@ -24,19 +25,19 @@ const ProductDetailsPage = () => {
       header: "Metal",
       images: [metal1, metal2, metal3],
       description: "All Recyclable metals",
-      price: 19.99,
+      price: 19,
     },
     {
       header: "Plastic",
       images: [plastic1, plastic2, plastic3],
       description: "Bio-degradable plastics",
-      price: 9.99,
+      price: 9,
     },
     {
       header: "Cloths",
       images: [cloth1, cloth2, cloth3],
       description: "All cloth scrap",
-      price: 29.99,
+      price: 29,
     },
   ];
 
@@ -97,18 +98,47 @@ const ProductDetailsPage = () => {
     });
   };
 
-  const handleClick = () => {
+  const handleHome = () => {
     router.push("/admin/home");
   };
 
-  const handleCheckout = () => {
-    router.push("/admin/checkout");
+  const Key = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY;
+  const stripe = new Stripe(Key, {
+    apiVersion: "2022-11-15",
+  });
+
+  const handleCheckout = async () => {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      line_items: [
+        {
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name: selectedOption.header,
+            },
+            unit_amount: selectedOption.price*100,
+          },
+          quantity: selectedQuantity,
+        },
+      ],
+      shipping_address_collection: {
+        allowed_countries: ["US"],
+      },
+      mode: "payment",
+      success_url: `${origin}/success`,
+      cancel_url: `${origin}/cancel`
+    });
+
+    if (session.url) {
+      window.location.href = session.url;
+    }
   };
 
   return (
     <div className="h-screen panel">
       <div className="py-4 border-b-2 border-white/10 flex justify-between px-10">
-        <button onClick={handleClick}>
+        <button onClick={handleHome}>
           <Image src={left} alt="" className="w-12 h-12 my-auto" />
         </button>
         <h1 className="font-odesans-semibold text-5xl text-white">Recyclit</h1>
