@@ -21,7 +21,7 @@ const Contact = () => {
             <Image src={contact} alt="" className="lg:w-[40rem] phone:mt-5 lg:mt-9 relative" />
           </div>
         </div>
-        <div className="card phone:my-10 lg:my-20 rounded-lg shadow-lg p-10 lg:max-w-md lg:w-full phone:w-11/12 phone:mx-auto phone:px-5 lg:px-0">
+        <div className="card phone:my-10 lg:my-20 rounded-lg shadow-lg py-10 lg:max-w-md lg:w-full phone:w-11/12 phone:mx-auto phone:px-5 lg:px-8">
           <h1 className="phone:text-2xl lg:text-3xl font-odesans-semibold text-fuchsia-900 mb-6">
             Let's talk business
           </h1>
