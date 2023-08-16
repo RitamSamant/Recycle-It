@@ -136,14 +136,14 @@ const ProductDetailsPage = () => {
   };
 
   return (
-    <div className="h-screen panel">
+    <div className="lg:h-screen panel">
       <div className="py-4 border-b-2 border-white/10 flex justify-between px-10">
         <button onClick={handleHome}>
-          <Image src={left} alt="" className="w-12 h-12 my-auto" />
+          <Image src={left} alt="" className="phone:w-9 phone:h-9 lg:w-12 lg:h-12 my-auto" />
         </button>
-        <h1 className="font-odesans-semibold text-5xl text-white">Recyclit</h1>
+        <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl text-white">Recyclit</h1>
         <button onClick={() => setCartModalOpen(true)}>
-          <Image src={cart} alt="" className="w-10 h-10 my-auto" />
+          <Image src={cart} alt="" className="phone:w-7 phone:h-7 lg:w-12 lg:h-12 my-auto" />
         </button>
       </div>
       <div className="flex flex-col items-end">
@@ -202,16 +202,16 @@ const ProductDetailsPage = () => {
           </div>
         )}
       </div>
-      <div className="flex justify-between py-16 px-72 text-white font-space-grostek my-auto">
+      <div className="lg:flex justify-between py-16 lg:px-72 text-white font-space-grostek my-auto">
         {/* Options */}
-        <div className="flex flex-col">
+        <div className="flex flex-col phone:w-11/12 phone:mx-auto">
           {/* Product Details */}
           <Image
             height={700}
             width={700}
             src={selectedImage.src}
             alt="Selected Product"
-            className=" mb-4 border border-gray-300 rounded-2xl h-[25rem] w-[40rem] object-cover"
+            className=" mb-4 border border-gray-300 rounded-2xl phone:h-[20rem] phone:w-[30rem] lg:h-[25rem] lg:w-[40rem] object-cover"
           />
           {/* Thumbnails */}
           <div className="flex gap-3">

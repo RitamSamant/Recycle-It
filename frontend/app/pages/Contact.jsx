@@ -15,9 +15,8 @@ const Contact = () => {
             <Image src={flower} alt="" className="phone:w-8 phone:h-8 lg:w-16 lg:h-16 phone:my-auto"/>
           </div>
           <div className="relative phone:px-5 lg:px-0">
-            <div className="absolute lg:top-16 lg:-left-[3rem] phone:w-96 phone:h-60 lg:w-96 lg:h-96 bg-fuchsia-400 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob"></div>
-            <div className="absolute phone:top-10 lg:top-16 lg:left-[16rem] phone:w-96 phone:h-60 lg:w-96 lg:h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob animation-delay-2000"></div>
-            <div className="absolute phone:right-[5rem] lg:top-10 lg:left-[7.5rem] phone:w-60 phone:h-60 lg:w-[28rem] lg:h-[28rem] bg-violet-500 rounded-full mix-blend-multiply filter blur-2xl phone:opacity-40 lg:opacity-70 animate-blob animation-delay-4000"></div>
+            <div className="absolute lg:top-16 lg:-left-[3rem] phone:w-60 phone:h-60 lg:w-96 lg:h-96 bg-fuchsia-400 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob"></div>
+            <div className="absolute phone:top-7 lg:top-16 phone:left-[7rem] lg:left-[16rem] phone:w-60 phone:h-60 lg:w-96 lg:h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob animation-delay-2000"></div>
             <Image src={contact} alt="" className="lg:w-[40rem] phone:mt-5 lg:mt-9 relative" />
           </div>
         </div>

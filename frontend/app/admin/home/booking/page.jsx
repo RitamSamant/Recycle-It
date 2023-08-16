@@ -22,12 +22,14 @@ import {
   startOfWeek,
 } from "date-fns";
 import { useState, useEffect } from "react";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const PreviousOrdersPage = () => {
+  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
 
   let today = startOfToday();
   let [selectedDay, setSelectedDay] = useState(today);
@@ -142,17 +144,17 @@ const [selectedMonth, setSelectedMonth] = useState(null);
   };
 
   return (
-    <div className="flex panel scroll overscroll-none h-screen">
+    <div className="lg:flex panel scroll overscroll-none lg:h-screen">
       {/* Sidebar */}
-      <div className="w-60 border-r-2 flex justify-center pt-8 border-white/10">
-        <div className="text-white mb-4">
+      {isAboveSmallScreens ? (<div className="phone:w-full lg:w-60 border-r-2 flex justify-center phone:pt-5 lg:pt-8 border-white/10">
+        <div className="phone:flex text-white mb-4">
           <Link href="/admin/home" className="flex">
-            <Image src={left} alt="" className="w-12 h-12 mx-auto mb-10" />
+            <Image src={left} alt="" className="phone:w-8 phone:h-8 lg:w-12 lg:h-12 phone:my-auto mx-auto mb-10" />
           </Link>
           <Image
             src={photo}
             alt="Profile"
-            className="w-16 h-16 rounded-full border-2 border-white/20 mx-auto"
+            className="phone:w-10 phone:h-10 lg:w-16 lg:h-16 rounded-full border-2 border-white/20 mx-auto phone:my-auto"
           />
           <p className="text-white/30 font-space-grostek mt-1 text-center">
             @johndoe
@@ -168,26 +170,26 @@ const [selectedMonth, setSelectedMonth] = useState(null);
             </div>
           </div>
         </div>
-      </div>
+      </div>) : (<></>)}
 
       {/* Main */}
       <div className="w-full">
         <div className="flex justify-between border-b-2 border-white/10 p-5">
-          <h2 className="text-3xl font-odesans-semibold text-white my-auto">
+          <h2 className="phone:text-xl lg:text-3xl font-odesans-semibold text-white my-auto">
             Book A Date & Time
           </h2>
           <Link href="/admin/notifications">
-            <Image src={bell} alt="" className="w-10 h-10 my-auto" />
+            <Image src={bell} alt="" className="phone:w-7 phone:h-7 lg:w-10 lg:h-10 my-auto" />
           </Link>
         </div>
 
         {/* Calender and Time Picker */}
-        <div className="mt-10 grid grid-cols-[2fr_1.5fr_1fr]">
+        <div className="mt-10 lg:grid grid-cols-[2fr_1.5fr_1fr]">
           {/* Calender */}
           <div className="font-space-grostek panel scroll border-r-2 border-white/10">
             <div className="w-full px-2 mx-auto">
               <div className="flex items-center px-5">
-                <h2 className="flex-auto font-semibold text-white font-odesans-semibold text-3xl">
+                <h2 className="flex-auto font-semibold text-white font-odesans-semibold phone:text-xl lg:text-3xl">
                   {format(firstDayOfCurrentMonth, "MMMM yyyy")}
                 </h2>
 
@@ -197,7 +199,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
                   className="-my-1.5 flex flex-none items-center justify-center p-3 text-white hover:bg-black/40 rounded-full transition duration-500 ease-in-out"
                 >
                   <span className="sr-only">Previous month</span>
-                  <ChevronLeftIcon className="w-8 h-8" aria-hidden="true" />
+                  <ChevronLeftIcon className="phone:w-6 phone:h-6 lg:w-8 lg:h-8" aria-hidden="true" />
                 </button>
                 <button
                   onClick={next}
@@ -205,29 +207,29 @@ const [selectedMonth, setSelectedMonth] = useState(null);
                   className="-my-1.5 -mr-1.5 flex flex-none items-center justify-center p-3 text-white hover:bg-black/40 rounded-full transition duration-500 ease-in-out"
                 >
                   <span className="sr-only">Next month</span>
-                  <ChevronRightIcon className="w-8 h-8" aria-hidden="true" />
+                  <ChevronRightIcon className="phone:w-6 phone:h-6 lg:w-8 lg:h-8" aria-hidden="true" />
                 </button>
               </div>
-              <div className="flex text-gray-100 justify-between mt-8 px-5">
-                <div className="border border-white/10 rounded-full w-16 h-16 flex items-center justify-center text-lg">
+              <div className="flex text-gray-100 justify-between mt-8 lg:px-5">
+                <div className="border border-white/10 rounded-full phone:w-12 phone:h-12 lg:w-16 lg:h-16 flex items-center justify-center text-lg">
                   S
                 </div>
-                <div className="border border-white/10 rounded-full w-16 h-16 flex items-center justify-center text-lg">
+                <div className="border border-white/10 rounded-full phone:w-12 phone:h-12 lg:w-16 lg:h-16 flex items-center justify-center text-lg">
                   M
                 </div>
-                <div className="border border-white/10 rounded-full w-16 h-16 flex items-center justify-center text-lg">
+                <div className="border border-white/10 rounded-full phone:w-12 phone:h-12 lg:w-16 lg:h-16 flex items-center justify-center text-lg">
                   T
                 </div>
-                <div className="border border-white/10 rounded-full w-16 h-16 flex items-center justify-center text-lg">
+                <div className="border border-white/10 rounded-full phone:w-12 phone:h-12 lg:w-16 lg:h-16 flex items-center justify-center text-lg">
                   W
                 </div>
-                <div className="border border-white/10 rounded-full w-16 h-16 flex items-center justify-center text-lg">
+                <div className="border border-white/10 rounded-full phone:w-12 phone:h-12 lg:w-16 lg:h-16 flex items-center justify-center text-lg">
                   T
                 </div>
-                <div className="border border-white/10 rounded-full w-16 h-16 flex items-center justify-center text-lg">
+                <div className="border border-white/10 rounded-full phone:w-12 phone:h-12 lg:w-16 lg:h-16 flex items-center justify-center text-lg">
                   F
                 </div>
-                <div className="border border-white/10 rounded-full w-16 h-16 flex items-center justify-center text-lg">
+                <div className="border border-white/10 rounded-full phone:w-12 phone:h-12 lg:w-16 lg:h-16 flex items-center justify-center text-lg">
                   S
                 </div>
               </div>
@@ -285,13 +287,13 @@ const [selectedMonth, setSelectedMonth] = useState(null);
           </div>
 
           {/* Time */}
-          <div className="my-auto">
+          <div className="my-auto phone:mb-12 lg:mb-0 phone:-mt-7">
             <div className="flex justify-center items-center text-white/90 font-technology">
-              <div className="text-[12rem] text-right" onWheel={(e) => handleScroll(e, true)}>
+              <div className="phone:text-[9rem] lg:text-[12rem] text-right" onWheel={(e) => handleScroll(e, true)}>
                 {selectedHour.toString().padStart(2, '0')}
               </div>
               <p className="text-[12rem] text-white/90 mx-5">:</p>
-              <div className="text-[12rem] text-left" onWheel={(e) => handleScroll(e, false)}>
+              <div className="phone:text-[9rem] lg:text-[12rem] text-left" onWheel={(e) => handleScroll(e, false)}>
                 {selectedMinute.toString().padStart(2, '0')}
               </div>
             </div>
@@ -305,11 +307,11 @@ const [selectedMonth, setSelectedMonth] = useState(null);
           </div>
 
           {/* Confirm */}
-          <div className="mx-auto justify-center items-center flex text-white border-l-2 border-white/10 px-5">
+          <div className="mx-auto justify-center items-center flex text-white border-l-2 border-white/10 px-5 phone:pb-10">
             <form >
               <div className="slider-container">
-              <h1 className="text-lg mb-4 font-space-grostek text-white/90">How would you like your pickup schedule be?</h1>
-                <label for="checkbox" className="flex items-center mb-2 slider-label gap-3 cursor-pointer">
+              <h1 className="lg:text-lg mb-4 font-space-grostek text-white/90 phone:text-center">How would you like your pickup schedule be?</h1>
+                <label for="checkbox" className="flex items-center phone:justify-center mb-2 slider-label gap-3 cursor-pointer">
                   Daily
                   <input
                     type="checkbox"
@@ -322,8 +324,8 @@ const [selectedMonth, setSelectedMonth] = useState(null);
                   <span class="slider"></span>
                   Weekly
                 </label>
-                <h1 className="text-lg mb-4 font-space-grostek text-white/90">How would you like your subscription be?</h1>
-                <label className="flex items-center mb-2 slider-label gap-3 cursor-pointer">
+                <h1 className="lg:text-lg mb-4 font-space-grostek text-white/90">How would you like your subscription be?</h1>
+                <label className="flex items-center phone:justify-center mb-2 slider-label gap-3 cursor-pointer">
                   No
                   <input
                     type="checkbox"
@@ -335,8 +337,8 @@ const [selectedMonth, setSelectedMonth] = useState(null);
                   <span class="slider"></span>
                   Yes
                 </label>
-                <h1 className="text-lg mb-4 font-space-grostek text-white/90">How would you like your subscription be?</h1>
-                <label className="flex items-center slider-label gap-3 cursor-pointer">
+                <h1 className="lg:text-lg mb-4 font-space-grostek text-white/90">How would you like your subscription be?</h1>
+                <label className="flex items-center phone:justify-center slider-label gap-3 cursor-pointer">
                   No
                   <input
                     type="checkbox"

@@ -32,7 +32,7 @@ const Process = () => {
           <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl phone:pt-10 lg:pt-0 text-left">Our Process Tree.</h1>
           <div className="lg:flex mt-10 gap-10">
             <p className="text-3xl font-odesans-semibold my-auto text-purple-500 phone:text-center">What We Do</p>
-            <div className="phone:text-lg lg:text-xl phone:text-center lg:text-right my-auto flex flex-col phone:gap-3 lg:gap-2 phone:mt-5 lg:mt-0 font-garamond-regular lg:border-l-4 lg:pl-7 lg:border-fuchsia-100">
+            <div className="phone:text-lg lg:text-xl phone:text-center lg:text-right my-auto flex flex-col phone:gap-1 lg:gap-2 phone:mt-5 lg:mt-0 font-garamond-regular lg:border-l-4 lg:pl-7 lg:border-fuchsia-100">
               {steps.map((step, index) => (
                 <button
                   key={index}

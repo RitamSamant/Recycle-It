@@ -114,7 +114,14 @@ body::-webkit-scrollbar {
 .scroll {
   scrollbar-width: none;
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+  -moz-appearance: textfield;
+}
 .slider-container {
   display: flex;
   flex-direction: column;
