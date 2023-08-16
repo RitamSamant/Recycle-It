@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import React, { useState } from "react";
 import Image from "next/image";
 import left from "../../../../public/images/dashboard/left-arrow.svg";
@@ -116,8 +115,7 @@ const ProductDetailsPage = () => {
         <button onClick={() => setCartModalOpen(true)}>
           <Image src={cart} alt="" className="w-10 h-10 my-auto" />
         </button>
-       </div>
-        
+      </div>
       <div className="flex flex-col items-end">
         {cartModalOpen && (
           <div className="text-white backdrop-blur-sm absolute mr-5 mt-2 font-space-grostek">
@@ -194,7 +192,7 @@ const ProductDetailsPage = () => {
                 key={index}
                 src={image.src}
                 alt={`Thumbnail ${index}`}
-                className={`mb-2 cursor-pointer object-cover  ${
+                className={`mb-2 cursor-pointer object-cover ${
                   selectedImage === image
                     ? "border-2 border-white/90 rounded-2xl w-28 h-20"
                     : "border-2 border-white/20 rounded-2xl w-28 h-20"

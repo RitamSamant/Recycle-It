@@ -10,7 +10,7 @@ router.post("/login", orgController.orgLogin);
 router.post("/dashboard/claim", authentication, orgController.overall);
 
 router.get(
-  "dashboard/products",
+  "/dashboard/products",
   authentication,
   warehouseController.getProducts
 );
