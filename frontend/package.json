@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.16",
     "@heroicons/react": "v1",
     "autoprefixer": "^10.4.15",
+    "axios": "^1.4.0",
     "chart.js": "^4.3.3",
     "date-fns": "^2.30.0",
     "eslint": "8.46.0",

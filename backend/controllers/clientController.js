@@ -24,7 +24,7 @@ const clientRegister = async (req, res) => {
 
 const clientLogin = async (req, res) => {
   const { email, password } = req.body;
-  const client = await Client.findOne({ email, password });
+  const client = await Client.findOne({ email,password });
   if (client) {
     const token = jwt.sign({ email, role: "client" }, process.env.passKey, {
       expiresIn: "24h",
@@ -43,6 +43,7 @@ async function calculatePrice(weight, pricePerUnit) {
     }, 1000);
   });
 }
+
 
 const overallPrice = async (req, res) => {
   const clientId = req.body.clientId;

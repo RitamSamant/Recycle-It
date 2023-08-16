@@ -1,124 +1,144 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import photo from "../../../../public/images/dashboard/sagittarius.png";
 import Image from "next/image";
 import left from "../../../../public/images/dashboard/left-arrow.svg";
 import Link from "next/link";
 import bell from "../../../../public/images/dashboard/bell.svg";
+import axios from "axios";
 
 const PreviousOrdersPage = () => {
-  const previousOrders = [
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-  ];
+
+  const [data,Setdata] = useState('')
+
+  const getOrderClient = async (req,res)=>{
+    const token = localStorage.getItem('token')
+    const response = await axios.get('http://localhost:5000/client/dashboard/orderedItems',{
+      headers : {
+        Authorization : `Bearer ${token}`
+      }
+    })
+    Setdata(response)
+    console.log(response.data);
+  }
+
+  useEffect(()=>{
+    getOrderClient()
+  },[])
+
+  // const previousOrders = [
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  // ];
 
   return (
     <div className="flex panel scroll">
       <div className="w-60 border-r-2 flex justify-center pt-8 border-white/10">
         <div className="text-white mb-4">
-          <Link href="/admin/home" className="flex">
+          <Link href="/client/home" className="flex">
             <Image src={left} alt="" className="w-12 h-12 mx-auto mb-10" />
           </Link>
           <Image
@@ -176,7 +196,7 @@ const PreviousOrdersPage = () => {
           </div>
         </div>
         <div className="mt-2 space-y-4 h-screen overflow-y-scroll scroll">
-          {previousOrders.map((order) => (
+          {/* {previousOrders.map((order) => (
             <div
               key={order.id}
               className="bg-white/10 border-2 border-white/10 hover:border-white/30 transition duration-500 cursor pointer py-4 shadow-md rounded-md flex space-x-4 cursor-pointer"
@@ -197,7 +217,7 @@ const PreviousOrdersPage = () => {
                 {order.status}
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
