@@ -13,9 +13,14 @@ import { CategoryScale,
   Legend,
   PointElement,
   BarElement,
-  ArcElement 
+  ArcElement
 } from 'chart.js';
 import { Line,Bar,Pie } from 'react-chartjs-2';
+import pattern1 from "../../../public/images/dashboard/pattern_01.svg";
+import pattern2 from "../../../public/images/dashboard/pattern_02.svg";
+import pattern3 from "../../../public/images/dashboard/pattern_03.svg";
+import pattern4 from "../../../public/images/dashboard/pattern_04.svg";
+import pattern6 from "../../../public/images/dashboard/pattern_06.svg";
 
 CHARTJS.register( CategoryScale,LinearScale,LineElement,Tooltip,Legend,PointElement,BarElement,ArcElement)
 
@@ -31,13 +36,14 @@ const DashboardPage = () => {
     labels: ['January', 'February', 'March', 'April', 'May'],
     datasets: [
       {
-        label: 'Sales',
+        label: 'Bought',
         fill: false,
         lineTension: 0.5,
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(75,192,192,1)',
-        borderWidth: 2,
+        backgroundColor: 'rgba(0,0,0,0.4)',
+        borderColor: 'rgba(255,255,255,1)',
+        borderWidth: 1,
         data: [65, 59, 80, 81, 56],
+
       },
     ],
   };
@@ -66,19 +72,63 @@ const DashboardPage = () => {
         label: 'Earnings',
         fill: false,
         lineTension: 0.5,
-        backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(75,192,192,1)',
+        backgroundColor: 'rgba(255,255,255,1)',
+        borderColor: 'rgba(255,255,255,1)',
         borderWidth: 2,
         data: [85, 59, 90, 95, 86],
       },
     ],
   };
 
-  //dummy options for react-chartjs-2
-  const options =  {
-   
+  const options = {
+    plugins: {
+      legend: {
+        labels: {
+          color: 'white',
+          font: {
+            family: 'Space-Grostek',
+            size: 14,
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: 'white',
+          font: {
+            family: 'Space-Grostek',
+            size: 12,
+          },
+        },
+        title: {
+          display: true,
+          color: 'white',
+          font: {
+            family: 'Space-Grostek',
+            size: 16,
+          },
+        },
+      },
+      y: {
+        ticks: {
+          color: 'white',
+          font: {
+            family: 'Space-Grostek',
+            size: 12,
+          },
+        },
+        title: {
+          display: true,
+          color: 'white',
+          font: {
+            family: 'Helvetica',
+            size: 16,
+          },
+        },
+      },
+    },
   };
-
 
   return (
     <div className="flex h-full panel pb-5">
@@ -111,15 +161,14 @@ const DashboardPage = () => {
         <div className="flex px-4 mt-3">
           {/* Top Row */}
           <Link href="/admin/home/warehouse" className="w-1/3 p-4">
-            <div className="cursor-pointer flex flex-col justify-between p-5 bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
-               <p className=' text-center text-2xl'>Warehouse</p>
-               {/* svg/image here */}
+            <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
+               <Image src={pattern1} alt='' className='opacity-10 absolute'/>
             </div>
           </Link>
           <Link href="/admin/home/wishlist" className="w-1/3 p-4">
-            <div className="cursor-pointer p-5 flex flex-col justify-between bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
-            <p className=' text-center text-2xl'>Wishlist</p>
-              {/* svg/image here */}
+            <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
+              <Image src={pattern3} alt='' className='opacity-30 absolute'/>
+              <p>Wishlist</p>
             </div>
           </Link>
           <Link href="/admin/home/wastebought" className="w-1/3 p-4">
@@ -133,21 +182,20 @@ const DashboardPage = () => {
         <div className="flex px-4">
           {/* Bottom Row */}
           <Link href="/admin/home/booking" className="w-1/3 p-4">
-            <div className="cursor-pointer p-8 flex flex-col justify-between  bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white">
-               <p className=' text-center text-2xl'>Booking</p>
-               <Pie data={dataPie} options={options} className=' w-1/2 ml-6 p-2'/>
+            <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
+               <Image src={pattern4} alt='' className='opacity-30 absolute'/>
             </div>
           </Link>
           <Link href="/admin/home/earning" className="w-1/3 p-4">
             <div className="cursor-pointer p-5 flex flex-col justify-between bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
                <p className=' text-center text-2xl'>Earnings</p>
-                <Bar data={dataBar} options={options}/>
+                <Bar data={dataBar} options={options} className=''/>
             </div>
           </Link>
           <Link href="/admin/home/faq" className="w-1/3 p-4">
-            <div className="cursor-pointer p-5 flex flex-col justify-between bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
-               <p className=' text-center text-2xl'>FAQs</p>
-               {/* Insert svg/ */}
+            <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
+              <Image src={pattern2} alt='' className='opacity-30 absolute'/>
+              <p>FAQ</p>
             </div>
           </Link>
         </div>

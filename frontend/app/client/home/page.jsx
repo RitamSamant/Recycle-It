@@ -110,19 +110,19 @@ const DashboardPage = () => {
          </div>
         <div className="flex px-4 mt-3">
           {/* Top Row */}
-          <Link href="/admin/home/warehouse" className="w-1/3 p-4">
+          <Link href="/client/home/warehouse" className="w-1/3 p-4">
             <div className="cursor-pointer flex flex-col justify-between p-5 bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
                <p className=' text-center text-2xl'>Warehouse</p>
                {/* svg/image here */}
             </div>
           </Link>
-          <Link href="/admin/home/wishlist" className="w-1/3 p-4">
+          <Link href="/client/home/wishlist" className="w-1/3 p-4">
             <div className="cursor-pointer p-5 flex flex-col justify-between bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
             <p className=' text-center text-2xl'>Wishlist</p>
               {/* svg/image here */}
             </div>
           </Link>
-          <Link href="/admin/home/wastebought" className="w-1/3 p-4">
+          <Link href="/client/home/wastebought" className="w-1/3 p-4">
             <div className="cursor-pointer flex flex-col justify-between p-5 bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
                <p className=' text-center text-2xl'>Waste Bought</p>
                <Line data={data} options={options} className=''/>
@@ -132,19 +132,19 @@ const DashboardPage = () => {
 
         <div className="flex px-4">
           {/* Bottom Row */}
-          <Link href="/admin/home/booking" className="w-1/3 p-4">
+          <Link href="/client/home/booking" className="w-1/3 p-4">
             <div className="cursor-pointer p-8 flex flex-col justify-between  bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white">
                <p className=' text-center text-2xl'>Booking</p>
                <Pie data={dataPie} options={options} className=' w-1/2 ml-6 p-2'/>
             </div>
           </Link>
-          <Link href="/admin/home/earning" className="w-1/3 p-4">
+          <Link href="/client/home/earning" className="w-1/3 p-4">
             <div className="cursor-pointer p-5 flex flex-col justify-between bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
                <p className=' text-center text-2xl'>Earnings</p>
                 <Bar data={dataBar} options={options}/>
             </div>
           </Link>
-          <Link href="/admin/home/faq" className="w-1/3 p-4">
+          <Link href="/client/home/faq" className="w-1/3 p-4">
             <div className="cursor-pointer p-5 flex flex-col justify-between bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
                <p className=' text-center text-2xl'>FAQs</p>
                {/* Insert svg/ */}
