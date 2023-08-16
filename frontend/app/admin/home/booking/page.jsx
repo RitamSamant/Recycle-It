@@ -32,6 +32,11 @@ const PreviousOrdersPage = () => {
   let today = startOfToday();
   let [selectedDay, setSelectedDay] = useState(today);
   let [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
+
+const [selectedDate, setSelectedDate] = useState(null);
+const [selectedMonth, setSelectedMonth] = useState(null);
+
+
   const [isScrolling, setIsScrolling] = useState(false);
   let firstDayOfCurrentMonth = startOfMonth(
     parse(currentMonth, "MMM-yyyy", new Date())
@@ -109,6 +114,11 @@ const PreviousOrdersPage = () => {
     }, delay);
   };
 
+  const handleTimeSelection = () => {
+    const selectedTime = `${selectedHour.toString().padStart(2, '0')}:${selectedMinute.toString().padStart(2, '0')}`;
+    console.log("Selected Time:", selectedTime);
+  };
+
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleCheckboxChange = (event) => {
@@ -120,6 +130,15 @@ const PreviousOrdersPage = () => {
         return [...prevSelected, option];
       }
     });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(selectedDay);
+    console.log(selectedMonth);
+    console.log(selectedHour);
+    console.log(selectedMinute)
+    console.log(selectedOptions)
   };
 
   return (
@@ -146,12 +165,6 @@ const PreviousOrdersPage = () => {
               <button className="px-5 rounded-full border-2 border-white/10 font-space-grostek mt-2">
                 Edit
               </button>
-              <Link
-                href="/admin/warehouse"
-                className="mt-[22rem] rounded-2xl border-2 bg-white/10 border-white/20 px-5 py-1"
-              >
-                Go To Warehouse
-              </Link>
             </div>
           </div>
         </div>
@@ -283,11 +296,17 @@ const PreviousOrdersPage = () => {
               </div>
             </div>
             <p className="font-technology text-white text-2xl text-center">Scroll up and down on the time</p>
+            <button
+              onClick={() => handleTimeSelection()}
+              className="bg-black flex rounded-xl shadow-xl text-white px-7 py-2 mt-10 mx-auto font-space-grostek"
+            >
+              Save Time
+            </button>
           </div>
 
           {/* Confirm */}
           <div className="mx-auto justify-center items-center flex text-white border-l-2 border-white/10 px-5">
-            <form>
+            <form >
               <div className="slider-container">
               <h1 className="text-lg mb-4 font-space-grostek text-white/90">How would you like your pickup schedule be?</h1>
                 <label for="checkbox" className="flex items-center mb-2 slider-label gap-3 cursor-pointer">
@@ -304,7 +323,7 @@ const PreviousOrdersPage = () => {
                   Weekly
                 </label>
                 <h1 className="text-lg mb-4 font-space-grostek text-white/90">How would you like your subscription be?</h1>
-                <label className="flex items-center mb-2 slider-label gap-3">
+                <label className="flex items-center mb-2 slider-label gap-3 cursor-pointer">
                   No
                   <input
                     type="checkbox"
@@ -317,7 +336,7 @@ const PreviousOrdersPage = () => {
                   Yes
                 </label>
                 <h1 className="text-lg mb-4 font-space-grostek text-white/90">How would you like your subscription be?</h1>
-                <label className="flex items-center slider-label gap-3">
+                <label className="flex items-center slider-label gap-3 cursor-pointer">
                   No
                   <input
                     type="checkbox"
@@ -330,12 +349,10 @@ const PreviousOrdersPage = () => {
                   Yes
                 </label>
               </div>
-
-
-              {/* Add more checkboxes as needed */}
                 <button
                   type="button"
-                  className="bg-black rounded-xl shadow-xl text-white px-7 py-2 mt-4"
+                  className="bg-black rounded-xl shadow-xl text-white px-10 font-space-grostek py-2 mt-10 flex mx-auto"
+                  onClick={handleSubmit}
                 >
                   Submit
                 </button>
