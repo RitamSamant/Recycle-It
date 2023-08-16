@@ -33,6 +33,14 @@ Our innovative project focuses on addressing the issue of non-biodegradable wast
 - JWT
 </br>
 
+## ⚽ Team dotSlashByte
+- [Ritam Samanta](https://github.com/RitamSamant)
+- [Anurag Das](https://github.com/oeuvars)
+- [Samit Bhattacharjee](https://github.com/Samit-prsl)
+- [Akash Goswami](https://github.com/Akashbuilds)
+
+</br>
+
 
 
 
