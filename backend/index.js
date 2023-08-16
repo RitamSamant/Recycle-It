@@ -10,9 +10,12 @@ app.use(express.json());
 const port = process.env.PORT;
 
 app.get("/", (req, res) => res.send("this is dashboard!"));
+
+//donates used plastic and also buy recycled products
 app.use("/client", require("./routes/clientRoutes"));
 app.use("/org", require("./routes/orgRoutes"));
 
+//direct recycled product buyer (user/small buisness)
 app.use("/digitalWarehouse/user", require("./routes/userRoutes"));
 
 mongoose

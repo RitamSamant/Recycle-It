@@ -175,7 +175,7 @@ const orderProduct3 = async (req, res) => {
   const product = await Product.findById(req.params.productid);
   console.log(product);
   if (product) {
-    const org = await Org.findOne({ email: req.org.email });
+    const org = await Org.findOne({ buisnessEmail: req.user.buisnessEmail });
     if (org) {
       org.orderforOrg.push(product);
       await org.save();
@@ -190,9 +190,9 @@ const orderProduct3 = async (req, res) => {
 
 const orderedHistory3 = async (req, res) => {
   try {
-    const org = await Org.findOne({ email: req.org.email }).populate(
-      "orderforOrg"
-    );
+    const org = await Org.findOne({
+      buisnessEmail: req.user.buisnessEmail,
+    }).populate("orderforOrg");
     if (org) {
       res.status(200).json({ orderforOrg: org.orderforOrg || [] });
     } else {
@@ -207,7 +207,7 @@ const addinWishlist3 = async (req, res) => {
   const product = await Product.findById(req.params.productid);
   console.log(product);
   if (product) {
-    const org = await Org.findOne({ email: req.org.email });
+    const org = await Org.findOne({ buisnessEmail: req.user.buisnessEmail });
     if (org) {
       org.wishlistforOrg.push(product);
       await org.save();
@@ -221,9 +221,9 @@ const addinWishlist3 = async (req, res) => {
 };
 
 const wishlistedItems3 = async (req, res) => {
-  const org = await Org.findOne({ email: req.org.email }).populate(
-    "wishlistforOrg"
-  );
+  const org = await Org.findOne({
+    buisnessEmail: req.user.buisnessEmail,
+  }).populate("wishlistforOrg");
   if (org) {
     res.json({ wishlistforOrg: org.wishlistforOrg || [] });
   } else {
