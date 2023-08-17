@@ -8,7 +8,7 @@ import ".././globals.css";
 import logo from "../../public/images/logos/watering-can.png";
 import business from "../../public/images/welcome/businessman.png";
 import user from "../../public/images/welcome/man.png";
-import useMediaQuery from "@/hooks/useMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const page = () => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
