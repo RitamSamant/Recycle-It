@@ -101,7 +101,7 @@ const SignupPage = () => {
             </button>
           </div>
         </form>
-        <p className='font-garamond-regular text-lg text-center mt-5'>Not Signed in? <Link href="/admin/login" className='underline text-emerald-950'>Signup</Link></p>
+        <p className='font-garamond-regular text-lg text-center mt-5'>Not Signed in? <Link href="/client/login" className='underline text-emerald-950'>Signup</Link></p>
       </div>
     </div>
   );

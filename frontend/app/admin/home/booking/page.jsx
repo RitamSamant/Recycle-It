@@ -158,7 +158,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
   };
 
   return (
-    <div className="lg:flex panel scroll overscroll-none lg:h-screen">
+    <div className="lg:flex panel scroll overscroll-none lg:h-full py-5">
       {/* Sidebar */}
       {isAboveSmallScreens ? (
       <div className="w-60 border-r-2 flex justify-center phone:pt-5 lg:pt-8 border-white/10">

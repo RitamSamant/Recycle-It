@@ -61,7 +61,7 @@ const LoginPage = () => {
               Login
             </button>
           </div>
-          <p className='font-garamond-regular text-lg text-center mt-5'>Not logged in? <Link href="/admin/signup" className='underline text-purple-950'>Signup</Link></p>
+          <p className='font-garamond-regular text-lg text-center mt-5'>Not logged in? <Link href="/client/signup" className='underline text-purple-950'>Signup</Link></p>
         </form>
       </div>
     </div>

@@ -182,23 +182,24 @@ const DashboardPage = () => {
             </div>
             <div className="flex px-4 mt-3">
               {/* Top Row */}
-              <Link href="/admin/home/warehouse" className="w-1/3 p-4">
-                <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
+              <Link href="/admin/home/warehouse" className="w-1/3 p-4 ">
+                <div className="relative cursor-pointer flex justify-center items-center  bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
                   <Image
                     src={pattern1}
                     alt=""
-                    className="opacity-10 absolute"
+                    className="opacity-10 absolute "
                   />
+                  <h1 className=" text-5xl font-odesans-medium absolute  ">Warehouse</h1>
                 </div>
               </Link>
               <Link href="/admin/home/wishlist" className="w-1/3 p-4">
-                <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
+                <div className="relative cursor-pointer flex justify-center items-center bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
                   <Image
                     src={pattern3}
                     alt=""
                     className="opacity-30 absolute"
                   />
-                  <p>Wishlist</p>
+                  <p className=" text-5xl font-odesans-medium absolute">Wishlist</p>
                 </div>
               </Link>
               <Link href="/admin/home/wastebought" className="w-1/3 p-4">
@@ -212,12 +213,13 @@ const DashboardPage = () => {
             <div className="flex px-4">
               {/* Bottom Row */}
               <Link href="/admin/home/booking" className="w-1/3 p-4">
-                <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
+                <div className="relative cursor-pointer flex justify-center items-center bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
                   <Image
                     src={pattern4}
                     alt=""
                     className="opacity-30 absolute"
                   />
+                  <h1 className=" text-5xl absolute font-odesans-medium">Booking</h1>
                 </div>
               </Link>
               <Link href="/admin/home/earning" className="w-1/3 p-4">
@@ -227,13 +229,13 @@ const DashboardPage = () => {
                 </div>
               </Link>
               <Link href="/admin/home/faq" className="w-1/3 p-4">
-                <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
+                <div className="relative cursor-pointer flex justify-center items-center bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
                   <Image
                     src={pattern2}
                     alt=""
                     className="opacity-30 absolute"
                   />
-                  <p>FAQ</p>
+                  <p className=" text-5xl font-odesans-medium absolute">FAQ</p>
                 </div>
               </Link>
             </div>
@@ -261,22 +263,23 @@ const DashboardPage = () => {
             <div className="px-4 mt-3">
               {/* Top Row */}
               <Link href="/admin/home/warehouse" className="w-1/3 p-4">
-                <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
+                <div className="relative flex justify-center items-center cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
                   <Image
                     src={pattern1}
                     alt=""
                     className="opacity-10 absolute"
                   />
+                  <h1 className=" text-5xl absolute font-odesans-medium">Warehouse</h1>
                 </div>
               </Link>
               <Link href="/admin/home/wishlist" className="w-1/3 p-4">
-                <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
+                <div className="relative cursor-pointer flex justify-center items-center bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
                   <Image
                     src={pattern3}
                     alt=""
                     className="opacity-30 absolute"
                   />
-                  <p>Wishlist</p>
+                  <p className=" text-5xl absolute font-odesans-medium">Wishlist</p>
                 </div>
               </Link>
               <Link href="/admin/home/wastebought" className="w-1/3 p-4">
@@ -289,12 +292,13 @@ const DashboardPage = () => {
             <div className="lg:flex px-4 phone:-mt-6">
               {/* Bottom Row */}
               <Link href="/admin/home/booking" className="w-1/3 p-4">
-                <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
+                <div className="relative cursor-pointer flex justify-center items-center bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
                   <Image
                     src={pattern4}
                     alt=""
                     className="opacity-30 absolute"
                   />
+                  <h1 className=" text-5xl absolute font-odesans-medium">Booking</h1>
                 </div>
               </Link>
               <Link href="/admin/home/earning" className="w-1/3 p-4">
@@ -304,13 +308,13 @@ const DashboardPage = () => {
                 </div>
               </Link>
               <Link href="/admin/home/faq" className="w-1/3 p-4">
-                <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
+                <div className="relative cursor-pointer flex justify-center items-center bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
                   <Image
                     src={pattern2}
                     alt=""
                     className="opacity-30 absolute"
                   />
-                  <p>FAQ</p>
+                  <p className=" text-5xl absolute font-odesans-medium">FAQ</p>
                 </div>
               </Link>
             </div>

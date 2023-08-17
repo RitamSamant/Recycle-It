@@ -142,7 +142,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
     console.log(selectedHour);
     console.log(selectedMinute)
     console.log(selectedOptions)
-    toast.success("Cart Items Added.", {
+    toast.success("Pickup scheduled", {
       style: {
         border: "2px solid rgba(255, 255, 255, 0.1)",
         padding: "16px",
@@ -158,7 +158,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
   };
 
   return (
-    <div className="lg:flex panel scroll overscroll-none lg:h-screen">
+    <div className="lg:flex panel scroll overscroll-none lg:h-full py-5">
       {/* Sidebar */}
       {isAboveSmallScreens ? (
       <div className="w-60 border-r-2 flex justify-center phone:pt-5 lg:pt-8 border-white/10">
@@ -327,17 +327,17 @@ const [selectedMonth, setSelectedMonth] = useState(null);
               <div className="slider-container">
               <h1 className="lg:text-lg mb-4 font-space-grostek text-white/90 phone:text-center">How would you like your pickup schedule be?</h1>
                 <label for="checkbox" className="flex items-center phone:justify-center mb-2 slider-label gap-3 cursor-pointer">
-                  Daily
+                  
                   <input
                     type="checkbox"
                     id="checkbox"
-                    value="Option 1"
-                    checked={selectedOptions.includes('Option 1')}
+                    value="Daily"
+                    checked={selectedOptions.includes('Daily')}
                     onChange={handleCheckboxChange}
                     className="slider-input"
                   />
                   <span class="slider"></span>
-                  Weekly
+                  Daily
                 </label>
               </div>
               <Toaster position="bottom-right" reverseOrder={false} />
