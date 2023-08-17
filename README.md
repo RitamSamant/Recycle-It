@@ -22,6 +22,15 @@ Our innovative project focuses on addressing the issue of non-biodegradable wast
 <img src="https://github.com/RitamSamant/Recycle-It/blob/main/src/overview.png"/>
 </br>
 
+## UI Samples
+<div align = "center">
+<img src = "src/Checkout.png" width = 500 height = 300>
+<img src = "src/Stripe payment gateway.png" width = 500 height = 300>
+<img src = "src/booking page.png" width = 500 height = 300>
+<img src = "src/home page ss.png" width = 500 height = 300>
+</div>
+</br>
+
 ## 🖥️ Tech Stack
 #### Frontend
 - NextJS
