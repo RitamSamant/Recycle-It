@@ -14,7 +14,7 @@ const LoginPage = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    const response = await axios.post('http://localhost:5000/org/login',user)
+    const response = await axios.post('https://recycle-it.onrender.com/org/login',user)
     const newToken = response.data.token;
     localStorage.setItem('token', newToken);
     console.log(response.data)

@@ -17,7 +17,7 @@ const SignupPage = () => {
   const router = useRouter();
   const handleClick = async (e) => {
     e.preventDefault();
-    const res = await axios.post('http://localhost:5000/client/register',user)
+    const res = await axios.post('https://recycle-it.onrender.com/client/register',user)
     console.log(res.data)
     router.push('/client/login')
   }
@@ -101,7 +101,7 @@ const SignupPage = () => {
             </button>
           </div>
         </form>
-        <p className='font-garamond-regular text-lg text-center mt-5'>Not Signed in? <Link href="/admin/login" className='underline text-emerald-950'>Signup</Link></p>
+        <p className='font-garamond-regular text-lg text-center mt-5'>Not Signed in? <Link href="/client/login" className='underline text-emerald-950'>Signup</Link></p>
       </div>
     </div>
   );

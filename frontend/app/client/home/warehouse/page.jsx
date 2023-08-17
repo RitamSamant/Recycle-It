@@ -136,7 +136,7 @@ const ProductDetailsPage = () => {
   };
 
   return (
-    <div className="lg:h-screen panel">
+    <div className="lg:h-full py-5 panel">
       <div className="py-4 border-b-2 border-white/10 flex justify-between px-10">
         <button onClick={handleHome}>
           <Image src={left} alt="" className="phone:w-9 phone:h-9 lg:w-12 lg:h-12 my-auto" />

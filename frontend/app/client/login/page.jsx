@@ -14,7 +14,7 @@ const LoginPage = () => {
   const router = useRouter();
   const handleClick = async (e) => {
     e.preventDefault();
-    const res = await axios.post('http://localhost:5000/client/login',user)
+    const res = await axios.post('https://recycle-it.onrender.com/client/login',user)
     const newToken = res.data.token;
     localStorage.setItem('token', newToken);
     console.log(res.data)
@@ -61,7 +61,7 @@ const LoginPage = () => {
               Login
             </button>
           </div>
-          <p className='font-garamond-regular text-lg text-center mt-5'>Not logged in? <Link href="/admin/signup" className='underline text-purple-950'>Signup</Link></p>
+          <p className='font-garamond-regular text-lg text-center mt-5'>Not logged in? <Link href="/client/signup" className='underline text-purple-950'>Signup</Link></p>
         </form>
       </div>
     </div>
