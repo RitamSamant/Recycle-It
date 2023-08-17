@@ -8,7 +8,6 @@ import ".././globals.css";
 import logo from "../../public/images/logos/watering-can.png";
 import business from "../../public/images/welcome/businessman.png";
 import user from "../../public/images/welcome/man.png";
-import { SiteBlob2 } from "../../components/site-blob-2";
 import useMediaQuery from "@/hooks/useMediaQuery";
 
 const page = () => {

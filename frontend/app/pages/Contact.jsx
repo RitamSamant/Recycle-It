@@ -22,7 +22,7 @@ const Contact = () => {
         </div>
         <div className="card rounded-lg shadow-lg py-10 lg:max-w-[30rem] phone:w-11/12 phone:mx-auto phone:px-5 lg:px-8">
           <h1 className="phone:text-2xl lg:text-3xl font-odesans-semibold text-fuchsia-900 mb-6">
-            Let's talk business
+            Let&apos;s talk business
           </h1>
           <form className="space-y-4">
             <div className="space-y-1">

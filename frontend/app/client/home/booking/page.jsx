@@ -327,17 +327,16 @@ const [selectedMonth, setSelectedMonth] = useState(null);
               <div className="slider-container">
               <h1 className="lg:text-lg mb-4 font-space-grostek text-white/90 phone:text-center">How would you like your pickup schedule be?</h1>
                 <label for="checkbox" className="flex items-center phone:justify-center mb-2 slider-label gap-3 cursor-pointer">
-                  Daily
                   <input
                     type="checkbox"
                     id="checkbox"
-                    value="Option 1"
-                    checked={selectedOptions.includes('Option 1')}
+                    value="Daily"
+                    checked={selectedOptions.includes('Daily')}
                     onChange={handleCheckboxChange}
                     className="slider-input"
                   />
                   <span class="slider"></span>
-                  Weekly
+                  Daily
                 </label>
               </div>
               <Toaster position="bottom-right" reverseOrder={false} />

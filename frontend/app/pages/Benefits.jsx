@@ -42,8 +42,8 @@ const Benefits = () => {
           <SiteBlob2 />
         </div>
         <div className="space-y-4 card rounded-xl p-5 lg:w-[30%] phone:w-5/6 phone:mx-auto mx-auto font-garamond-regular text-lg mt-20">
-          {benefitsList.map((benefit) => (
-            <div className="flex justify-between">
+          {benefitsList.map((benefit, index) => (
+            <div className="flex justify-between" key={index}>
               <div className="text-left my-auto">{benefit}</div>
               <Image src={tick} alt="" className="w-8 h-8"/>
             </div>

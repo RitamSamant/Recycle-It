@@ -22,7 +22,7 @@ const Hero = () => {
           </h1>
           <p className="font-garamond-regular phone:text-base lg:text-xl phone:w-[15rem] lg:w-[30rem] text-center">
             Championing A Greener Future by Embracing Recycling and Harnessing
-            the Potential of Recycled Products to Safeguard Our Planet's Health
+            the Potential of Recycled Products to Safeguard Our Planet&apos;s Health
             and Promote Sustainable Prosperity.
           </p>
         </div>
