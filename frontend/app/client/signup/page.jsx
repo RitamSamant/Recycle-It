@@ -17,7 +17,7 @@ const SignupPage = () => {
   const router = useRouter();
   const handleClick = async (e) => {
     e.preventDefault();
-    const res = await axios.post('http://localhost:5000/client/register',user)
+    const res = await axios.post('https://recycle-it.onrender.com/client/register',user)
     console.log(res.data)
     router.push('/client/login')
   }
