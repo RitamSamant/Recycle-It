@@ -22,7 +22,7 @@ const SignupPage = () => {
     router.push('/admin/login')
   }
   return (
-    <div className="flex items-center justify-center h-screen py-5 bg-[#C4D7B2]">
+    <div className="flex items-center justify-center h-full py-5 bg-[#C4D7B2]">
       <div className="signup p-8 shadow-md rounded-lg lg:w-1/4">
         <h2 className="text-teal-800 font-odesans-semibold text-4xl mb-4 text-center">Sign Up</h2>
         <form>
