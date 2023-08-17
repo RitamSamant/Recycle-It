@@ -6,7 +6,7 @@ import flower from "../../public/images/contact/flower.svg"
 const Contact = () => {
   return (
     <div className="bg-[#FDCEDF] overflow-x-hidden">
-      <div className="lg:flex justify-between lg:w-[87%] mx-auto items-center h-[85vh]">
+      <div className="lg:flex justify-between lg:w-[87%] mx-auto items-center phone:pb-10 lg:pb-0">
         <div className="flex flex-col">
           <div className="flex phone:mt-10 lg:mt-0">
             <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl lg:ml-[6.5rem] my-auto phone:px-5 lg:px-0">
@@ -20,7 +20,7 @@ const Contact = () => {
             <Image src={contact} alt="" className="lg:w-[40rem] phone:mt-5 lg:mt-9 relative" />
           </div>
         </div>
-        <div className="card rounded-lg shadow-lg py-10 lg:max-w-[30rem] phone:w-11/12 phone:mx-auto phone:px-5 lg:px-8">
+        <div className="card rounded-lg shadow-lg py-10 lg:max-w-[30rem] phone:w-11/12 phone:mx-auto phone:px-5 lg:px-8 phone:mt-8 lg:mt-0">
           <h1 className="phone:text-2xl lg:text-3xl font-odesans-semibold text-fuchsia-900 mb-6">
             Let&apos;s talk business
           </h1>
@@ -79,7 +79,7 @@ const Contact = () => {
       <div className="bg-white/30 py-5 rounded-md">
         <div className="lg:w-5/6 mx-auto flex justify-between phone:px-2 lg:px-0">
           <h1 className="font-odesans-semibold lg:text-2xl text-fuchsia-700 opacity-70">©Recycle It</h1>
-          <div className="flex font-garamond-regular lg:text-lg gap-5 opacity-80 text-fuchsia-950">
+          <div className="flex font-garamond-regular lg:text-lg phone:gap-2 lg:gap-5 opacity-80 text-fuchsia-950">
             <p>Privacy Policy</p>
             <p>About</p>
             <p>Terms & Condition</p>

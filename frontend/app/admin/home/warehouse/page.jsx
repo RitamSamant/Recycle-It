@@ -126,8 +126,7 @@ const ProductDetailsPage = () => {
         allowed_countries: ["US"],
       },
       mode: "payment",
-      success_url: `${origin}/success`,
-      cancel_url: `${origin}/cancel`
+      success_url: `${origin}/admin/success`,
     });
 
     if (session.url) {
