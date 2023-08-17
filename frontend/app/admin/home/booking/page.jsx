@@ -23,6 +23,7 @@ import {
 } from "date-fns";
 import { useState, useEffect } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { Toaster, toast } from "react-hot-toast";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -141,14 +142,28 @@ const [selectedMonth, setSelectedMonth] = useState(null);
     console.log(selectedHour);
     console.log(selectedMinute)
     console.log(selectedOptions)
+    toast.success("Cart Items Added.", {
+      style: {
+        border: "2px solid rgba(255, 255, 255, 0.1)",
+        padding: "16px",
+        color: "#fff",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(10px)",
+      },
+      iconTheme: {
+        primary: "#000",
+        secondary: "#fff",
+      },
+    });
   };
 
   return (
     <div className="lg:flex panel scroll overscroll-none lg:h-screen">
       {/* Sidebar */}
-      {isAboveSmallScreens ? (<div className="phone:w-full lg:w-60 border-r-2 flex justify-center phone:pt-5 lg:pt-8 border-white/10">
-        <div className="phone:flex text-white mb-4">
-          <Link href="/admin/home" className="flex">
+      {isAboveSmallScreens ? (
+      <div className="w-60 border-r-2 flex justify-center phone:pt-5 lg:pt-8 border-white/10">
+        <div className="text-white mb-4">
+          <Link href="/admin/home" className="flex mb-5">
             <Image src={left} alt="" className="phone:w-8 phone:h-8 lg:w-12 lg:h-12 phone:my-auto mx-auto mb-10" />
           </Link>
           <Image
@@ -287,7 +302,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
           </div>
 
           {/* Time */}
-          <div className="my-auto phone:mb-12 lg:mb-0 phone:-mt-7">
+          <div className="my-auto flex flex-col items-center justify-center phone:mb-12 lg:mb-0 lg:mt-0 phone:bg-white/5 lg:bg-transparent lg:border-0 ">
             <div className="flex justify-center items-center text-white/90 font-technology">
               <div className="phone:text-[9rem] lg:text-[12rem] text-right" onWheel={(e) => handleScroll(e, true)}>
                 {selectedHour.toString().padStart(2, '0')}
@@ -300,7 +315,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
             <p className="font-technology text-white text-2xl text-center">Scroll up and down on the time</p>
             <button
               onClick={() => handleTimeSelection()}
-              className="bg-black flex rounded-xl shadow-xl text-white px-7 py-2 mt-10 mx-auto font-space-grostek"
+              className="bg-black flex rounded-xl shadow-xl text-white px-7 py-2 my-10 mx-auto font-space-grostek"
             >
               Save Time
             </button>
@@ -324,33 +339,8 @@ const [selectedMonth, setSelectedMonth] = useState(null);
                   <span class="slider"></span>
                   Weekly
                 </label>
-                <h1 className="lg:text-lg mb-4 font-space-grostek text-white/90">How would you like your subscription be?</h1>
-                <label className="flex items-center phone:justify-center mb-2 slider-label gap-3 cursor-pointer">
-                  No
-                  <input
-                    type="checkbox"
-                    value="Option 2"
-                    checked={selectedOptions.includes('Option 2')}
-                    onChange={handleCheckboxChange}
-                    className="slider-input"
-                  />
-                  <span class="slider"></span>
-                  Yes
-                </label>
-                <h1 className="lg:text-lg mb-4 font-space-grostek text-white/90">How would you like your subscription be?</h1>
-                <label className="flex items-center phone:justify-center slider-label gap-3 cursor-pointer">
-                  No
-                  <input
-                    type="checkbox"
-                    value="Option 3"
-                    checked={selectedOptions.includes('Option 3')}
-                    onChange={handleCheckboxChange}
-                    className="slider-input"
-                  />
-                  <span class="slider"></span>
-                  Yes
-                </label>
               </div>
+              <Toaster position="bottom-right" reverseOrder={false} />
                 <button
                   type="button"
                   className="bg-black rounded-xl shadow-xl text-white px-10 font-space-grostek py-2 mt-10 flex mx-auto"
