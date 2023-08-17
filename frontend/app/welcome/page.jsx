@@ -10,10 +10,10 @@ import business from "../../public/images/welcome/businessman.png";
 import user from "../../public/images/welcome/man.png";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
-const page = () => {
+const Page = () => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   return (
-    <div className="panel">
+    <div className="panel h-full">
       <div className="py-[1rem] border-b-2 border-white/10">
         <div className="flex mx-auto justify-center">
           <Image
@@ -51,7 +51,7 @@ const page = () => {
           alt=""
           className="phone:h-[25rem] lg:h-[40rem] w-[30rem] border-2 lg:rounded-t-[20rem] phone:mt-1 border-sky-100/10"
         />
-        <div className="w-full border-2 py-5 phone:rounded-b-[10rem] lg:rounded-t-[20rem] border-sky-100/10 mt-1">
+        <div className="w-full border-2 py-5 phone:rounded-b-[10rem] lg:rounded-b-[0rem] lg:rounded-t-[20rem] border-sky-100/10 mt-1">
           <div className="my-auto h-full flex flex-col justify-center items-center gap-10">
             {isAboveSmallScreens ? (
               <>
@@ -74,7 +74,6 @@ const page = () => {
               </>
             ) : (
               <>
-
                 <Link
                   href="/admin/login"
                   className="font-space-grostek text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
@@ -99,4 +98,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
