@@ -56,7 +56,7 @@ const Newsletter = () => {
   ]
 
   return (
-    <div className="mx-auto lg:flex justify-between py-16 lg:w-5/6 overflow-x-hidden">
+    <div className="mx-auto lg:flex justify-between py-16 lg:w-11/12 phone:overflow-x-hidden lg:overflow-x-visible">
       <div className="lg:w-1/2 lg:border-r-[2px] lg:border-lime-200 lg:h-[24rem]">
         <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl lg:px-10 phone:px-5">
           Our Free Newsletter is <br /> Launching Soon!
@@ -87,7 +87,7 @@ const Newsletter = () => {
         </div>
       </div>
 
-      <div className="mx-auto my-auto relative phone:mt-16 lg:mt-0">
+      <div className="mx-auto my-auto relative mt-16">
         <div className="absolute -top-20 left-[5rem] -z-10 phone:w-72 phone:h-72 lg:w-96 lg:h-96 bg-lime-300 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob"></div>
         <div className="absolute -top-16 right-[5rem] -z-10 phone:w-72 phone:h-72 lg:w-96 lg:h-96 bg-green-300 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob"></div>
         <h2 className="phone:text-3xl lg:text-5xl font-odesans-semibold mb-4 text-teal-950 phone:px-5 lg:px-0">

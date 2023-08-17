@@ -6,7 +6,7 @@ import flower from "../../public/images/contact/flower.svg"
 const Contact = () => {
   return (
     <div className="bg-[#FDCEDF] overflow-x-hidden">
-      <div className="lg:flex justify-between lg:w-[87%] mx-auto items-center h-screen/80">
+      <div className="lg:flex justify-between lg:w-[87%] mx-auto items-center h-[85vh]">
         <div className="flex flex-col">
           <div className="flex phone:mt-10 lg:mt-0">
             <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl lg:ml-[6.5rem] my-auto phone:px-5 lg:px-0">
@@ -20,7 +20,7 @@ const Contact = () => {
             <Image src={contact} alt="" className="lg:w-[40rem] phone:mt-5 lg:mt-9 relative" />
           </div>
         </div>
-        <div className="card phone:my-10 lg:my-20 rounded-lg shadow-lg py-10 lg:max-w-md lg:w-full phone:w-11/12 phone:mx-auto phone:px-5 lg:px-8">
+        <div className="card rounded-lg shadow-lg py-10 lg:max-w-[30rem] phone:w-11/12 phone:mx-auto phone:px-5 lg:px-8">
           <h1 className="phone:text-2xl lg:text-3xl font-odesans-semibold text-fuchsia-900 mb-6">
             Let's talk business
           </h1>
