@@ -45,7 +45,13 @@ Our innovative project focuses on addressing the issue of non-biodegradable wast
 - JWT
 </br>
 
-## 📜 API Documentation
+## 🌏 Websites Links
+
+#### Platforms
+- [Project website](https://recycle-it.vercel.app/)
+- [Project on Devfolio](https://devfolio.co/projects/recycleit-7792)
+- [Project on Quine](https://quine.sh/repo/RitamSamant-Recycle-It-678676521)
+
 </br>
 
 ## ⚽ Team dotSlashByte
