@@ -89,7 +89,7 @@ const FAQSection = () => {
         <div className="panel flex">
           <div className="w-60 border-r-2 flex justify-center pt-8 border-white/10">
             <div className="text-white mb-4">
-              <Link href="/admin/home" className="flex">
+              <Link href="/client/home" className="flex">
                 <Image src={left} alt="" className="w-12 h-12 mx-auto mb-10" />
               </Link>
               <Image
@@ -108,12 +108,6 @@ const FAQSection = () => {
                   <button className="px-5 rounded-full border-2 border-white/10 font-space-grostek mt-2">
                     Edit
                   </button>
-                  <Link
-                    href="/admin/warehouse"
-                    className="mt-[22rem] rounded-2xl border-2 bg-white/10 border-white/20 px-5 py-1"
-                  >
-                    Go To Warehouse
-                  </Link>
                 </div>
               </div>
             </div>

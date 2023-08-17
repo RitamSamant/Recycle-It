@@ -260,7 +260,7 @@ const DashboardPage = () => {
 
             <div className="px-4 mt-3">
               {/* Top Row */}
-              <Link href="/admin/home/warehouse" className="w-1/3 p-4">
+              <Link href="/client/home/warehouse" className="w-1/3 p-4">
                 <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
                   <Image
                     src={pattern1}
@@ -269,7 +269,7 @@ const DashboardPage = () => {
                   />
                 </div>
               </Link>
-              <Link href="/admin/home/wishlist" className="w-1/3 p-4">
+              <Link href="/client/home/wishlist" className="w-1/3 p-4">
                 <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
                   <Image
                     src={pattern3}
@@ -279,7 +279,7 @@ const DashboardPage = () => {
                   <p>Wishlist</p>
                 </div>
               </Link>
-              <Link href="/admin/home/wastebought" className="w-1/3 p-4">
+              <Link href="/client/home/wastebought" className="w-1/3 p-4">
                 <div className="cursor-pointer flex flex-col justify-between p-5 bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
                   <p className=" text-center text-2xl">Waste Bought</p>
                   <Line data={data} options={options} className="" />
@@ -288,7 +288,7 @@ const DashboardPage = () => {
             </div>
             <div className="lg:flex px-4 phone:-mt-6">
               {/* Bottom Row */}
-              <Link href="/admin/home/booking" className="w-1/3 p-4">
+              <Link href="/client/home/booking" className="w-1/3 p-4">
                 <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
                   <Image
                     src={pattern4}
@@ -297,13 +297,13 @@ const DashboardPage = () => {
                   />
                 </div>
               </Link>
-              <Link href="/admin/home/earning" className="w-1/3 p-4">
+              <Link href="/client/home/earning" className="w-1/3 p-4">
                 <div className="cursor-pointer p-5 flex flex-col justify-between bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
                   <p className=" text-center text-2xl">Earnings</p>
                   <Bar data={dataBar} options={options} className="" />
                 </div>
               </Link>
-              <Link href="/admin/home/faq" className="w-1/3 p-4">
+              <Link href="/client/home/faq" className="w-1/3 p-4">
                 <div className="relative cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
                   <Image
                     src={pattern2}

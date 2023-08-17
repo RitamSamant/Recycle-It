@@ -40,7 +40,7 @@ const page = () => {
               long as it keeps the Earth clean.
             </p>
             <Link
-              href="/user/login"
+              href="/client/login"
               className="font-space-grostek text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
             >
               Client

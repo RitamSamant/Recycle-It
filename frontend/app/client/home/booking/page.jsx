@@ -163,7 +163,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
       {isAboveSmallScreens ? (
       <div className="w-60 border-r-2 flex justify-center phone:pt-5 lg:pt-8 border-white/10">
         <div className="text-white mb-4">
-          <Link href="/admin/home" className="flex mb-5">
+          <Link href="/client/home" className="flex mb-5">
             <Image src={left} alt="" className="phone:w-8 phone:h-8 lg:w-12 lg:h-12 phone:my-auto mx-auto mb-10" />
           </Link>
           <Image

@@ -124,7 +124,7 @@ const PreviousOrdersPage = () => {
         <div className="flex panel scroll">
           <div className="w-60 border-r-2 flex justify-center pt-8 border-white/10">
             <div className="text-white mb-4">
-              <Link href="/admin/home" className="flex">
+              <Link href="/client/home" className="flex">
                 <Image src={left} alt="" className="w-12 h-12 mx-auto mb-10" />
               </Link>
               <Image
@@ -160,7 +160,7 @@ const PreviousOrdersPage = () => {
               <h2 className="text-3xl font-odesans-semibold text-white my-auto">
                 Total Waste Bought
               </h2>
-              <Link href="/admin/notifications">
+              <Link href="/client/notifications">
                 <Image src={bell} alt="" className="w-10 h-10 my-auto" />
               </Link>
             </div>

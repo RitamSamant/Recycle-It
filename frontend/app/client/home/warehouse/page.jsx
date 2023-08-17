@@ -99,7 +99,7 @@ const ProductDetailsPage = () => {
   };
 
   const handleHome = () => {
-    router.push("/admin/home");
+    router.push("/client/home");
   };
 
   const Key = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY;
