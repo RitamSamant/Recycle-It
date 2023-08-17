@@ -38,116 +38,118 @@ const PreviousOrdersPage = () => {
 const [selectedDate, setSelectedDate] = useState(null);
 const [selectedMonth, setSelectedMonth] = useState(null);
 
-
-  const [isScrolling, setIsScrolling] = useState(false);
-  let firstDayOfCurrentMonth = startOfMonth(
-    parse(currentMonth, "MMM-yyyy", new Date())
-  );
-  let days = eachDayOfInterval({
-    start: startOfWeek(firstDayOfCurrentMonth),
-    end: endOfWeek(endOfMonth(firstDayOfCurrentMonth)),
-  }).map((date) => ({
-    date,
-  }));
-
-  useEffect(() => {
-    const now = new Date();
-    setSelectedHour(now.getHours());
-    setSelectedMinute(now.getMinutes());
-  }, []);
-
-  function next() {
-    let firstDayOfNextMonth = add(firstDayOfCurrentMonth, { months: 1 });
-    setCurrentMonth(format(firstDayOfNextMonth, "MMM-yyyy"));
-  }
-
-  function previous() {
-    let firstDayOfNextMonth = add(firstDayOfCurrentMonth, { months: -1 });
-    setCurrentMonth(format(firstDayOfNextMonth, "MMM-yyyy"));
-  }
-
-  const [selectedHour, setSelectedHour] = useState(0);
-  const [selectedMinute, setSelectedMinute] = useState(0);
-  const scrollTimeoutRef = useRef(null);
-
-  useEffect(() => {
-    setSelectedHour(7); // Set default hour to 7
-    setSelectedMinute(0); // Set default minute to 0
-  }, []);
-
-  const handleScroll = (e, isHour) => {
-    setIsScrolling(true);
-    const scrollAmount = e.nativeEvent.deltaY;
-    const delay = 100;
-
-    clearTimeout(scrollTimeoutRef.current);
-
-    scrollTimeoutRef.current = setTimeout(() => {
-      if (isHour) {
-        setSelectedHour((prevHour) => {
-          const newHour = prevHour + (scrollAmount > 0 ? 1 : -1);
-
-          if (newHour === 19 && selectedMinute === 30) {
-            setSelectedMinute(0);
-          } else if (newHour === 7 && selectedMinute === 30) {
-            setSelectedMinute(0);
-          }
-
-          return Math.max(7, Math.min(19, newHour));
-        });
-      } else {
-        setSelectedMinute((prevMinute) => {
-          if (selectedHour === 19 && scrollAmount > 0) {
-            return prevMinute;
-          }
-          const newMinute = prevMinute + (scrollAmount > 0 ? 30 : -30);
-          if (newMinute < 0) {
-            setSelectedHour((prevHour) => Math.max(7, prevHour - 1));
-            return 30;
-          } else if (newMinute > 59) {
-            setSelectedHour((prevHour) => Math.min(19, prevHour + 1));
-            return 0;
-          } else {
-            return newMinute;
-          }
-        });
-      }
-      setIsScrolling(false);
-    }, delay);
-  };
-
-  const handleTimeSelection = () => {
-    const selectedTime = `${selectedHour.toString().padStart(2, '0')}:${selectedMinute.toString().padStart(2, '0')}`;
-    console.log("Selected Time:", selectedTime);
-  };
-
-  const [selectedOptions, setSelectedOptions] = useState([]);
-
-  const handleCheckboxChange = (event) => {
-    const option = event.target.value;
-    setSelectedOptions((prevSelected) => {
-      if (prevSelected.includes(option)) {
-        return prevSelected.filter((item) => item !== option);
-      } else {
-        return [...prevSelected, option];
-      }
-    });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(selectedDay);
-    console.log(selectedMonth);
-    console.log(selectedHour);
-    console.log(selectedMinute)
-    console.log(selectedOptions)
-  };
+  
+  // const previousOrders = [
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  //   {
+  //     id: 1,
+  //     date: "2023-08-10",
+  //     items: "Product A",
+  //     price: 20.0,
+  //     status: "Completed",
+  //   },
+  // ];
 
   return (
-    <div className="lg:flex panel scroll overscroll-none lg:py-5">
-      {/* Sidebar */}
-      {isAboveSmallScreens ? (
-      <div className="w-60 border-r-2 flex justify-center phone:pt-5 lg:pt-8 border-white/10">
+    <div className="flex panel scroll">
+      <div className="w-60 border-r-2 flex justify-center pt-8 border-white/10">
         <div className="text-white mb-4">
           <Link href="/admin/home" className="flex mb-5">
             <Image src={left} alt="" className="phone:w-8 phone:h-8 lg:w-12 lg:h-12 phone:my-auto mx-auto mb-10" />
@@ -298,70 +300,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
                 {selectedMinute.toString().padStart(2, '0')}
               </div>
             </div>
-            <p className="font-technology text-white text-2xl text-center">Scroll up and down on the time</p>
-            <button
-              onClick={() => handleTimeSelection()}
-              className="bg-black flex rounded-xl shadow-xl text-white px-7 py-2 my-10 mx-auto font-space-grostek"
-            >
-              Save Time
-            </button>
-          </div>
-
-          {/* Confirm */}
-          <div className="mx-auto justify-center items-center flex text-white border-l-2 border-white/10 px-5 phone:pb-10">
-            <form >
-              <div className="slider-container">
-              <h1 className="lg:text-lg mb-4 font-space-grostek text-white/90 phone:text-center">How would you like your pickup schedule be?</h1>
-                <label for="checkbox" className="flex items-center phone:justify-center mb-2 slider-label gap-3 cursor-pointer">
-                  Daily
-                  <input
-                    type="checkbox"
-                    id="checkbox"
-                    value="Option 1"
-                    checked={selectedOptions.includes('Option 1')}
-                    onChange={handleCheckboxChange}
-                    className="slider-input"
-                  />
-                  <span class="slider"></span>
-                  Weekly
-                </label>
-                <h1 className="lg:text-lg mb-4 font-space-grostek text-white/90">How would you like your subscription be?</h1>
-                <label className="flex items-center phone:justify-center mb-2 slider-label gap-3 cursor-pointer">
-                  No
-                  <input
-                    type="checkbox"
-                    value="Option 2"
-                    checked={selectedOptions.includes('Option 2')}
-                    onChange={handleCheckboxChange}
-                    className="slider-input"
-                  />
-                  <span class="slider"></span>
-                  Yes
-                </label>
-                <h1 className="lg:text-lg mb-4 font-space-grostek text-white/90">How would you like your subscription be?</h1>
-                <label className="flex items-center phone:justify-center slider-label gap-3 cursor-pointer">
-                  No
-                  <input
-                    type="checkbox"
-                    value="Option 3"
-                    checked={selectedOptions.includes('Option 3')}
-                    onChange={handleCheckboxChange}
-                    className="slider-input"
-                  />
-                  <span class="slider"></span>
-                  Yes
-                </label>
-              </div>
-                <button
-                  type="button"
-                  className="bg-black rounded-xl shadow-xl text-white px-10 font-space-grostek py-2 mt-10 flex mx-auto"
-                  onClick={handleSubmit}
-                >
-                  Submit
-                </button>
-            </form>
-          </div>
-
+          ))}
         </div>
       </div>
     </div>
