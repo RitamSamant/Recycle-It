@@ -22,7 +22,7 @@ Our innovative project focuses on addressing the issue of non-biodegradable wast
 <img src="https://github.com/RitamSamant/Recycle-It/blob/main/src/overview.png"/>
 </br>
 
-## UI Samples
+## 👀 Sneak Peaks
 <div align = "center">
 <img src = "src/Checkout.png" width = 500 height = 300>
 <img src = "src/Stripe payment gateway.png" width = 500 height = 300>
