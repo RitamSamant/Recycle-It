@@ -48,6 +48,12 @@ Our innovative project focuses on addressing the issue of non-biodegradable wast
 ## 📜 API Documentation
 </br>
 
+## 🌏 Websites Links
+[Project website](https://recycle-it.vercel.app/)
+
+[Project on Quine](https://quine.sh/repo/RitamSamant-Recycle-It-678676521)
+</br>
+
 ## ⚽ Team dotSlashByte
 - [Ritam Samanta](https://github.com/RitamSamant)
 - [Anurag Das](https://github.com/oeuvars)
