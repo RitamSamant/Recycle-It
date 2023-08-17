@@ -22,7 +22,7 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="bg-[#DBC4F0] flex items-center justify-center h-full">
+    <div className="bg-[#DBC4F0] flex items-center justify-center h-screen">
       <div className="card p-8 shadow-md rounded-lg w-1/4">
         <h2 className="text-fuchsia-800 font-odesans-semibold text-4xl mb-4 text-center">Log In</h2>
         <form>

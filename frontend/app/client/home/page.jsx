@@ -178,7 +178,7 @@ const DashboardPage = () => {
           {/* Main Content */}
           <div className="w-full">
             <div className="py-3 border-b-2 border-white/10 text-center text-5xl text-white font-odesans-semibold">
-              Recyclit
+              Recycle It
             </div>
             <div className="flex px-4 mt-3">
               {/* Top Row */}
@@ -253,7 +253,7 @@ const DashboardPage = () => {
                 className="w-12 h-12 rounded-full border-2 border-white/20 m-auto"
               />
               <div className="py-3 border-white/10 text-center text-5xl text-white font-odesans-semibold">
-                Recyclit
+                Recycle It
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" fill="#8055F7" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-9 h-9 my-auto text-purple-800">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />

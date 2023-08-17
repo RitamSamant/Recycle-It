@@ -141,7 +141,7 @@ const ProductDetailsPage = () => {
         <button onClick={handleHome}>
           <Image src={left} alt="" className="phone:w-9 phone:h-9 lg:w-12 lg:h-12 my-auto" />
         </button>
-        <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl text-white">Recyclit</h1>
+        <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl text-white">Recycle It</h1>
         <button onClick={() => setCartModalOpen(true)}>
           <Image src={cart} alt="" className="phone:w-7 phone:h-7 lg:w-12 lg:h-12 my-auto" />
         </button>

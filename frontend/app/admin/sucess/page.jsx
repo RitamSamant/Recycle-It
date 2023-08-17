@@ -22,7 +22,6 @@ export default function Checkout() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can perform further actions here, like sending the data to a server.
     console.log('Form submitted:', formData);
   };
 

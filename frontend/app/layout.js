@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Recyclit',
+  title: 'Recycle It',
   description: 'Recycle IT',
   icons: {
     icon: './logo.svg',

@@ -78,7 +78,7 @@ const Contact = () => {
       </div>
       <div className="bg-white/30 py-5 rounded-md">
         <div className="lg:w-5/6 mx-auto flex justify-between phone:px-2 lg:px-0">
-          <h1 className="font-odesans-semibold lg:text-2xl text-fuchsia-700 opacity-70">©Recyclit</h1>
+          <h1 className="font-odesans-semibold lg:text-2xl text-fuchsia-700 opacity-70">©Recycle It</h1>
           <div className="flex font-garamond-regular lg:text-lg gap-5 opacity-80 text-fuchsia-950">
             <p>Privacy Policy</p>
             <p>About</p>
