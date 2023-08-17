@@ -45,9 +45,6 @@ Our innovative project focuses on addressing the issue of non-biodegradable wast
 - JWT
 </br>
 
-## 📜 API Documentation
-</br>
-
 ## 🌏 Websites Links
 
 #### Platforms
