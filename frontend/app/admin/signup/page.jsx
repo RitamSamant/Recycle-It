@@ -17,13 +17,19 @@ const SignupPage = () => {
   const router = useRouter();
   const handleClick = async (e) => {
     e.preventDefault();
+   try {
+    
     const response = await axios.post('https://recycle-it.onrender.com/org/register',user)
     console.log(response.data)
     router.push('/admin/login')
+    
+   } catch (err) {
+      alert("User already exists, try logging in!")
+   }
   }
   return (
-    <div className="flex items-center justify-center h-[100vh] py-5 bg-[#C4D7B2]">
-      <div className="signup p-8 shadow-md rounded-lg lg:w-1/4">
+     <div className="flex items-center justify-center lg:h-[100%] py-36 h-full lg:py-5 bg-[#C4D7B2]">
+      <div className="signup lg:p-8 p-5 shadow-md rounded-lg lg:w-1/4 w-[75%]">
         <h2 className="text-teal-800 font-odesans-semibold text-4xl mb-4 text-center">Sign Up</h2>
         <form>
           <div className="mb-4">
@@ -104,7 +110,7 @@ const SignupPage = () => {
             </button>
           </div>
         </form>
-        <p className='font-garamond-regular text-lg text-center mt-5'>Not Signed in? <Link href="/admin/login" className='underline text-emerald-950'>Signup</Link></p>
+        <p className='font-garamond-regular text-lg text-center mt-5'>Already Signed in? <Link href="/admin/login" className='underline text-emerald-950'>Login</Link></p>
       </div>
     </div>
   );
