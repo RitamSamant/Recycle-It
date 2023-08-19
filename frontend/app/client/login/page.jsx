@@ -14,16 +14,22 @@ const LoginPage = () => {
   const router = useRouter();
   const handleClick = async (e) => {
     e.preventDefault();
+   try {
+    
     const res = await axios.post('https://recycle-it.onrender.com/client/login',user)
     const newToken = res.data.token;
     localStorage.setItem('token', newToken);
     console.log(res.data)
     router.push('/client/home')
+    
+   } catch (err) {
+      alert("Please check the login credentials!!")
+   }
   }
 
   return (
     <div className="bg-[#DBC4F0] flex items-center justify-center h-screen">
-      <div className="card p-8 shadow-md rounded-lg w-1/4">
+      <div className="card lg:p-8 p-5 shadow-md rounded-lg lg:w-1/4 w-[75%]">
         <h2 className="text-fuchsia-800 font-odesans-semibold text-4xl mb-4 text-center">Log In</h2>
         <form>
           <div className="mb-4">

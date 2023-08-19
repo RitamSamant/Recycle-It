@@ -177,7 +177,7 @@ const DashboardPage = () => {
 
           {/* Main Content */}
           <div className="w-full">
-            <div className="py-3 border-b-2 border-white/10 text-center text-5xl text-white font-odesans-semibold">
+            <div className="py-3 border-b-2 border-white/10 text-center text-5xl  text-white font-odesans-semibold">
               Recycle It
             </div>
             <div className="flex px-4 mt-3">
