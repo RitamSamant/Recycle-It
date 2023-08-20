@@ -15,13 +15,13 @@ const LoginPage = () => {
   const handleClick = async (e) => {
     e.preventDefault();
    try {
-    
+
     const res = await axios.post('https://recycle-it.onrender.com/client/login',user)
     const newToken = res.data.token;
     localStorage.setItem('token', newToken);
     console.log(res.data)
     router.push('/client/home')
-    
+
    } catch (err) {
       alert("Please check the login credentials!!")
    }

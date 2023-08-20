@@ -1,282 +1,119 @@
 "use client"
-import React, { useState } from "react";
+
+import React, { useEffect, useState } from "react";
+import love from "../../../../public/images/logo/love(1).svg";
+import axios from "axios";
 import Image from "next/image";
-import left from "../../../../public/images/dashboard/left-arrow.svg";
-import cart from "../../../../public/images/dashboard/cart.svg";
-import plastic1 from "../../../../public/images/dashboard/bag.webp";
-import plastic2 from "../../../../public/images/dashboard/plastic2.jpg";
-import plastic3 from "../../../../public/images/dashboard/plastic3.jpg";
-import cloth1 from "../../../../public/images/dashboard/cloths.webp";
-import cloth2 from "../../../../public/images/dashboard/cloth2.jpg";
-import cloth3 from "../../../../public/images/dashboard/cloth3.jpg";
-import metal1 from "../../../../public/images/dashboard/metal1.jpg";
-import metal2 from "../../../../public/images/dashboard/metal2.jpg";
-import metal3 from "../../../../public/images/dashboard/metal3.webp";
-import { useRouter } from "next/navigation";
-import cross from "../../../../public/images/dashboard/cross.svg";
-import trash from "../../../../public/images/dashboard/trash.svg";
-import { Toaster, toast } from "react-hot-toast";
+import Link from "next/link";
 import Stripe from "stripe";
+import { request } from "http";
 
-const ProductDetailsPage = () => {
-  const router = useRouter();
-  const options = [
-    {
-      header: "Metal",
-      images: [metal1, metal2, metal3],
-      description: "All Recyclable metals",
-      price: 19,
-    },
-    {
-      header: "Plastic",
-      images: [plastic1, plastic2, plastic3],
-      description: "Bio-degradable plastics",
-      price: 9,
-    },
-    {
-      header: "Cloths",
-      images: [cloth1, cloth2, cloth3],
-      description: "All cloth scrap",
-      price: 29,
-    },
-  ];
+const page2 = () => {
 
-  const [selectedOption, setSelectedOption] = useState(options[0]);
-  const [selectedImage, setSelectedImage] = useState(selectedOption.images[0]);
-  const [cartItems, setCartItems] = useState([]);
-  const [cartModalOpen, setCartModalOpen] = useState(false);
-  const [selectedQuantity, setSelectedQuantity] = useState(1);
+  const [Data, setData] = useState();
+  const [selectedName, setSelectedName] = useState();
+  const [selectedPrice, setSelectedPrice] = useState(0);
+  const [selectedId, setSelectedId] = useState()
+  const [selectedDescription, setSelectedDescription] = useState();
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const res = await axios.get(
+        "https://recycle-it.onrender.com/client/dashboard/products",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      setData(res.data.products);
+      console.log(res.data.products[1]._id)
+      } catch(error) {
+        console.log(error)
+      }
+    }
+    getProducts()
+  }, [])
 
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    setSelectedImage(option.images[0]);
-  };
-
-  const handleThumbnailClick = (image) => {
-    setSelectedImage(image);
-  };
-
-  const handleAddToCart = () => {
-    const cartItem = {
-      name: selectedOption.header,
-      price: selectedOption.price,
-      image: selectedImage.src,
-      quantity: selectedQuantity,
-    };
-
-    setCartItems((prevCartItems) => [...prevCartItems, cartItem]);
-
-    toast.success("Cart Items Added.", {
-      style: {
-        border: "2px solid rgba(255, 255, 255, 0.1)",
-        padding: "16px",
-        color: "#fff",
-        backgroundColor: "rgba(0, 0, 0, 0.1)",
-        backdropFilter: "blur(10px)",
-      },
-      iconTheme: {
-        primary: "#000",
-        secondary: "#fff",
-      },
-    });
-  };
-
-  const clearCart = () => {
-    setCartItems([]);
-    toast.success("Cart Items Removed.", {
-      style: {
-        border: "2px solid rgba(255, 255, 255, 0.1)",
-        padding: "16px",
-        color: "#fff",
-        backgroundColor: "rgba(0, 0, 0, 0.1)",
-        backdropFilter: "blur(10px)",
-      },
-      iconTheme: {
-        primary: "#000",
-        secondary: "#fff",
-      },
-    });
-  };
-
-  const handleHome = () => {
-    router.push("/client/home");
-  };
 
   const Key = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY;
   const stripe = new Stripe(Key, {
     apiVersion: "2022-11-15",
   });
 
-  const handleCheckout = async () => {
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
-      line_items: [
-        {
-          price_data: {
-            currency: "usd",
-            product_data: {
-              name: selectedOption.header,
-            },
-            unit_amount: selectedOption.price*100,
-          },
-          quantity: selectedQuantity,
-        },
-      ],
-      shipping_address_collection: {
-        allowed_countries: ["US"],
-      },
-      mode: "payment",
-      success_url: `${origin}/client/success`,
-    });
 
-    if (session.url) {
-      window.location.href = session.url;
-    }
+  const handleCheckout = async (items) => {
+    setSelectedId(items._id)
+    setSelectedName(items.type);
+    setSelectedPrice(items.price);
+    setSelectedDescription(items.desc);
+    // const session = await stripe.checkout.sessions.create({
+    //   payment_method_types: ["card"],
+    //   line_items: [
+    //     {
+    //       price_data: {
+    //         currency: "inr",
+    //         product_data: {
+    //           name: selectedName,
+    //         },
+    //         unit_amount: selectedPrice*100,
+    //       },
+    //       quantity: 1,
+    //     },
+    //   ],
+    //   shipping_address_collection: {
+    //     allowed_countries: ["IN"],
+    //   },
+    //   mode: "payment",
+    //   success_url: `${origin}/client/success`,
+    // });
+
+    // if (session.url) {
+    //   window.location.href = session.url;
+    // }
   };
 
   return (
-    <div className="lg:h-full py-5 panel">
-      <div className="py-4 border-b-2 border-white/10 flex justify-between px-10">
-        <button onClick={handleHome}>
-          <Image src={left} alt="" className="phone:w-9 phone:h-9 lg:w-12 lg:h-12 my-auto" />
-        </button>
-        <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl text-white">Recycle It</h1>
-        <button onClick={() => setCartModalOpen(true)}>
-          <Image src={cart} alt="" className="phone:w-7 phone:h-7 lg:w-12 lg:h-12 my-auto" />
-        </button>
-      </div>
-      <div className="flex flex-col items-end">
-        {cartModalOpen && (
-          <div className="text-white backdrop-blur-sm absolute mr-5 mt-2 font-space-grostek">
-            <div className="bg-white/10 border-2 border-white/10 p-6 rounded-lg">
-              <div className="flex justify-between mb-4">
-                <h2 className="text-lg mt-auto">Cart Items</h2>
-                <button
-                  onClick={() => setCartModalOpen(false)}
-                  className="mb-auto"
-                >
-                  <Image src={cross} alt="" className="w-6 h-6 my-auto" />
+    <div className="grid grid-cols-3 panel w-[100%] px-10 mx-auto py-10 gap-5">
+      {Data ? (
+        Data.map((items, index) => (
+          <div className="bg-white/10 border-2 border-white/10 h-72 rounded-2xl grid grid-cols-2 gap-5 px-3" key={index}>
+            <img
+              src={items.img}
+              alt=""
+              className="m-auto overflow-hidden h-60 w-full object-cover rounded-3xl"
+            />
+            <div className="my-5 flex flex-col justify-between">
+              <div className="flex justify-between">
+                <div className="flex my-auto justify-between w-full">
+                  <div className="font-odesans-semibold text-3xl text-white break-words">
+                    {items.type}
+                  </div>
+                  <button>
+                    <Image src={love} alt="" className="w-9 h-9 mt-auto" />
+                  </button>
+                </div>
+              </div>
+              <p className="font-space-grostek text-gray-300">
+                {items.desc}
+              </p>
+              <div className="flex flex-col gap-5">
+                <p className="text-4xl font-odesans-semibold text-white">
+                  ₹{items.price}
+                </p>
+                <button onClick={() =>handleCheckout(items)} className="font-space-grostek py-3 bg-black text-white rounded-lg shadow-lg my-auto w-[50%]">
+                  Buy Now
                 </button>
               </div>
-              <div className="h-32 overflow-y-scroll scroll">
-                {cartItems.map((item, index) => (
-                  <div key={index} className="flex items-center mb-2">
-                    <Image
-                      height={50}
-                      width={50}
-                      src={item.image}
-                      alt={`Cart Item ${index}`}
-                      className="w-12 h-12 mr-2 rounded-md"
-                    />
-                    <div>
-                      <p className="text-lg">{item.name}</p>
-                      <p className="text-gray-200 text-lg">
-                        ${item.price.toFixed(2)} x {item.quantity} = $
-                        {(item.price * item.quantity).toFixed(2)}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {cartItems.length > 0 ? (
-                <div className="flex justify-between mt-5">
-                  <button
-                    className="bg-white/10 border-2 border-white/10 text-white px-7 py-2 rounded-md"
-                    onClick={handleCheckout}
-                  >
-                    Checkout
-                  </button>
-                  <button
-                    onClick={clearCart}
-                    className=""
-                  >
-                    <Image src={trash} alt="" className="w-7 h-7 my-auto" />
-                  </button>
-                </div>
-              ) : (
-                <p>Your Cart Is Empty</p>
-              )}
             </div>
           </div>
-        )}
-      </div>
-      <div className="lg:flex justify-between py-16 lg:px-72 text-white font-space-grostek my-auto">
-        {/* Options */}
-        <div className="flex flex-col phone:w-11/12 phone:mx-auto">
-          {/* Product Details */}
-          <Image
-            height={700}
-            width={700}
-            src={selectedImage.src}
-            alt="Selected Product"
-            className=" mb-4 border border-gray-300 rounded-2xl phone:h-[20rem] phone:w-[30rem] lg:h-[25rem] lg:w-[40rem] object-cover"
-          />
-          {/* Thumbnails */}
-          <div className="flex gap-3">
-            {selectedOption.images.map((image, index) => (
-              <Image
-                height={100}
-                width={100}
-                key={index}
-                src={image.src}
-                alt={`Thumbnail ${index}`}
-                className={`mb-2 cursor-pointer object-cover ${
-                  selectedImage === image
-                    ? "border-2 border-white/90 rounded-2xl w-28 h-20"
-                    : "border-2 border-white/20 rounded-2xl w-28 h-20"
-                }`}
-                onClick={() => handleThumbnailClick(image)}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Description */}
-        <div className="mt-10 px-4">
-          <h2 className="text-4xl font-odesans-semibold mb-2">
-            {selectedOption.header}
-          </h2>
-          <p className="text-gray-600 mb-4">{selectedOption.description}</p>
-          <div className="flex justify-left gap-2">
-            {options.map((option, index) => {
-              return (
-                <div
-                  key={index}
-                  className={`cursor-pointer p-2 rounded-lg ${
-                    selectedOption === option
-                      ? "bg-white/20 border-white/50 border-2"
-                      : "bg-white/10 border-white/10 border-2"
-                  }`}
-                  onClick={() => handleOptionClick(option)}
-                >
-                  {option.header}
-                </div>
-              );
-            })}
-          </div>
-          <div className="flex flex-col mt-10 gap-5">
-            <input
-              type="number"
-              className="w-20 px-2 py-2 border-2 border-white/10 rounded-md text-white bg-white/10 outline-none my-auto"
-              value={selectedQuantity}
-              onChange={(e) => setSelectedQuantity(Number(e.target.value))}
-            />
-            <span className="text-5xl w-40">
-              ${selectedOption.price.toFixed(2)}
-            </span>
-          </div>
-          <Toaster position="bottom-right" reverseOrder={false} />
-          <button
-            className="bg-white/10 border-2 border-white/10 mt-5 text-white px-7 py-2 rounded-md"
-            onClick={handleAddToCart}
-          >
-            Add to Cart
-          </button>
-        </div>
-      </div>
+        ))
+      ) : (
+        <>Loading</>
+      )}
     </div>
   );
 };
 
-export default ProductDetailsPage;
+export default page2;
