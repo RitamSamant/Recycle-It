@@ -4,26 +4,59 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'
 import axios from 'axios';
+import { Toaster, toast } from "react-hot-toast"
 
 const LoginPage = () => {
   const [user,Setuser] = useState({
     email : "",
     password : ""
   })
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   const router = useRouter();
   const handleClick = async (e) => {
     e.preventDefault();
    try {
-
+    setIsLoggingIn(true);
     const res = await axios.post('https://recycle-it.onrender.com/client/login',user)
     const newToken = res.data.token;
     localStorage.setItem('token', newToken);
-    console.log(res.data)
     router.push('/client/home')
-
+    toast.success("You are logged in!🎉", {
+      style: {
+        border: "2px solid rgba(255, 255, 255, 0.1)",
+        padding: "10px",
+        color: "#fff",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(10px)",
+        fontFamily: "Space-Grostek",
+        fontSize: '1.1em',
+        minWidth: "10em",
+      },
+      iconTheme: {
+        primary: "#000",
+        secondary: "#fff",
+      },
+    });
    } catch (err) {
-      alert("Please check the login credentials!!")
+    toast.error("Please check your credentials.😒", {
+      style: {
+        border: "2px solid rgba(255, 255, 255, 0.1)",
+        padding: "10px",
+        color: "#fff",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(10px)",
+        fontFamily: "Space-Grostek",
+        fontSize: '1.1em',
+        width: "50em",
+      },
+      iconTheme: {
+        primary: "#000",
+        secondary: "#fff",
+      },
+    });
+   } finally {
+    setIsLoggingIn(false);
    }
   }
 
@@ -59,15 +92,24 @@ const LoginPage = () => {
             />
           </div>
           <div>
-            <button
-              type="submit"
-              className="w-full bg-fuchsia-800 text-white py-2 rounded-md font-space-grostek text-lg mt-4"
-              onClick={handleClick}
-            >
-              Login
-            </button>
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+          />
+          <button
+            type="submit"
+            className={`w-full py-2 rounded-md font-space-grostek text-lg mt-4 ${
+              isLoggingIn
+                ? 'bg-gray-300/10 cursor-not-allowed border border-black/10'
+                : 'bg-fuchsia-800 text-white'
+            }`}
+            onClick={handleClick}
+            disabled={isLoggingIn}
+          >
+            {isLoggingIn ? 'Logging In...' : 'Login'}
+          </button>
           </div>
-          <p className='font-garamond-regular text-lg text-center mt-5'>Not logged in? <Link href="/client/signup" className='underline text-purple-950'>Signup</Link></p>
+          <p className='font-space-grostek text-center mt-5'>Not logged in? <Link href="/client/signup" className='underline text-purple-950'>Signup</Link></p>
         </form>
       </div>
     </div>

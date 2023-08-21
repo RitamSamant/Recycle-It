@@ -117,7 +117,7 @@ const FAQSection = () => {
               <h2 className="text-3xl font-semibold font-odesans-semibold text-white mb-10">
                 Frequently Asked Questions
               </h2>
-              <Link href="/admin/notifications">
+              <Link href="/client/notifications">
                 <Image src={bell} alt="" className="w-10 h-10 my-auto" />
               </Link>
             </div>

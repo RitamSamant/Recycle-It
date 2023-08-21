@@ -35,11 +35,6 @@ const PreviousOrdersPage = () => {
   let today = startOfToday();
   let [selectedDay, setSelectedDay] = useState(today);
   let [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
-
-const [selectedDate, setSelectedDate] = useState(null);
-const [selectedMonth, setSelectedMonth] = useState(null);
-
-
   const [isScrolling, setIsScrolling] = useState(false);
   let firstDayOfCurrentMonth = startOfMonth(
     parse(currentMonth, "MMM-yyyy", new Date())
@@ -72,8 +67,8 @@ const [selectedMonth, setSelectedMonth] = useState(null);
   const scrollTimeoutRef = useRef(null);
 
   useEffect(() => {
-    setSelectedHour(7); // Set default hour to 7
-    setSelectedMinute(0); // Set default minute to 0
+    setSelectedHour(7);
+    setSelectedMinute(0);
   }, []);
 
   const handleScroll = (e, isHour) => {
@@ -137,12 +132,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(selectedDay);
-    console.log(selectedMonth);
-    console.log(selectedHour);
-    console.log(selectedMinute)
-    console.log(selectedOptions)
-    toast.success("Cart Items Added.", {
+    toast.success("Booking is in process.", {
       style: {
         border: "2px solid rgba(255, 255, 255, 0.1)",
         padding: "16px",
@@ -158,10 +148,10 @@ const [selectedMonth, setSelectedMonth] = useState(null);
   };
 
   return (
-    <div className="lg:flex panel scroll overscroll-none lg:h-full py-5">
+    <div className="lg:flex panel scroll overscroll-none lg:h-screen phone:h-full">
       {/* Sidebar */}
       {isAboveSmallScreens ? (
-      <div className="w-60 border-r-2 flex justify-center phone:pt-5 lg:pt-8 border-white/10">
+      <div className="w-60 border-r-2 flex justify-center border-white/10 pt-5">
         <div className="text-white mb-4">
           <Link href="/client/home" className="flex mb-5">
             <Image src={left} alt="" className="phone:w-8 phone:h-8 lg:w-12 lg:h-12 phone:my-auto mx-auto mb-10" />
@@ -199,7 +189,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
         </div>
 
         {/* Calender and Time Picker */}
-        <div className="mt-10 lg:grid grid-cols-[2fr_1.5fr_1fr]">
+        <div className="phone:mt-5 lg:mt-10 lg:grid grid-cols-[2fr_1.5fr_1fr]">
           {/* Calender */}
           <div className="font-space-grostek panel scroll border-r-2 border-white/10">
             <div className="w-full px-2 mx-auto">
@@ -325,8 +315,9 @@ const [selectedMonth, setSelectedMonth] = useState(null);
           <div className="mx-auto justify-center items-center flex text-white border-l-2 border-white/10 px-5 phone:pb-10">
             <form >
               <div className="slider-container">
-              <h1 className="lg:text-lg mb-4 font-space-grostek text-white/90 phone:text-center">How would you like your pickup schedule be?</h1>
+              <h1 className="text-lg mb-4 font-space-grostek text-white/90 phone:text-center">How would you like your pickup schedule be?</h1>
                 <label for="checkbox" className="flex items-center phone:justify-center mb-2 slider-label gap-3 cursor-pointer">
+                  Weekly
                   <input
                     type="checkbox"
                     id="checkbox"
@@ -342,7 +333,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
               <Toaster position="bottom-right" reverseOrder={false} />
                 <button
                   type="button"
-                  className="bg-black rounded-xl shadow-xl text-white px-10 font-space-grostek py-2 mt-10 flex mx-auto"
+                  className="bg-black rounded-md border-2 border-white/10 shadow-xl text-white px-10 font-space-grostek py-2 mt-10 flex mx-auto"
                   onClick={handleSubmit}
                 >
                   Submit
