@@ -8,7 +8,7 @@ import Link from "next/link";
 import Stripe from "stripe";
 
 
-const page2 = () => {
+const Page2 = () => {
 
   const [Data, setData] = useState();
   let SelectedName = ''
@@ -169,4 +169,4 @@ const page2 = () => {
   );
 };
 
-export default page2;
+export default Page2;

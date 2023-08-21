@@ -8,30 +8,31 @@ import Link from "next/link";
 import Stripe from "stripe";
 
 
-const page2 = () => {
-
+const Page2 = () => {
   const [Data, setData] = useState();
+  
   let SelectedName = ''
   let SelectedPrice = 0
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        const res = await axios.get(
-        "https://recycle-it.onrender.com/org/dashboard/products",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      setData(res.data.products);
-      console.log(res.data.products[1]._id)
-      } catch(error) {
-        console.log(error)
+
+  const getProducts = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const res = await axios.get(
+      "https://recycle-it.onrender.com/org/dashboard/products",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
+    );
+    setData(res.data.products);
+    console.log(res.data.products[1]._id)
+    } catch(error) {
+      console.log(error)
     }
-    getProducts()
+  }
+  useEffect(() => {
+   getProducts()
   }, [])
 
 
@@ -169,4 +170,4 @@ const page2 = () => {
   );
 };
 
-export default page2;
+export default Page2;
