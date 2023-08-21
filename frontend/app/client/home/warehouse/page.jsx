@@ -6,15 +6,13 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import Stripe from "stripe";
-import { request } from "http";
+
 
 const page2 = () => {
 
   const [Data, setData] = useState();
-  const [selectedName, setSelectedName] = useState();
-  const [selectedPrice, setSelectedPrice] = useState(0);
-  const [selectedId, setSelectedId] = useState()
-  const [selectedDescription, setSelectedDescription] = useState();
+  let SelectedName = ''
+  let SelectedPrice = 0
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -37,48 +35,102 @@ const page2 = () => {
   }, [])
 
 
-  // const Key = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY;
-  // const stripe = new Stripe(Key, {
-  //   apiVersion: "2022-11-15",
-  // });
-
-
+  const Key = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY;
+  const stripe = new Stripe(Key, {
+    apiVersion: "2022-11-15",
+  });
+  
   const handleCheckout = async (items) => {
-    setSelectedId(items._id)
-    setSelectedName(items.type);
-    setSelectedPrice(items.price);
-    setSelectedDescription(items.desc);
-    // const session = await stripe.checkout.sessions.create({
-    //   payment_method_types: ["card"],
-    //   line_items: [
-    //     {
-    //       price_data: {
-    //         currency: "inr",
-    //         product_data: {
-    //           name: selectedName,
-    //         },
-    //         unit_amount: selectedPrice*100,
-    //       },
-    //       quantity: 1,
-    //     },
-    //   ],
-    //   shipping_address_collection: {
-    //     allowed_countries: ["IN"],
-    //   },
-    //   mode: "payment",
-    //   success_url: `${origin}/client/success`,
-    // });
+  
+    const saveProducts = async ()=>{
+      //console.log(items._id)
+      const token = localStorage.getItem('token')
+      const url = `https://recycle-it.onrender.com/client/products/`+items._id
+      //console.log(url)
+      try {
+        
+        const res = await axios.post(url,null,{
+          headers : {
+            Authorization : `Bearer ${token}`
+          }
+        })
+        //console.log(res.data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    
 
-    // if (session.url) {
-    //   window.location.href = session.url;
-    // }
-  };
+    const getSavedProd = async () =>{
+      const token = localStorage.getItem('token')
+      try {
+        
+        const url = "https://recycle-it.onrender.com/client/dashboard/orderedItems"
+        const res = await axios.get(url,{
+          headers : {
+            Authorization : `Bearer ${token}`
+          }
+        })
+        const last = res.data.orderforclient.length - 1
+        //console.log(res.data.orderforclient)
+        //console.log(last)
+        SelectedName = res.data.orderforclient[last].type
+        SelectedPrice = res.data.orderforclient[last].price
+        //console.log(SelectedName,SelectedPrice)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    await saveProducts()
+    await getSavedProd()
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      line_items: [
+        {
+          price_data: {
+            currency: "inr",
+            product_data: {
+              name: SelectedName,
+            },
+            unit_amount: SelectedPrice*100,
+          },
+          quantity: 1,
+        },
+      ],
+      shipping_address_collection: {
+        allowed_countries: ["IN"],
+      },
+      mode: "payment",
+      success_url: `${origin}/client/success`,
+    });
+
+    if (session.url) {
+      window.location.href = session.url;
+    }
+   };
+
+   const handleWish = async(items)=>{
+    const token = localStorage.getItem('token')
+    try {
+      
+      const res = await axios.post('https://recycle-it.onrender.com/client/wishlist/products/'+items._id,null,{
+        headers : {
+          Authorization :  `Bearer ${token}`
+        }
+      })
+      console.log(res.data)
+      alert("Added to wishlist!")
+    } catch (err) {
+      console.log(err)
+    }
+   }
 
   return (
-    <div className="grid grid-cols-3 panel w-[100%] px-10 mx-auto py-10 gap-5">
+   <>
+    <div className="lg:grid lg:grid-cols-3 panel w-[100%] h-full px-10 mx-auto py-10 gap-5">
       {Data ? (
         Data.map((items, index) => (
-          <div className="bg-white/10 border-2 border-white/10 h-72 rounded-2xl grid grid-cols-2 gap-5 px-3" key={index}>
+          <div className="bg-white/10 border-2 flex flex-col justify-between gap-5  border-white/10 lg:h-72 h-full rounded-2xl lg:grid lg:grid-cols-2 py-2 lg:my-0 my-5  px-3" key={index}>
             <img
               src={items.img}
               alt=""
@@ -91,7 +143,7 @@ const page2 = () => {
                     {items.type}
                   </div>
                   <button>
-                    <Image src={love} alt="" className="w-9 h-9 mt-auto" />
+                    <Image src={love} alt="" className="w-9 h-9 mt-auto" onClick={()=>{handleWish(items)}}/>
                   </button>
                 </div>
               </div>
@@ -113,6 +165,7 @@ const page2 = () => {
         <>Loading</>
       )}
     </div>
+    </>
   );
 };
 

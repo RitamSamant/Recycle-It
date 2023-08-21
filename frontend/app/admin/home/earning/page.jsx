@@ -6,7 +6,7 @@ import Image from "next/image";
 import left from "../../../../public/images/dashboard/left-arrow.svg";
 import Link from "next/link";
 import bell from "../../../../public/images/dashboard/bell.svg";
-import useMediaQuery from "@/hooks/useMediaQuery";
+import useMediaQuery from "../../../../hooks/useMediaQuery";
 import { Menu } from "@headlessui/react";
 
 const PreviousOrdersPage = () => {

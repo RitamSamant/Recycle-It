@@ -22,7 +22,7 @@ import {
   startOfWeek,
 } from "date-fns";
 import { useState, useEffect } from "react";
-import useMediaQuery from "@/hooks/useMediaQuery";
+import useMediaQuery from "../../../../hooks/useMediaQuery";
 import { Toaster, toast } from "react-hot-toast";
 
 function classNames(...classes) {

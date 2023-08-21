@@ -6,7 +6,7 @@ import React from "react";
 import left from "../../../../public/images/dashboard/left-arrow.svg";
 import bell from "../../../../public/images/dashboard/bell.svg";
 import photo from "../../../../public/images/dashboard/sagittarius.png";
-import useMediaQuery from "@/hooks/useMediaQuery";
+import useMediaQuery from "../../../../hooks/useMediaQuery";
 
 const FAQSection = () => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");

@@ -22,7 +22,7 @@ import pattern2 from "../../../public/images/dashboard/pattern_02.svg";
 import pattern3 from "../../../public/images/dashboard/pattern_03.svg";
 import pattern4 from "../../../public/images/dashboard/pattern_04.svg";
 import pattern6 from "../../../public/images/dashboard/pattern_06.svg";
-import useMediaQuery from "@/hooks/useMediaQuery";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 
 CHARTJS.register(
   CategoryScale,
