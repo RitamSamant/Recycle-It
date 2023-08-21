@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import logo from "../../public/images/logos/watering-can.png";
-import useMediaQuery from "@/hooks/useMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery";
 const Navbar = () => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   return (

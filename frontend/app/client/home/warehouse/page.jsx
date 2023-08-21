@@ -37,10 +37,10 @@ const page2 = () => {
   }, [])
 
 
-  const Key = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY;
-  const stripe = new Stripe(Key, {
-    apiVersion: "2022-11-15",
-  });
+  // const Key = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY;
+  // const stripe = new Stripe(Key, {
+  //   apiVersion: "2022-11-15",
+  // });
 
 
   const handleCheckout = async (items) => {
