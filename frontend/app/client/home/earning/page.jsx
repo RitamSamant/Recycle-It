@@ -17,51 +17,37 @@ const PreviousOrdersPage = () => {
     {
       id: 1,
       date: "2023-08-10",
-      items: "Product A",
+      items: "PET",
       price: 20.0,
-      status: "Completed",
+      status: "2 kg",
     },
     {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
+      id: 2,
+      date: "2023-07-10",
+      items: "HDPE",
+      price: 30.0,
+      status: "5 kg",
     },
     {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
+      id: 3,
+      date: "2023-08-21",
+      items: "LDPE",
+      price: 45.0,
+      status: "2 kg",
     },
     {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
+      id: 4,
+      date: "2023-08-17",
+      items: "PP",
       price: 20.0,
-      status: "Completed",
+      status: "3.5 kg",
     },
     {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
-    },
-    {
-      id: 1,
-      date: "2023-08-10",
-      items: "Product A",
-      price: 20.0,
-      status: "Completed",
+      id: 5,
+      date: "2023-08-15",
+      items: "PVC",
+      price: 30.0,
+      status: "8 kg",
     },
   ];
 
@@ -122,10 +108,10 @@ const PreviousOrdersPage = () => {
                 Date
               </div>
               <div className="w-1/4 text-xl text-left ml-4 text-white font-garamond-regular">
-                Price
+                Price/kg
               </div>
               <div className="w-1/4 text-xl text-left ml-4 text-white font-garamond-regular">
-                Status
+                Weight
               </div>
             </div>
             <div className="mt-2 space-y-4 h-screen overflow-y-scroll scroll">
@@ -144,7 +130,7 @@ const PreviousOrdersPage = () => {
                     {order.date}
                   </div>
                   <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
-                    ${order.price}
+                  ₹{order.price}
                   </div>
                   <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
                     {order.status}
@@ -173,10 +159,10 @@ const PreviousOrdersPage = () => {
                 Date
               </div>
               <div className="w-1/4 text-white text-center font-garamond-regular">
-                Price
+                Price/kg
               </div>
               <div className="w-1/4 text-white text-center font-garamond-regular">
-                Status
+                Weight
               </div>
             </div>
             <div className="mt-2 space-y-4 h-[30rem] overflow-y-scroll scroll">
@@ -192,7 +178,7 @@ const PreviousOrdersPage = () => {
                     {order.date}
                   </div>
                   <div className="w-1/4 text-white text-center font-space-grostek">
-                    ${order.price}
+                  ₹{order.price}
                   </div>
                   <div className="w-1/4 text-white text-center font-space-grostek">
                     {order.status}
