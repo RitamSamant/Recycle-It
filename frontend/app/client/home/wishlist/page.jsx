@@ -147,7 +147,7 @@ const Page = () => {
 
 
   return (
-   <div className="panel lg:h-screen phone:h-full">
+   <div className="panel min-h-screen">
     <div className="phone:px-3 lg:px-10 flex justify-between border-b-2 border-white/10 phone:py-3 lg:py-4">
       <Link href="/client/home">
         <Image src={left} alt="" className="phone:w-9 phone:h-9 lg:w-12 lg:h-12 my-auto"/>
@@ -220,7 +220,7 @@ const Page = () => {
         ))
       ) : (
         <div className="flex justify-center items-center h-[85vh] w-screen">
-          <Image src={loading} alt="" className="w-72 h-72"/>
+          <Image src={loading} alt="" className="w-20 h-20"/>
         </div>
       )}
     </div>

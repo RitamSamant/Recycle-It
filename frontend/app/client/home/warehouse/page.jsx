@@ -234,7 +234,7 @@ const Page = () => {
         ))
       ) : (
         <div className="flex justify-center items-center h-[85vh] w-screen">
-          <Image src={loading} alt="" className="w-72 h-72"/>
+          <Image src={loading} alt="" className="w-20 h-20"/>
         </div>
       )}
     </div>
