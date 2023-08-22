@@ -148,7 +148,21 @@ const Page = () => {
         },
       });
     } catch (err) {
-      console.log(err)
+      toast.error("Failed to add to wishlist.☹️", {
+        style: {
+          border: "2px solid rgba(255, 255, 255, 0.1)",
+          padding: "10px",
+          color: "#fff",
+          backgroundColor: "rgba(0, 0, 0, 0.1)",
+          backdropFilter: "blur(10px)",
+          fontFamily: "Space-Grostek",
+          fontSize: '1.1em'
+        },
+        iconTheme: {
+          primary: "#000",
+          secondary: "#fff",
+        },
+      });
     } finally {
       setShake(false);
     }
@@ -164,13 +178,13 @@ const Page = () => {
   return (
    <div className="panel">
     <div className="phone:px-3 lg:px-10 flex justify-between border-b-2 border-white/10 phone:py-3 lg:py-4">
-      <Link href="/client/home">
+      <Link href="/admin/home">
         <Image src={left} alt="" className="phone:w-9 phone:h-9 lg:w-12 lg:h-12 my-auto"/>
       </Link>
       <h1 className="phone:text-3xl lg:text-5xl font-odesans-semibold text-white">
         Reycle It
       </h1>
-      <Link href="/client/notifications">
+      <Link href="/admin/notifications">
         <Image src={bell} alt="" className="phone:w-8 phone:h-8 lg:w-12 lg:h-12 my-auto"/>
       </Link>
     </div>

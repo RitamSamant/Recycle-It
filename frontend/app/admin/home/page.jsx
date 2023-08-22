@@ -21,7 +21,6 @@ import pattern1 from "../../../public/images/dashboard/pattern_01.svg";
 import pattern2 from "../../../public/images/dashboard/pattern_02.svg";
 import pattern3 from "../../../public/images/dashboard/pattern_03.svg";
 import pattern4 from "../../../public/images/dashboard/pattern_04.svg";
-import pattern6 from "../../../public/images/dashboard/pattern_06.svg";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 
 CHARTJS.register(
@@ -103,7 +102,7 @@ const DashboardPage = () => {
         labels: {
           color: "white",
           font: {
-            family: "Space-Grostek",
+            family: "Odesans-Medium",
             size: 14,
           },
         },
@@ -114,16 +113,17 @@ const DashboardPage = () => {
         ticks: {
           color: "white",
           font: {
-            family: "Space-Grostek",
-            size: 12,
+            family: "Odesans-Medium",
+            weight: 500,
+            size: 10,
           },
         },
         title: {
           display: true,
           color: "white",
           font: {
-            family: "Space-Grostek",
-            size: 16,
+            family: "Odesans-Medium",
+            size: 10,
           },
         },
       },
@@ -131,7 +131,7 @@ const DashboardPage = () => {
         ticks: {
           color: "white",
           font: {
-            family: "Space-Grostek",
+            family: "Odesans-Medium",
             size: 12,
           },
         },
@@ -139,8 +139,8 @@ const DashboardPage = () => {
           display: true,
           color: "white",
           font: {
-            family: "Helvetica",
-            size: 16,
+            family: "Odesans-Medium",
+            size: 11,
           },
         },
       },
@@ -152,7 +152,7 @@ const DashboardPage = () => {
       {isAboveSmallScreens ? (
         <div className="flex h-full panel pb-5">
           {/* Left Panel */}
-          <div className="w-60 border-r-2 flex justify-center pt-16 border-white/10">
+          <div className="w-60 border-r-2 flex flex-col justify-between py-16 border-white/10">
             <div className="text-white mb-4">
               <Image
                 src={photo}
@@ -162,17 +162,13 @@ const DashboardPage = () => {
               <p className="text-white/30 font-space-grostek mt-1 text-center">
                 @johndoe
               </p>
-              <div>
-                <p className="font-space-grostek mt-5 text-lg text-center">
-                  John Doe
-                </p>
-                <div className="flex flex-col">
-                  <button className="px-5 rounded-full border-2 border-white/10 font-space-grostek mt-2">
-                    Edit
-                  </button>
-                </div>
-              </div>
+              <p className="font-space-grostek mt-5 text-lg text-center">
+                John Doe
+              </p>
             </div>
+            <Link href="/welcome" className="text-white text-center bg-black/40 px-5 py-2 rounded-md border-2 border-white/10 w-2/3 mx-auto shadow-lg font-odesans-medium text-lg">
+              Log Out
+            </Link>
           </div>
 
           {/* Main Content */}
@@ -242,25 +238,27 @@ const DashboardPage = () => {
           </div>
         </div>
       ) : (
-        <>
-          <div className="panel h-full">
-            <div className="flex gap-[3.5rem] justify-between border-b-2 border-white/10 px-2">
+        <div>
+          <div className="panel min-h-screen pb-4">
+            <div className="flex justify-between border-b-2 border-white/10 px-3">
               <Image
                 height={100}
                 width={100}
                 src={photo}
                 alt="Profile"
-                className="w-12 h-12 rounded-full border-2 border-white/20 m-auto"
+                className="w-10 h-10 rounded-full border-2 border-white/20 my-auto"
               />
-              <div className="py-3 border-white/10 text-center text-5xl text-white font-odesans-semibold">
+              <div className="py-3 border-white/10 text-center text-3xl text-white font-odesans-semibold">
                 Recycle It
               </div>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="#8055F7" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-9 h-9 my-auto text-purple-800">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
+              <Link href="/welcome" className="my-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-9 h-9 my-auto text-white">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                </svg>
+              </Link>
             </div>
 
-            <div className="px-4 mt-3">
+            <div className="px-4">
               {/* Top Row */}
               <Link href="/admin/home/warehouse" className="w-1/3 p-4">
                 <div className="relative flex justify-center items-center cursor-pointer bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-lg hover:shadow-xl shadow-neutral-950 text-white  overflow-hidden">
@@ -284,8 +282,8 @@ const DashboardPage = () => {
               </Link>
               <Link href="/admin/home/wastebought" className="w-1/3 p-4">
                 <div className="cursor-pointer flex flex-col justify-between p-5 bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
-                  <p className=" text-center text-2xl">Waste Bought</p>
-                  <Line data={data} options={options} className="" />
+                  <p className=" text-center text-4xl">Waste Bought</p>
+                  <Line data={data} options={options} className="mx-auto -ml-3 scale-105 w-full overflow-hidden" />
                 </div>
               </Link>
             </div>
@@ -302,9 +300,9 @@ const DashboardPage = () => {
                 </div>
               </Link>
               <Link href="/admin/home/earning" className="w-1/3 p-4">
-                <div className="cursor-pointer p-5 flex flex-col justify-between bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
-                  <p className=" text-center text-2xl">Earnings</p>
-                  <Bar data={dataBar} options={options} className="" />
+                <div className="cursor-pointer p-1 flex flex-col justify-between bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white py-5">
+                  <p className=" text-center text-5xl">Earnings</p>
+                  <Bar data={dataBar} options={options} className="mx-auto -ml-3 scale-105 w-full overflow-hidden" />
                 </div>
               </Link>
               <Link href="/admin/home/faq" className="w-1/3 p-4">
@@ -319,7 +317,7 @@ const DashboardPage = () => {
               </Link>
             </div>
           </div>
-        </>
+        </div>
       )}
     </>
   );

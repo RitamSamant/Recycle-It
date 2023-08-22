@@ -13,7 +13,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 const Page = () => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   return (
-    <div className="panel h-full py-5">
+    <div className="panel h-full">
       <div className="py-[1rem] border-b-2 border-white/10">
         <div className="flex mx-auto justify-center">
           <Image
@@ -21,9 +21,9 @@ const Page = () => {
             alt=""
             className="phone:w-7 phone:h-7 lg:w-10 lg:h-10 my-auto"
           />
-          <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl text-center text-purple-600">
+          <Link href="/" className="font-odesans-semibold phone:text-3xl lg:text-5xl text-center text-purple-600">
             Recycle It
-          </h1>
+          </Link>
         </div>
       </div>
       <div className="lg:flex w-5/6 mx-auto justify-center gap-5 mt-5">

@@ -21,7 +21,6 @@ import pattern1 from "../../../public/images/dashboard/pattern_01.svg";
 import pattern2 from "../../../public/images/dashboard/pattern_02.svg";
 import pattern3 from "../../../public/images/dashboard/pattern_03.svg";
 import pattern4 from "../../../public/images/dashboard/pattern_04.svg";
-import pattern6 from "../../../public/images/dashboard/pattern_06.svg";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 
 CHARTJS.register(
@@ -152,7 +151,7 @@ const DashboardPage = () => {
       {isAboveSmallScreens ? (
         <div className="flex h-full panel pb-5">
           {/* Left Panel */}
-          <div className="w-60 border-r-2 flex justify-center pt-16 border-white/10">
+          <div className="w-60 border-r-2 flex flex-col justify-between py-16 border-white/10">
             <div className="text-white mb-4">
               <Image
                 src={photo}
@@ -162,17 +161,13 @@ const DashboardPage = () => {
               <p className="text-white/30 font-space-grostek mt-1 text-center">
                 @johndoe
               </p>
-              <div>
-                <p className="font-space-grostek mt-5 text-lg text-center">
-                  John Doe
-                </p>
-                <div className="flex flex-col">
-                  <button className="px-5 rounded-full border-2 border-white/10 font-space-grostek mt-2">
-                    Edit
-                  </button>
-                </div>
-              </div>
+              <p className="font-space-grostek mt-5 text-lg text-center">
+                John Doe
+              </p>
             </div>
+            <Link href="/welcome" className="text-white text-center bg-black/40 px-5 py-2 rounded-md border-2 border-white/10 w-2/3 mx-auto shadow-lg font-odesans-medium text-lg">
+              Log Out
+            </Link>
           </div>
 
           {/* Main Content */}

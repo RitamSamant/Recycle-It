@@ -178,11 +178,6 @@ const [selectedMonth, setSelectedMonth] = useState(null);
             <p className="font-space-grostek mt-5 text-lg text-center">
               John Doe
             </p>
-            <div className="flex flex-col">
-              <button className="px-5 rounded-full border-2 border-white/10 font-space-grostek mt-2">
-                Edit
-              </button>
-            </div>
           </div>
         </div>
       </div>) : (<></>)}

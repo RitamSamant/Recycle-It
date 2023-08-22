@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'
 import axios from 'axios';
+import { Toaster, toast } from "react-hot-toast"
 
 const SignupPage = () => {
 
@@ -14,21 +15,52 @@ const SignupPage = () => {
     address: "",
     buisnessBankAccount:""
   })
+  const [isSigningUp, setIsSigningUp] = useState(false);
   const router = useRouter();
   const handleClick = async (e) => {
     e.preventDefault();
    try {
-    
+    setIsSigningUp(true);
     const response = await axios.post('https://recycle-it.onrender.com/org/register',user)
     console.log(response.data)
     router.push('/admin/login')
-    
+    toast.success("You are signed up!🎉", {
+      style: {
+        border: "2px solid rgba(255, 255, 255, 0.1)",
+        padding: "10px",
+        color: "#fff",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(10px)",
+        fontFamily: "Space-Grostek",
+        fontSize: '1.1em'
+      },
+      iconTheme: {
+        primary: "#000",
+        secondary: "#fff",
+      },
+    });
    } catch (err) {
-      alert("User already exists, try logging in!")
+    toast.error("Please provide correct credentials.😞", {
+      style: {
+        border: "2px solid rgba(255, 255, 255, 0.1)",
+        padding: "10px",
+        color: "#fff",
+        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(10px)",
+        fontFamily: "Space-Grostek",
+        fontSize: '1.1em'
+      },
+      iconTheme: {
+        primary: "#000",
+        secondary: "#fff",
+      },
+    });
+   } finally {
+    setIsSigningUp(false);
    }
   }
   return (
-     <div className="flex items-center justify-center lg:h-[100%] py-36 h-full lg:py-5 bg-[#C4D7B2]">
+     <div className="flex items-center justify-center h-screen py-36 lg:py-5 bg-[#C4D7B2]">
       <div className="signup lg:p-8 p-5 shadow-md rounded-lg lg:w-1/4 w-[75%]">
         <h2 className="text-teal-800 font-odesans-semibold text-4xl mb-4 text-center">Sign Up</h2>
         <form>
@@ -103,14 +135,19 @@ const SignupPage = () => {
           <div>
             <button
               type="submit"
-              className="w-full bg-emerald-700 font-space-grostek text-white py-2 rounded-md mt-5"
+              className={`w-full text-lg font-space-grostek py-2 rounded-md mt-5 ${
+                isSigningUp
+                  ? 'bg-gray-300 cursor-not-allowed border border-black/10'
+                  : 'bg-emerald-700 text-white'
+              }`}
               onClick={handleClick}
+              disabled={isSigningUp}
             >
               Sign Up
             </button>
           </div>
         </form>
-        <p className='font-garamond-regular text-lg text-center mt-5'>Already Signed in? <Link href="/admin/login" className='underline text-emerald-950'>Login</Link></p>
+        <p className='font-space-grostek text-center mt-5'>Already Signed in? <Link href="/admin/login" className='underline text-emerald-950'>Login</Link></p>
       </div>
     </div>
   );

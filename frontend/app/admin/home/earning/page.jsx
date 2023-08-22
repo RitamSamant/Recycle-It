@@ -14,7 +14,7 @@ const PreviousOrdersPage = () => {
   const [selectedMaterial, setSelectedMaterial] = useState("Plastic");
   const [selectedWeight, setSelectedWeight] = useState(1);
   const previousOrders = [
-   
+
     {
       id: 1,
       date: "2023-08-10",
@@ -142,17 +142,17 @@ const PreviousOrdersPage = () => {
           </div>
         </div>
       ) : (
-        <div className="flex panel scroll">
-          <div className="phone:px-3 phone:py-5 lg:p-8 w-full">
-            <div className="flex justify-between">
+        <div className="flex panel scroll min-h-screen">
+          <div className="lg:p-8 w-full">
+            <div className="flex justify-between border-b-2 border-white/10 px-3 py-4">
               <h2 className="text-2xl font-odesans-semibold text-white my-auto">
-                Total Waste Sold
+                Total Products Sold
               </h2>
               <Link href="/admin/notifications">
                 <Image src={bell} alt="" className="w-8 h-8 my-auto" />
               </Link>
             </div>
-            <div className="flex space-x-4 mt-10">
+            <div className="flex space-x-4 mt-10 px-3">
               <div className="w-1/4 text-white text-center font-garamond-regular">
                 Items
               </div>
@@ -166,7 +166,7 @@ const PreviousOrdersPage = () => {
                 Weight
               </div>
             </div>
-            <div className="mt-2 space-y-4 h-[30rem] overflow-y-scroll scroll">
+            <div className="mt-2 space-y-4 overflow-y-scroll scroll px-3">
               {previousOrders.map((order) => (
                 <div
                   key={order.id}
@@ -186,75 +186,6 @@ const PreviousOrdersPage = () => {
                   </div>
                 </div>
               ))}
-            </div>
-            <div className="justify-center items-center my-10 w-11/12 mx-auto h-[60vh]">
-              <h1 className="text-2xl font-odesans-semibold text-white text-center">
-                Estimate your Earning
-              </h1>
-              <div className="flex flex-col gap-3 pt-7">
-                <h1 className="text-white text-center text-xl">
-                  Enter Quantity
-                </h1>
-                <input
-                  type="number"
-                  placeholder="Enter Kilogram"
-                  className="py-3 px-5 text-lg bg-white/10 border-white/10 rounded-xl text-white"
-                  value={selectedWeight}
-                  onChange={(e) => setSelectedWeight(e.target.value)}
-                />
-              </div>
-              <h1 className="text-white text-center text-xl mt-7">
-                  Enter Product Type
-              </h1>
-              <Menu>
-                <Menu.Button className="px-4 py-2 bg-white/10 rounded-sm mx-auto justify-center flex mt-3 font-medium text-white w-32">
-                  <h1>
-                    {selectedMaterial}
-                  </h1>
-                </Menu.Button>
-                <Menu.Items className="py-2 text-sm font-medium text-gray-700 flex flex-col gap-3">
-                  <Menu.Item>
-                    {({ active }) => (
-                      <div
-                        className={`bg-white/10 py-3 px-5 text-center rounded-xl text-white w-20 mx-auto ${
-                          active && "bg-white/20"
-                        }`}
-                        onClick={() => setSelectedMaterial("Cloths")}
-                      >
-                        Cloths
-                      </div>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item>
-                    {({ active }) => (
-                      <div
-                        className={`bg-white/10 py-3 px-5 text-center rounded-xl text-white w-20 mx-auto ${
-                          active && "bg-white/20"
-                        }`}
-                        onClick={() => setSelectedMaterial("Plastic")}
-                      >
-                        Plastic
-                      </div>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item>
-                    {({ active }) => (
-                      <div
-                        className={`bg-white/10 py-3 px-5 text-center rounded-xl text-white w-20 mx-auto ${
-                          active && "bg-white/20"
-                        }`}
-                        onClick={() => setSelectedMaterial("Metal")}
-                      >
-                        Metal
-                      </div>
-                    )}
-                  </Menu.Item>
-                </Menu.Items>
-              </Menu>
-              <div className="text-4xl gap-5 font-odesans-semibold text-white flex my-5 justify-center mb-auto">
-                <h1>Earning:</h1>
-                <h1>$2000</h1>
-              </div>
             </div>
           </div>
         </div>

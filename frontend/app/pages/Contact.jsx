@@ -5,8 +5,8 @@ import flower from "../../public/images/contact/flower.svg"
 
 const Contact = () => {
   return (
-    <div className="bg-[#FDCEDF] overflow-x-hidden">
-      <div className="lg:flex justify-between lg:w-[87%] mx-auto items-center phone:pb-10 lg:pb-0">
+    <div className="bg-[#FDCEDF] overflow-x-hidden lg:pt-12">
+      <div className="lg:flex justify-between lg:w-[87%] mx-auto items-center pb-10">
         <div className="flex flex-col">
           <div className="flex phone:mt-10 lg:mt-0">
             <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl lg:ml-[6.5rem] my-auto phone:px-5 lg:px-0">

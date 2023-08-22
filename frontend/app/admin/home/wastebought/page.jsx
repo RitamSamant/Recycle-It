@@ -15,7 +15,7 @@ const PreviousOrdersPage = () => {
   const getWishlist = async () =>{
     const token = localStorage.getItem('token')
     try {
-      
+
       const res = await axios.get('https://recycle-it.onrender.com/org/dashboard/orderedItems',{
         headers : {
           Authorization : `Bearer ${token}`
@@ -31,121 +31,13 @@ const PreviousOrdersPage = () => {
     getWishlist()
   },[])
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-  // const previousOrders = [
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  // ];
-  
   return (
     <>
       {isAboveSmallScreens ? (
         <div className="flex panel scroll">
           <div className="w-60 border-r-2 flex justify-center pt-8 border-white/10">
             <div className="text-white mb-4">
-              <Link href="/client/home" className="flex">
+              <Link href="/admin/home" className="flex">
                 <Image src={left} alt="" className="w-12 h-12 mx-auto mb-10" />
               </Link>
               <Image
@@ -161,12 +53,9 @@ const PreviousOrdersPage = () => {
                   John Doe
                 </p>
                 <div className="flex flex-col">
-                  <button className="px-5 rounded-full border-2 border-white/10 font-space-grostek mt-2">
-                    Edit
-                  </button>
                   <Link
                     href="/admin/warehouse"
-                    className="mt-[22rem] rounded-2xl border-2 bg-white/10 border-white/20 px-5 py-1"
+                    className="mt-[22rem] rounded-md border-2 bg-black/40 border-white/20 px-5 py-2 text-lg font-odesans-medium"
                   >
                     Go To Warehouse
                   </Link>
