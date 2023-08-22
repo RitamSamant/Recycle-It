@@ -240,13 +240,13 @@ const DashboardPage = () => {
       ) : (
         <>
           <div className="panel min-h-screen pb-4">
-            <div className="flex gap-[3.5rem] justify-between border-b-2 border-white/10 px-2">
+            <div className="flex justify-between border-b-2 border-white/10 px-3">
               <Image
                 height={100}
                 width={100}
                 src={photo}
                 alt="Profile"
-                className="w-12 h-12 rounded-full border-2 border-white/20 m-auto"
+                className="w-10 h-10 rounded-full border-2 border-white/20 my-auto"
               />
               <div className="py-3 border-white/10 text-center text-3xl text-white font-odesans-semibold">
                 Recycle It
