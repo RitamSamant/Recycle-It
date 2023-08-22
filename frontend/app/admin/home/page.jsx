@@ -239,7 +239,7 @@ const DashboardPage = () => {
       ) : (
         <div>
           <div className="panel min-h-screen pb-4">
-            <div className="flex justify-between border-b-2 border-white/10 px-3">
+            <div className="flex justify-between border-b-2 border-white/10 px-3 mx-auto">
               <Image
                 height={100}
                 width={100}
