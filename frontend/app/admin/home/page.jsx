@@ -80,7 +80,6 @@ const DashboardPage = () => {
     ],
   };
 
-  //dummy data for react-chartjs-2 (bar)
   const dataBar = {
     labels: ["January", "February", "March", "April", "May"],
     datasets: [

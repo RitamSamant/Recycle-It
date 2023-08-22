@@ -102,7 +102,7 @@ const DashboardPage = () => {
         labels: {
           color: "white",
           font: {
-            family: "Space-Grostek",
+            family: "Odesans-Medium",
             size: 14,
           },
         },
@@ -113,16 +113,17 @@ const DashboardPage = () => {
         ticks: {
           color: "white",
           font: {
-            family: "Space-Grostek",
-            size: 12,
+            family: "Odesans-Medium",
+            weight: 500,
+            size: 10,
           },
         },
         title: {
           display: true,
           color: "white",
           font: {
-            family: "Space-Grostek",
-            size: 16,
+            family: "Odesans-Medium",
+            size: 10,
           },
         },
       },
@@ -130,7 +131,7 @@ const DashboardPage = () => {
         ticks: {
           color: "white",
           font: {
-            family: "Space-Grostek",
+            family: "Odesans-Medium",
             size: 12,
           },
         },
@@ -138,8 +139,8 @@ const DashboardPage = () => {
           display: true,
           color: "white",
           font: {
-            family: "Helvetica",
-            size: 16,
+            family: "Odesans-Medium",
+            size: 11,
           },
         },
       },
@@ -199,8 +200,8 @@ const DashboardPage = () => {
               </Link>
               <Link href="/client/home/wastebought" className="w-1/3 p-4">
                 <div className="cursor-pointer flex flex-col justify-between p-5 bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
-                  <p className=" text-center text-2xl">Waste Bought</p>
-                  <Line data={data} options={options} className="" />
+                  <p className=" text-center text-4xl">Waste Bought</p>
+                  <Line data={data} options={options} className="mx-auto -ml-3 scale-105 w-full overflow-hidden" />
                 </div>
               </Link>
             </div>
@@ -219,8 +220,8 @@ const DashboardPage = () => {
               </Link>
               <Link href="/client/home/earning" className="w-1/3 p-4">
                 <div className="cursor-pointer p-5 flex flex-col justify-between bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
-                  <p className=" text-center text-2xl">Earnings</p>
-                  <Bar data={dataBar} options={options} className="" />
+                  <p className=" text-center text-5xl">Earnings</p>
+                  <Bar data={dataBar} options={options} className="mx-auto -ml-3 scale-105 w-full overflow-hidden" />
                 </div>
               </Link>
               <Link href="/client/home/faq" className="w-1/3 p-4">
