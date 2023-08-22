@@ -94,8 +94,10 @@ const Page = () => {
         console.log(err)
       }
     }
+    
     await saveProducts()
     await getSavedProd()
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: [
@@ -178,7 +180,7 @@ const Page = () => {
   return (
    <div className="panel">
     <div className="phone:px-3 lg:px-10 flex justify-between border-b-2 border-white/10 phone:py-3 lg:py-4">
-      <Link href="/admin/home">
+      <Link href="/client/home">
         <Image src={left} alt="" className="phone:w-9 phone:h-9 lg:w-12 lg:h-12 my-auto"/>
       </Link>
       <h1 className="phone:text-3xl lg:text-5xl font-odesans-semibold text-white">
