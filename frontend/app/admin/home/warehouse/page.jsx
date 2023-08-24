@@ -225,7 +225,7 @@ const Page = () => {
                   position="top-center"
                   reverseOrder={false}
                 />
-                <button onClick={() =>handleCheckout(items)} className={`font-space-grostek py-3 rounded-lg shadow-lg my-auto w-[50%] ${
+                <button onClick={() =>handleCheckout(items)} className={`font-odesans-medium py-3 rounded-lg shadow-lg my-auto w-[50%] ${
                   isButtonLaoding ? 'bg-gray-300/10 cursor-not-allowed border border-black/10' : 'bg-black text-white'
                 }`} disabled={isButtonLaoding}>
                   Buy Now

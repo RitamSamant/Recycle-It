@@ -148,7 +148,7 @@ const Page = () => {
   const saveProducts = async (items) =>{
     const token = localStorage.getItem('token')
     try {
-      
+
       const res = await axios.post('https://recycle-it.onrender.com/client/products/'+items._id,null,{
         headers : {
           Authorization : `Bearer ${token}`
@@ -160,10 +160,10 @@ const Page = () => {
     }
   }
 
- 
+
 
   return (
-   <div className="panel h-full py-5">
+   <div className="panel min-h-screen py-5">
     <div className="phone:px-3 lg:px-10 flex justify-between border-b-2 border-white/10 phone:py-3 lg:py-4">
       <Link href="/client/home">
         <Image src={left} alt="" className="phone:w-9 phone:h-9 lg:w-12 lg:h-12 my-auto"/>
@@ -202,7 +202,7 @@ const Page = () => {
                   {items.desc}
                 </p>
               </div>
-              <div className="flex lg:flex-col gap-2 phone:justify-between">
+              <div className="flex lg:flex-col phone:gap-5 lg:gap-2">
                 <div className="phone:grid lg:flex phone:gap-1 lg:gap-2">
                     <button
                       onClick={() => handleIncreaseQuantity(items.type)}
@@ -225,8 +225,8 @@ const Page = () => {
                   position="top-center"
                   reverseOrder={false}
                 />
-                <div onClick={()=>{saveProducts(items)}}>
-                <button onClick={()=>{handleCheckout(items)}} className={`font-space-grostek py-3 rounded-lg shadow-lg my-auto w-[50%] ${
+                <div onClick={()=>{saveProducts(items)}} className="my-auto">
+                <button onClick={()=>{handleCheckout(items)}} className={`font-odesans-medium rounded-lg shadow-lg my-auto w-full py-2 px-8 ${
                   isButtonLaoding ? 'bg-gray-300/10 cursor-not-allowed border border-black/10' : 'bg-black text-white'
                 }`} disabled={isButtonLaoding}>
                   Buy Now
