@@ -1,7 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
-import line from "../../public/images/process/line.svg";
+import React from "react";
 import Image from "next/image";
 import star from "../../public/images/newsletter/star.svg";
 import education from "../../public/images/newsletter/education.svg";
@@ -11,16 +8,6 @@ import update from "../../public/images/newsletter/update-time.svg";
 import person from "../../public/images/newsletter/person.svg";
 
 const Newsletter = () => {
-  const [email, setEmail] = useState("");
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (email) {
-      console.log(`Subscribed with email: ${email}`);
-      setEmail("");
-    }
-  };
-
 
   const features = [
     {
@@ -65,7 +52,7 @@ const Newsletter = () => {
           Get the earliest access about our new products.
         </p>
         <hr className="border border-lime-200 rounded-full phone:mt-7 lg:mt-10 " />
-        <div className="flex justify-center px-10 font-space-grostek mt-10">
+        <div className="flex px-10 font-odesans-medium mt-10">
         <div className="flex gap-16">
           <div className="flex flex-col gap-5">
             {features.slice(0, 3).map((feature, index) => (
@@ -93,20 +80,18 @@ const Newsletter = () => {
         <h2 className="phone:text-3xl lg:text-5xl font-odesans-semibold mb-4 text-teal-950 phone:px-5 lg:px-0">
           Subscribe
         </h2>
-        <p className="mb-4 font-garamond-regular phone:text-lg lg:text-xl phone:px-5 lg:px-0">
+        <p className="mb-4 font-odesans-medium phone:text-base lg:text-xl phone:px-5 lg:px-0">
           Stay updated with our latest news and offers.
         </p>
-        <form onSubmit={handleSubscribe} className="grid phone:px-5 lg:px-0">
+        <form className="grid phone:px-5 lg:px-0">
           <input
             type="email"
             placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="px-5 py-3 font-space-grostek text-lg my-auto rounded-lg bg-white/40 focus:outline-none text-emerald-950"
+            className="px-5 py-3 font-odesans-medium text-lg my-auto rounded-lg bg-white/40 focus:outline-none text-emerald-950"
           />
           <button
             type="submit"
-            className="bg-emerald-600 text-white px-4 py-2 rounded-lg mt-5 hover:bg-emerald-700 font-space-grostek text-lg focus:outline-none w-1/2 mx-auto transition duration-500"
+            className="bg-emerald-600 text-white px-4 py-2 rounded-lg mt-5 hover:bg-emerald-700 font-odesans-medium text-lg focus:outline-none w-1/2 mx-auto transition duration-500"
           >
             Subscribe
           </button>

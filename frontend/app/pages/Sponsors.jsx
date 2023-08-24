@@ -38,14 +38,14 @@ const Sponsors = () => {
   return (
     <div className="w-full bg-[#FFD966]/90">
       <div className="w-5/6 mx-auto phone:py-5 lg:py-16">
-        <h1 className="phone:text-3xl lg:text-5xl font-odesans-semibold mb-8">Our Sponsors</h1>
+        <h1 className="phone:text-2xl lg:text-5xl font-odesans-semibold mb-8">Our Sponsors</h1>
         <div className="overflow-hidden">
         <div
             className="conveyor-container flex space-x-4 conveyorContainer"
           >
             {ourSponsors.map((sponsor, index) => (
               <div key={index} className="">
-                <Image src={sponsor} alt={`Sponsor ${index}`} className='w-60 h-20'/>
+                <Image src={sponsor} alt={`Sponsor ${index}`} className='min-w-[40px] min-h-[40px]'/>
               </div>
             ))}
           </div>

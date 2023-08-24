@@ -72,7 +72,6 @@ body {
 .conveyor-container {
   display: flex;
   animation: conveyorBelt 10s linear infinite;
-  overflow: hidden;
 }
 
 .card {

@@ -24,17 +24,14 @@ const Navbar = () => {
         </section>
       ) : (
         <>
-          <section id="navbar" className="flex justify-center z-40 relative">
-            <div className="w-5/6 flex bg-yellow-50/90 fixed mx-auto justify-between px-5 py-1 font-odesans-medium rounded-full mt-7">
+          <section id="navbar" className="flex justify-center z-20 relative">
+            <div className="w-5/6 flex bg-yellow-50/80 fixed mx-auto justify-center px-5 py-1 font-odesans-medium rounded-full mt-7">
               <div className="flex gap-2">
-                <Image src={logo} alt="" className="w-9 h-19" />
-                <h1 className="my-auto text-lg text-fuchsia-600 font-bold">
+                <Image src={logo} alt="" className="w-8 h-8" />
+                <h1 className="my-auto text-xl text-fuchsia-600 font-odesans-semibold">
                   Recycle It
                 </h1>
               </div>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="#8055F7" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-9 h-9 my-auto text-purple-500">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
             </div>
           </section>
         </>

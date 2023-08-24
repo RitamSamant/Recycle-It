@@ -28,48 +28,48 @@ const Contact = () => {
             <div className="space-y-1">
               <label
                 htmlFor="name"
-                className="font-medium font-space-grostek lg:text-lg"
+                className="font-medium font-odesans-medium lg:text-lg"
               >
                 Name
               </label>
               <input
                 type="text"
                 id="name"
-                className="w-full bg-white/50 px-5 py-2 outline-none rounded-lg text-black font-space-grostek lg:text-lg"
+                className="w-full bg-white/50 px-5 py-2 outline-none rounded-lg text-gray-950 font-odesans-medium lg:text-lg"
                 placeholder="Your Name"
               />
             </div>
             <div className="space-y-1">
               <label
                 htmlFor="email"
-                className="block font-medium font-space-grostek"
+                className="block font-medium font-odesans-medium"
               >
                 Email
               </label>
               <input
                 type="email"
                 id="email"
-                className="w-full bg-white/50 px-5 py-2 outline-none rounded-lg text-black font-space-grostek lg:text-lg"
+                className="w-full bg-white/50 px-5 py-2 outline-none rounded-lg text-gray-950 font-odesans-medium lg:text-lg"
                 placeholder="Your Email"
               />
             </div>
             <div className="space-y-1">
               <label
                 htmlFor="message"
-                className="block font-medium font-space-grostek"
+                className="block font-medium font-odesans-medium"
               >
                 Message
               </label>
               <textarea
                 id="message"
                 rows="4"
-                className="w-full bg-white/50 px-5 py-2 outline-none rounded-lg text-black font-space-grostek"
+                className="w-full bg-white/50 px-5 py-2 outline-none rounded-lg text-gray-950 font-odesans-medium"
                 placeholder="Your Message"
               />
             </div>
             <button
               type="submit"
-              className="bg-fuchsia-900 text-white rounded-md py-2 px-4 font-space-grostek mx-auto"
+              className="bg-fuchsia-900 text-white rounded-md py-2 px-4 font-odesans-medium mx-auto"
             >
               Send Message
             </button>
@@ -77,12 +77,12 @@ const Contact = () => {
         </div>
       </div>
       <div className="bg-white/30 py-5 rounded-md">
-        <div className="lg:w-5/6 mx-auto flex justify-between phone:px-2 lg:px-0">
+        <div className="phone:w-11/12 lg:w-5/6 mx-auto flex justify-between phone:px-2 lg:px-0">
           <h1 className="font-odesans-semibold lg:text-2xl text-fuchsia-700 opacity-70">©Recycle It</h1>
-          <div className="flex font-garamond-regular lg:text-lg phone:gap-2 lg:gap-5 opacity-80 text-fuchsia-950">
-            <p>Privacy Policy</p>
-            <p>About</p>
-            <p>Terms & Condition</p>
+          <div className="flex font-odesans-light phone:text-xs lg:text-lg phone:gap-2 lg:gap-5 opacity-80 text-fuchsia-950">
+            <p className="my-auto">Privacy Policy</p>
+            <p className="my-auto">About</p>
+            <p className="my-auto">Terms & Condition</p>
           </div>
         </div>
       </div>
