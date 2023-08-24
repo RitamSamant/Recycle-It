@@ -31,7 +31,7 @@ const Page = () => {
         }
       );
       setData(res.data.wishlistforOrg);
-      console.log(res.data)
+      //console.log(res.data)
       if (res.data.wishlistforOrg) {
         const occurrences = {};
         res.data.wishlistforOrg.forEach(item => {
@@ -132,6 +132,22 @@ const Page = () => {
     setIsButtonLaoding(false);
   };
 
+  const saveProducts = async (items) =>{
+    const token = localStorage.getItem('token')
+    try {
+      
+      const res = await axios.post('https://recycle-it.onrender.com/org/products/'+items._id,null,{
+        headers : {
+          Authorization : `Bearer ${token}`
+        }
+      })
+      console.log(res.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+
    const handleIncreaseQuantity = (type) => {
     setProductOccurrences(prevOccurrences => ({
       ...prevOccurrences,
@@ -148,13 +164,13 @@ const Page = () => {
 
 
   return (
-   <div className="panel lg:h-screen phone:h-full">
+   <div className="panel lg:h-full py-5 phone:h-full">
     <div className="phone:px-3 lg:px-10 flex justify-between border-b-2 border-white/10 phone:py-3 lg:py-4">
       <Link href="/admin/home">
         <Image src={left} alt="" className="phone:w-9 phone:h-9 lg:w-12 lg:h-12 my-auto"/>
       </Link>
       <h1 className="phone:text-3xl lg:text-5xl font-odesans-semibold text-white">
-        Reycle It
+        Recycle It
       </h1>
       <Link href="/admin/notifications">
         <Image src={bell} alt="" className="phone:w-8 phone:h-8 lg:w-12 lg:h-12 my-auto"/>
@@ -210,11 +226,13 @@ const Page = () => {
                   position="top-center"
                   reverseOrder={false}
                 />
+                <div onClick={()=>{saveProducts(items)}}>
                 <button onClick={() =>handleCheckout(items.type)} className={`font-space-grostek py-3 rounded-lg shadow-lg my-auto w-[50%] ${
                   isButtonLaoding ? 'bg-gray-300/10 cursor-not-allowed border border-black/10' : 'bg-black text-white'
                 }`} disabled={isButtonLaoding}>
                   Buy Now
                 </button>
+                </div>
               </div>
             </div>
           </div>

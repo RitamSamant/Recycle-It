@@ -200,7 +200,7 @@ const DashboardPage = () => {
               </Link>
               <Link href="/client/home/wastebought" className="w-1/3 p-4">
                 <div className="cursor-pointer flex flex-col justify-between p-5 bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
-                  <p className=" text-center text-4xl">Waste Bought</p>
+                  <p className=" text-center text-3xl">Recycled Items Bought</p>
                   <Line data={data} options={options} className="mx-auto -ml-3 scale-105 w-full overflow-hidden" />
                 </div>
               </Link>
@@ -282,7 +282,7 @@ const DashboardPage = () => {
               </Link>
               <Link href="/client/home/wastebought" className="w-1/3 p-4">
                 <div className="cursor-pointer flex flex-col justify-between p-5 bg-white/10 border-2 border-white/10 hover:border-white/20 transition duration-300 h-[18rem] rounded-2xl shadow-md shadow-neutral-950 text-white">
-                  <p className=" text-center text-4xl">Waste Bought</p>
+                  <p className=" text-center text-3xl">Recycled Items Bought</p>
                   <Line data={data} options={options} className="mx-auto -ml-3 scale-105 w-full overflow-hidden" />
                 </div>
               </Link>

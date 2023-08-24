@@ -60,7 +60,7 @@ const Page = () => {
     apiVersion: "2022-11-15",
   });
 
-  const handleCheckout = async (productType) => {
+  const handleCheckout = async (items) => {
     toast.success("Paymnet initiated..⌛", {
       style: {
         border: "2px solid rgba(255, 255, 255, 0.1)",
@@ -79,7 +79,7 @@ const Page = () => {
     });
     setIsButtonLaoding(true);
 
-    const item = Data.find(item => item.type === productType);
+    const item = Data.find(item => item.type === items.type);
     if (!item) {
       setIsButtonLaoding(false);
       return;
@@ -145,9 +145,25 @@ const Page = () => {
     }));
   };
 
+  const saveProducts = async (items) =>{
+    const token = localStorage.getItem('token')
+    try {
+      
+      const res = await axios.post('https://recycle-it.onrender.com/client/products/'+items._id,null,{
+        headers : {
+          Authorization : `Bearer ${token}`
+        }
+      })
+      console.log(res.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+ 
 
   return (
-   <div className="panel min-h-screen">
+   <div className="panel h-full py-5">
     <div className="phone:px-3 lg:px-10 flex justify-between border-b-2 border-white/10 phone:py-3 lg:py-4">
       <Link href="/client/home">
         <Image src={left} alt="" className="phone:w-9 phone:h-9 lg:w-12 lg:h-12 my-auto"/>
@@ -209,11 +225,13 @@ const Page = () => {
                   position="top-center"
                   reverseOrder={false}
                 />
-                <button onClick={() =>handleCheckout(items.type)} className={`font-space-grostek py-3 rounded-lg shadow-lg my-auto w-[50%] ${
+                <div onClick={()=>{saveProducts(items)}}>
+                <button onClick={()=>{handleCheckout(items)}} className={`font-space-grostek py-3 rounded-lg shadow-lg my-auto w-[50%] ${
                   isButtonLaoding ? 'bg-gray-300/10 cursor-not-allowed border border-black/10' : 'bg-black text-white'
                 }`} disabled={isButtonLaoding}>
                   Buy Now
                 </button>
+                </div>
               </div>
             </div>
           </div>
