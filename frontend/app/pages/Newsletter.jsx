@@ -48,7 +48,7 @@ const Newsletter = () => {
         <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl lg:px-10 phone:px-5">
           Our Free Newsletter is <br /> Launching Soon!
         </h1>
-        <p className="phone:text-sm lg:text-xl font-space-grostek mt-5 lg:px-10 phone:px-5">
+        <p className="phone:text-sm lg:text-xl font-odesans-medium mt-5 lg:px-10 phone:px-5">
           Get the earliest access about our new products.
         </p>
         <hr className="border border-lime-200 rounded-full phone:mt-7 lg:mt-10 " />

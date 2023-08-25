@@ -40,7 +40,7 @@ const Page = () => {
             </p>
             <Link
               href="/client/login"
-              className="font-space-grostek text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
+              className="font-odesans-medium text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
             >
               Client
             </Link>
@@ -67,7 +67,7 @@ const Page = () => {
                 </p>
                 <Link
                   href="/admin/login"
-                  className="font-space-grostek text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
+                  className="font-odesans-medium text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
                 >
                   Business
                 </Link>
@@ -76,7 +76,7 @@ const Page = () => {
               <>
                 <Link
                   href="/admin/login"
-                  className="font-space-grostek text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
+                  className="font-odesans-medium text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
                 >
                   Business
                 </Link>

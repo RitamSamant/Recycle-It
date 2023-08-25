@@ -66,15 +66,15 @@ const PreviousOrdersPage = () => {
                 alt="Profile"
                 className="w-16 h-16 rounded-full border-2 border-white/20 mx-auto"
               />
-              <p className="text-white/30 font-space-grostek mt-1 text-center">
+              <p className="text-white/30 font-odesans-medium mt-1 text-center">
                 @johndoe
               </p>
               <div>
-                <p className="font-space-grostek mt-5 text-lg text-center">
+                <p className="font-odesans-medium mt-5 text-lg text-center">
                   John Doe
                 </p>
                 <div className="flex flex-col">
-                  <button className="px-5 rounded-full border-2 border-white/10 font-space-grostek mt-2">
+                  <button className="px-5 rounded-full border-2 border-white/10 font-odesans-medium mt-2">
                     Edit
                   </button>
                   <Link
@@ -121,19 +121,19 @@ const PreviousOrdersPage = () => {
                   key={order.id}
                   className="bg-white/10 border-2 border-white/10 hover:border-white/30 transition duration-500 cursor pointer py-4 shadow-md rounded-md flex space-x-4 cursor-pointer"
                 >
-                  <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
+                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
                     {order.id}
                   </div>
-                  <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
+                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
                     {order.items}
                   </div>
-                  <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
+                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
                     {order.date}
                   </div>
-                  <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
+                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
                   ₹{order.price}
                   </div>
-                  <div className="w-1/4 text-left ml-5 text-white font-space-grostek">
+                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
                     {order.status}
                   </div>
                 </div>
@@ -172,16 +172,16 @@ const PreviousOrdersPage = () => {
                   key={order.id}
                   className="bg-white/10 border-2 border-white/10 hover:border-white/30 transition duration-500 cursor pointer py-4 px-4 shadow-md rounded-md flex space-x-4 cursor-pointer text-sm justify-between"
                 >
-                  <div className="w-1/4 text-white text-center font-space-grostek">
+                  <div className="w-1/4 text-white text-center font-odesans-medium">
                     {order.items}
                   </div>
-                  <div className="w-1/4 text-white text-center font-space-grostek">
+                  <div className="w-1/4 text-white text-center font-odesans-medium">
                     {order.date}
                   </div>
-                  <div className="w-1/4 text-white text-center font-space-grostek">
+                  <div className="w-1/4 text-white text-center font-odesans-medium">
                   ₹{order.price}
                   </div>
-                  <div className="w-1/4 text-white text-center font-space-grostek">
+                  <div className="w-1/4 text-white text-center font-odesans-medium">
                     {order.status}
                   </div>
                 </div>

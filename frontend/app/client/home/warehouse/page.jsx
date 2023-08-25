@@ -94,7 +94,7 @@ const Page = () => {
         console.log(err)
       }
     }
-    
+
     await saveProducts()
     await getSavedProd()
 
@@ -213,7 +213,7 @@ const Page = () => {
                     <Image src={love} alt="" className="w-9 h-9 mt-auto" onClick={()=>{handleWish(items)}}/>
                   </button>
                 </div>
-                <p className="font-space-grostek text-gray-300">
+                <p className="font-odesans-medium text-gray-300">
                   {items.desc}
                 </p>
               </div>
@@ -225,7 +225,7 @@ const Page = () => {
                   position="top-center"
                   reverseOrder={false}
                 />
-                <button onClick={() =>handleCheckout(items)} className={`font-space-grostek py-3 rounded-lg shadow-lg my-auto w-[50%] ${
+                <button onClick={() =>handleCheckout(items)} className={`font-odesans-medium py-3 rounded-lg shadow-lg my-auto w-[50%] ${
                   isButtonLaoding ? 'bg-gray-300/10 cursor-not-allowed border border-black/10' : 'bg-black text-white'
                 }`} disabled={isButtonLaoding}>
                   Buy Now

@@ -159,10 +159,10 @@ const DashboardPage = () => {
                 alt="Profile"
                 className="w-16 h-16 rounded-full border-2 border-white/20 mx-auto"
               />
-              <p className="text-white/30 font-space-grostek mt-1 text-center">
+              <p className="text-white/30 font-odesans-medium mt-1 text-center">
                 @johndoe
               </p>
-              <p className="font-space-grostek mt-5 text-lg text-center">
+              <p className="font-odesans-medium mt-5 text-lg text-center">
                 John Doe
               </p>
             </div>

@@ -191,7 +191,7 @@ const Page = () => {
                   <div className="font-odesans-semibold text-3xl text-white break-words">
                     {items.type}
                   </div>
-                  <div className="font-space-grostek text-white text-xl bg-black/40 border-2 rounded-full border-white/10 w-10 h-10 items-center flex justify-center">
+                  <div className="font-odesans-medium text-white text-xl bg-black/40 border-2 rounded-full border-white/10 w-10 h-10 items-center flex justify-center">
                       {productOccurrences[items.type] || 0}
                   </div>
                   <Toaster
@@ -199,7 +199,7 @@ const Page = () => {
                     reverseOrder={false}
                   />
                 </div>
-                <p className="font-space-grostek text-gray-300">
+                <p className="font-odesans-medium text-gray-300">
                   {items.desc}
                 </p>
               </div>

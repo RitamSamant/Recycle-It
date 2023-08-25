@@ -213,7 +213,7 @@ const Page = () => {
                     <Image src={love} alt="" className="w-9 h-9 mt-auto" onClick={()=>{handleWish(items)}}/>
                   </button>
                 </div>
-                <p className="font-space-grostek text-gray-300">
+                <p className="font-odesans-medium text-gray-300">
                   {items.desc}
                 </p>
               </div>
