@@ -13,8 +13,8 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 const Page = () => {
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   return (
-    <div className="panel h-full py-5">
-      <div className="py-[1rem] border-b-2 border-white/10">
+    <div className="panel min-h-screen">
+      <div className="phone:py-3 lg:py-5 border-b-2 border-white/10">
         <div className="flex mx-auto justify-center">
           <Image
             src={logo}
