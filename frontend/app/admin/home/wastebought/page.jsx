@@ -34,7 +34,7 @@ const PreviousOrdersPage = () => {
   return (
     <>
       {isAboveSmallScreens ? (
-        <div className="flex panel scroll">
+        <div className="flex panel scroll min-h-screen">
           <div className="w-60 border-r-2 flex justify-center pt-8 border-white/10">
             <div className="text-white mb-4">
               <Link href="/admin/home" className="flex">

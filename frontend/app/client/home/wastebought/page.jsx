@@ -15,7 +15,7 @@ const PreviousOrdersPage = () => {
   const getWishlist = async () =>{
     const token = localStorage.getItem('token')
     try {
-      
+
       const res = await axios.get('https://recycle-it.onrender.com/client/dashboard/orderedItems',{
         headers : {
           Authorization : `Bearer ${token}`
@@ -31,118 +31,10 @@ const PreviousOrdersPage = () => {
     getWishlist()
   },[])
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
-  // const previousOrders = [
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  //   {
-  //     id: 1,
-  //     date: "2023-08-10",
-  //     items: "Product A",
-  //     price: 20.0,
-  //     status: "Completed",
-  //   },
-  // ];
-  
   return (
     <>
       {isAboveSmallScreens ? (
-        <div className="flex panel scroll">
+        <div className="flex panel scroll min-h-screen">
           <div className="w-60 border-r-2 flex justify-center pt-8 border-white/10">
             <div className="text-white mb-4">
               <Link href="/client/home" className="flex">
