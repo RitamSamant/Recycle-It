@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section id="hero" className="bg-[#fefae0]/70 pt-40">
+    <section id="hero" className="bg-[#fefae0]/70 phone:pt-24 lg:pt-40">
       <div className="mx-auto">
         <div className="flex justify-center phone:gap-5 lg:gap-52">
           {/* <Image src={flower} alt="" className="phone:w-9 phone:h-9 lg:w-20 lg:h-20 phone:mb-auto lg:mb-0" /> */}

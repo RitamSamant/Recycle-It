@@ -1,26 +1,28 @@
+"use client"
+
 import React from "react";
-import contact from "../../public/images/contact/contact.svg";
+import contact2 from "../../public/images/contact/contact2.webp";
+import contact1 from "../../public/images/contact/contact1.webp";
 import Image from "next/image";
 import flower from "../../public/images/contact/flower.svg"
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const Contact = () => {
+  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   return (
     <section id="connect" className="bg-[#FDCEDF] overflow-x-hidden lg:pt-12">
-      <div className="lg:flex justify-between lg:w-[87%] mx-auto items-center pb-10">
+      <div className=" justify-between mx-auto items-center">
         <div className="flex flex-col">
-          <div className="flex phone:mt-10 lg:mt-0">
-            <h1 className="font-artik phone:text-3xl lg:text-5xl lg:ml-[6.5rem] my-auto phone:px-5 lg:px-0">
+          <div className="flex mx-auto phone:mt-10 lg:mt-0">
+            <h1 className="font-artik phone:text-3xl lg:text-5xl my-auto phone:px-5 lg:px-0">
               Contact Us
             </h1>
             <Image src={flower} alt="" className="phone:w-8 phone:h-8 lg:w-12 lg:h-12 phone:my-auto"/>
           </div>
-          <div className="relative phone:px-5 lg:px-0">
-            <div className="absolute lg:top-16 lg:-left-[3rem] phone:w-60 phone:h-60 lg:w-96 lg:h-96 bg-fuchsia-400 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob"></div>
-            <div className="absolute phone:top-7 lg:top-16 phone:left-[7rem] lg:left-[16rem] phone:w-60 phone:h-60 lg:w-96 lg:h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob animation-delay-2000"></div>
-            <Image src={contact} alt="" className="lg:w-[40rem] phone:mt-5 lg:mt-9 relative" />
-          </div>
+          {isAboveSmallScreens ? (<Image src={contact1} alt="" className="lg:w-full phone:mt-5 lg:py-7 relative" />) : (<Image src={contact2} alt="" className="lg:w-full phone:mt-5 lg:mt-9 relative" />)}
+
         </div>
-        <div className="card rounded-lg shadow-lg py-10 lg:max-w-[30rem] phone:w-11/12 phone:mx-auto phone:px-5 lg:px-8 phone:mt-8 lg:mt-0">
+        <div className="card rounded-lg shadow-lg py-10 lg:w-2/3 phone:w-11/12 phone:mx-auto phone:px-5 lg:px-8 phone:mt-8 lg:mt-0 my-8">
           <h1 className="phone:text-2xl lg:text-3xl font-artik text-fuchsia-900 mb-6">
             Let&apos;s talk business
           </h1>

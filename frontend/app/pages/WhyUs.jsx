@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import bg from "../../public/images/whyus/pexels-shvets-production-7512950-1.webp"
+import bg from "../../public/images/whyus/philip-strong-iOBTE2xsYko-unsplash.png"
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 const WhyUs = () => {
@@ -21,8 +21,17 @@ const WhyUs = () => {
               />) : (<></>)}
             <div className="lg:flex gap-5 my-auto">
               <p className="phone:text-4xl lg:text-3xl font-artik text-purple-500 my-auto text-center">
-                What Sets Up Apart
+                What Sets Us Apart
               </p>
+              <div>
+              {isAboveSmallScreens ? (<></>) : (<Image src={bg}
+                alt="Recycle"
+                width={1000}
+                height={1000}
+                className="rounded-lg shadow-md phone:h-[20rem] lg:w-[25rem] lg:h-[30rem] object-cover mt-10"
+              />)}
+              </div>
+
               <div className="lg:p-5 phone:mt-10 lg:mt-0 font-roxale lg:text-xl flex flex-col phone:gap-2 lg:gap-3 phone:text-center lg:text-right lg:border-l-4 lg:border-purple-200 lg:pl-5">
               {isAboveSmallScreens ?
                 (<h2 className="phone:text-2xl lg:text-5xl font-artik phone:mb-0 lg:mb-8 phone:text-center lg:text-right">

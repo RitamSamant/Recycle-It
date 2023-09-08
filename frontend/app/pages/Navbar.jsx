@@ -28,7 +28,7 @@ const Navbar = () => {
       ) : (
         <>
           <section id="navbar" className="flex justify-center z-20 relative">
-            <div className="w-5/6 flex bg-yellow-50/80 fixed mx-auto justify-center px-5 py-1 font-roxale rounded-full mt-7">
+            <div className="w-5/6 flex backdrop-blur bg-white/50 border border-white/30 fixed mx-auto justify-center px-5 py-1 font-roxale rounded-full mt-7">
               <div className="flex gap-2">
                 <Image src={logo} alt="" className="w-8 h-8" />
                 <h1 className="my-auto text-xl text-fuchsia-600 font-roxale">
