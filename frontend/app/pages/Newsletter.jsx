@@ -45,14 +45,14 @@ const Newsletter = () => {
   return (
     <div className="mx-auto lg:flex justify-between py-16 lg:w-11/12 phone:overflow-x-hidden lg:overflow-x-visible">
       <div className="lg:w-1/2 lg:border-r-[2px] lg:border-lime-200 lg:h-[24rem]">
-        <h1 className="font-odesans-semibold phone:text-3xl lg:text-5xl lg:px-10 phone:px-5">
+        <h1 className="font-artik phone:text-3xl lg:text-5xl lg:px-10 phone:px-5">
           Our Free Newsletter is <br /> Launching Soon!
         </h1>
-        <p className="phone:text-sm lg:text-xl font-odesans-medium mt-5 lg:px-10 phone:px-5">
+        <p className="phone:text-sm lg:text-xl font-roxale mt-5 lg:px-10 phone:px-5">
           Get the earliest access about our new products.
         </p>
         <hr className="border border-lime-200 rounded-full phone:mt-7 lg:mt-10 " />
-        <div className="flex px-10 font-odesans-medium mt-10">
+        <div className="flex px-10 font-roxale mt-10">
         <div className="flex gap-16">
           <div className="flex flex-col gap-5">
             {features.slice(0, 3).map((feature, index) => (
@@ -77,23 +77,25 @@ const Newsletter = () => {
       <div className="mx-auto my-auto relative mt-16">
         <div className="absolute -top-20 left-[5rem] -z-10 phone:w-72 phone:h-72 lg:w-96 lg:h-96 bg-lime-300 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob"></div>
         <div className="absolute -top-16 right-[5rem] -z-10 phone:w-72 phone:h-72 lg:w-96 lg:h-96 bg-green-300 rounded-full mix-blend-multiply filter blur-2xl opacity-60 animate-blob"></div>
-        <h2 className="phone:text-3xl lg:text-5xl font-odesans-semibold mb-4 text-teal-950 phone:px-5 lg:px-0">
+        <h2 className="phone:text-3xl lg:text-5xl font-artik mb-4 text-teal-950 phone:px-5 lg:px-0">
           Subscribe
         </h2>
-        <p className="mb-4 font-odesans-medium phone:text-base lg:text-xl phone:px-5 lg:px-0">
+        <p className="mb-4 font-roxale phone:text-base lg:text-xl phone:px-5 lg:px-0">
           Stay updated with our latest news and offers.
         </p>
         <form className="grid phone:px-5 lg:px-0">
           <input
             type="email"
             placeholder="Enter your email"
-            className="px-5 py-3 font-odesans-medium text-lg my-auto rounded-lg bg-white/40 focus:outline-none text-emerald-950"
+            className="px-5 py-3 font-roxale text-lg my-auto rounded-lg bg-white/40 focus:outline-none text-emerald-950"
           />
           <button
             type="submit"
-            className="bg-emerald-600 text-white px-4 py-2 rounded-lg mt-5 hover:bg-emerald-700 font-odesans-medium text-lg focus:outline-none w-1/2 mx-auto transition duration-500"
+            className="bg-emerald-600 text-white px-4 py-2 rounded-lg mt-5 hover:bg-emerald-700 font-roxale text-lg focus:outline-none w-1/2 mx-auto transition duration-500"
           >
-            Subscribe
+            <p className="my-auto">
+              Subscribe
+            </p>
           </button>
         </form>
       </div>

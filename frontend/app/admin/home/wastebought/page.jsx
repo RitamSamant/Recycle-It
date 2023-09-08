@@ -45,17 +45,17 @@ const PreviousOrdersPage = () => {
                 alt="Profile"
                 className="w-16 h-16 rounded-full border-2 border-white/20 mx-auto"
               />
-              <p className="text-white/30 font-odesans-medium mt-1 text-center">
+              <p className="text-white/30 font-roxale mt-1 text-center">
                 @johndoe
               </p>
               <div>
-                <p className="font-odesans-medium mt-5 text-lg text-center">
+                <p className="font-roxale mt-5 text-lg text-center">
                   John Doe
                 </p>
                 <div className="flex flex-col">
                   <Link
                     href="/admin/warehouse"
-                    className="mt-[22rem] rounded-md border-2 bg-black/40 border-white/20 px-5 py-2 text-lg font-odesans-medium"
+                    className="mt-[22rem] rounded-md border-2 bg-black/40 border-white/20 px-5 py-2 text-lg font-roxale"
                   >
                     Go To Warehouse
                   </Link>
@@ -67,7 +67,7 @@ const PreviousOrdersPage = () => {
           {/* Main */}
           <div className="p-8 w-full">
             <div className="flex justify-between">
-              <h2 className="text-3xl font-odesans-semibold text-white my-auto">
+              <h2 className="text-3xl font-roxale text-white my-auto">
                 Recycled Items bought
               </h2>
               <Link href="/client/notifications">
@@ -97,19 +97,19 @@ const PreviousOrdersPage = () => {
                   key={items._id}
                   className="bg-white/10 border-2 border-white/10 hover:border-white/30 transition duration-500 cursor pointer py-4 shadow-md rounded-md flex space-x-4 cursor-pointer"
                 >
-                  <div className="w-1/4 text-left text-sm ml-5 text-white font-odesans-medium">
+                  <div className="w-1/4 text-left text-sm ml-5 text-white font-roxale">
                     {index+1}
                   </div>
-                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
+                  <div className="w-1/4 text-left ml-5 text-white font-roxale">
                     {items.type}
                   </div>
-                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
+                  <div className="w-1/4 text-left ml-5 text-white font-roxale">
                     Recently
                   </div>
-                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
+                  <div className="w-1/4 text-left ml-5 text-white font-roxale">
                   ₹{items.price}
                   </div>
-                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
+                  <div className="w-1/4 text-left ml-5 text-white font-roxale">
                     Processing
                   </div>
                 </div>
@@ -122,7 +122,7 @@ const PreviousOrdersPage = () => {
 
           <div className="phone:p-4 lg:p-8 w-full">
             <div className="flex justify-between">
-              <h2 className="text-2xl font-odesans-semibold text-white my-auto">
+              <h2 className="text-2xl font-roxale text-white my-auto">
                 Recycled Items Bought
               </h2>
               <Link href="/admin/notifications">
@@ -149,16 +149,16 @@ const PreviousOrdersPage = () => {
                   key={index+1}
                   className="bg-white/10 border-2 border-white/10 hover:border-white/30 transition duration-500 cursor pointer py-4 px-4 shadow-md rounded-md flex space-x-4 cursor-pointer text-sm justify-between"
                 >
-                  <div className="w-1/4 text-white text-center font-odesans-medium">
+                  <div className="w-1/4 text-white text-center font-roxale">
                     {items.type}
                   </div>
-                  <div className="w-1/4 text-white text-center font-odesans-medium">
+                  <div className="w-1/4 text-white text-center font-roxale">
                     Recently
                   </div>
-                  <div className="w-1/4 text-white text-center font-odesans-medium">
+                  <div className="w-1/4 text-white text-center font-roxale">
                   ₹{items.price}
                   </div>
-                  <div className="w-1/4 text-white text-center font-odesans-medium">
+                  <div className="w-1/4 text-white text-center font-roxale">
                     Processing
                   </div>
                 </div>

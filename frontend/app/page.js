@@ -11,10 +11,10 @@ import Contact from './pages/Contact'
 
 export default function Home() {
   return (
-    <main className="font-osesans-medium">
+    <main className="">
       <Navbar />
       <Hero />
-      <Process />
+      {/* <Process /> */}
       <WhyUs />
       <Sponsors />
       <Benefits />

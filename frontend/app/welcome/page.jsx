@@ -21,7 +21,7 @@ const Page = () => {
             alt=""
             className="phone:w-7 phone:h-7 lg:w-10 lg:h-10 my-auto"
           />
-          <Link href="/" className="font-odesans-semibold phone:text-3xl lg:text-5xl text-center text-purple-600">
+          <Link href="/" className="font-artik phone:text-3xl lg:text-5xl text-center text-purple-600">
             Recycle It
           </Link>
         </div>
@@ -34,13 +34,13 @@ const Page = () => {
               alt=""
               className="h-16 w-16 border rounded-full"
             />
-            <p className="font-garamond-regular text-lg text-sky-50 w-2/3 text-justify">
+            <p className="font-roxale text-lg text-sky-50 w-2/3 text-justify">
               We offer our services to households and small business too, as
               long as it keeps the Earth clean.
             </p>
             <Link
               href="/client/login"
-              className="font-odesans-medium text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
+              className="font-roxale text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
             >
               Client
             </Link>
@@ -61,13 +61,13 @@ const Page = () => {
                   alt=""
                   className="h-16 w-16 border rounded-full"
                 />
-                <p className="font-garamond-regular text-lg w-2/3 text-justify text-sky-50">
+                <p className="font-roxale text-lg w-2/3 text-justify text-sky-50">
                   Join us as a business, we have special perks you may wanna
                   chcek out
                 </p>
                 <Link
                   href="/admin/login"
-                  className="font-odesans-medium text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
+                  className="font-roxale text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
                 >
                   Business
                 </Link>
@@ -76,11 +76,11 @@ const Page = () => {
               <>
                 <Link
                   href="/admin/login"
-                  className="font-odesans-medium text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
+                  className="font-roxale text-lg px-7 py-2 border border-sky-100 hover:border-sky-900 rounded-lg text-sky-50 transition duration-500"
                 >
                   Business
                 </Link>
-                <p className="font-garamond-regular text-lg w-2/3 text-justify text-sky-50">
+                <p className="font-roxale text-lg w-2/3 text-justify text-sky-50">
                   Join us as a business, we have special perks you may wanna
                   chcek out
                 </p>

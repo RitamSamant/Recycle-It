@@ -39,14 +39,14 @@ const Reviews = () => {
   };
 
   return (
-    <div className="bg-[#A0C49D] py-10">
+    <section id="reviews" className="bg-[#A0C49D] py-10">
       <div className="mx-auto -mt-10">
         <Image src={quote} alt="" className='w-20 h-20 rotate-180 mx-auto my-10'/>
         {selectedTestimonial !== null && (
-          <div className="flex text-xl font-garamond-regular transition duration-500 ease-in-out">
+          <div className="flex text-xl font-roxale transition duration-500 ease-in-out">
             <div className='text-center mx-auto'>
                <p className="text-black mb-2 w-2/3 mx-auto phone:text-xl lg:text-2xl">{Testimonials[selectedTestimonial - 1].comment}</p>
-               <p className="font-odesans-semibold phone:text-2xl lg:text-3xl mt-7 text-emerald-600">{Testimonials[selectedTestimonial - 1].name}</p>
+               <p className="font-roxale phone:text-2xl lg:text-3xl mt-7 text-emerald-600">{Testimonials[selectedTestimonial - 1].name}</p>
                <p className="text-black phone:text-sm lg:text-base">{Testimonials[selectedTestimonial - 1].occupation}</p>
             </div>
           </div>
@@ -58,7 +58,7 @@ const Reviews = () => {
         </div>
         <Image src={twitter} alt='' className='phone:w-9 phone:h-9 lg:w-16 lg:h-16 mx-auto'/>
       </div>
-    </div>
+    </section>
   );
 };
 

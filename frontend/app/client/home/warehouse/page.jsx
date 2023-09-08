@@ -183,7 +183,7 @@ const Page = () => {
       <Link href="/client/home">
         <Image src={left} alt="" className="phone:w-9 phone:h-9 lg:w-12 lg:h-12 my-auto"/>
       </Link>
-      <h1 className="phone:text-3xl lg:text-5xl font-odesans-semibold text-white">
+      <h1 className="phone:text-3xl lg:text-5xl font-roxale text-white">
         Reycle It
       </h1>
       <Link href="/admin/notifications">
@@ -202,7 +202,7 @@ const Page = () => {
             <div className="my-5 flex flex-col justify-between phone:gap-7 lg:gap-0">
               <div className="">
                 <div className="flex my-auto justify-between w-full">
-                  <div className="font-odesans-semibold text-3xl text-white break-words">
+                  <div className="font-roxale text-3xl text-white break-words">
                     {items.type}
                   </div>
                   <Toaster
@@ -213,19 +213,19 @@ const Page = () => {
                     <Image src={love} alt="" className="w-9 h-9 mt-auto" onClick={()=>{handleWish(items)}}/>
                   </button>
                 </div>
-                <p className="font-odesans-medium text-gray-300">
+                <p className="font-roxale text-gray-300">
                   {items.desc}
                 </p>
               </div>
               <div className="flex lg:flex-col gap-2 phone:justify-between">
-                <p className="phone:text-2xl lg:text-3xl font-odesans-semibold text-white my-auto">
+                <p className="phone:text-2xl lg:text-3xl font-roxale text-white my-auto">
                   Price: ₹{items.price}
                 </p>
                 <Toaster
                   position="top-center"
                   reverseOrder={false}
                 />
-                <button onClick={() =>handleCheckout(items)} className={`font-odesans-medium py-3 rounded-lg shadow-lg my-auto w-[50%] ${
+                <button onClick={() =>handleCheckout(items)} className={`font-roxale py-3 rounded-lg shadow-lg my-auto w-[50%] ${
                   isButtonLaoding ? 'bg-gray-300/10 cursor-not-allowed border border-black/10' : 'bg-black text-white'
                 }`} disabled={isButtonLaoding}>
                   Buy Now

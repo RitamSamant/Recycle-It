@@ -171,11 +171,11 @@ const [selectedMonth, setSelectedMonth] = useState(null);
             alt="Profile"
             className="phone:w-10 phone:h-10 lg:w-16 lg:h-16 rounded-full border-2 border-white/20 mx-auto phone:my-auto"
           />
-          <p className="text-white/30 font-odesans-medium mt-1 text-center">
+          <p className="text-white/30 font-roxale mt-1 text-center">
             @johndoe
           </p>
           <div>
-            <p className="font-odesans-medium mt-5 text-lg text-center">
+            <p className="font-roxale mt-5 text-lg text-center">
               John Doe
             </p>
           </div>
@@ -185,7 +185,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
       {/* Main */}
       <div className="w-full">
         <div className="flex justify-between border-b-2 border-white/10 p-5">
-          <h2 className="phone:text-xl lg:text-3xl font-odesans-semibold text-white my-auto">
+          <h2 className="phone:text-xl lg:text-3xl font-roxale text-white my-auto">
             Book A Date & Time
           </h2>
           <Link href="/admin/notifications">
@@ -196,10 +196,10 @@ const [selectedMonth, setSelectedMonth] = useState(null);
         {/* Calender and Time Picker */}
         <div className="mt-10 lg:grid grid-cols-[2fr_1.5fr_1fr]">
           {/* Calender */}
-          <div className="font-odesans-medium panel scroll border-r-2 border-white/10">
+          <div className="font-roxale panel scroll border-r-2 border-white/10">
             <div className="w-full px-2 mx-auto">
               <div className="flex items-center px-5">
-                <h2 className="flex-auto font-semibold text-white font-odesans-semibold phone:text-xl lg:text-3xl">
+                <h2 className="flex-auto font-semibold text-white font-roxale phone:text-xl lg:text-3xl">
                   {format(firstDayOfCurrentMonth, "MMMM yyyy")}
                 </h2>
 
@@ -310,7 +310,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
             <p className="font-technology text-white text-2xl text-center">Scroll up and down on the time</p>
             <button
               onClick={() => handleTimeSelection()}
-              className="bg-black flex rounded-xl shadow-xl text-white px-7 py-2 my-10 mx-auto font-odesans-medium"
+              className="bg-black flex rounded-xl shadow-xl text-white px-7 py-2 my-10 mx-auto font-roxale"
             >
               Save Time
             </button>
@@ -320,7 +320,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
           <div className="mx-auto justify-center items-center flex text-white border-l-2 border-white/10 px-5 phone:pb-10">
             <form >
               <div className="slider-container">
-              <h1 className="lg:text-lg mb-4 font-odesans-medium text-white/90 phone:text-center">How would you like your pickup schedule be?</h1>
+              <h1 className="lg:text-lg mb-4 font-roxale text-white/90 phone:text-center">How would you like your pickup schedule be?</h1>
                 <label for="checkbox" className="flex items-center phone:justify-center mb-2 slider-label gap-3 cursor-pointer">
                   Daily
                   <input
@@ -338,7 +338,7 @@ const [selectedMonth, setSelectedMonth] = useState(null);
               <Toaster position="bottom-right" reverseOrder={false} />
                 <button
                   type="button"
-                  className="bg-black rounded-xl shadow-xl text-white px-10 font-odesans-medium py-2 mt-10 flex mx-auto"
+                  className="bg-black rounded-xl shadow-xl text-white px-10 font-roxale py-2 mt-10 flex mx-auto"
                   onClick={handleSubmit}
                 >
                   Submit

@@ -158,21 +158,21 @@ const DashboardPage = () => {
                 alt="Profile"
                 className="w-16 h-16 rounded-full border-2 border-white/20 mx-auto"
               />
-              <p className="text-white/30 font-odesans-medium mt-1 text-center">
+              <p className="text-white/30 font-roxale mt-1 text-center">
                 @johndoe
               </p>
-              <p className="font-odesans-medium mt-5 text-lg text-center">
+              <p className="font-roxale mt-5 text-lg text-center">
                 John Doe
               </p>
             </div>
-            <Link href="/welcome" className="text-white text-center bg-black/40 px-5 py-2 rounded-md border-2 border-white/10 w-2/3 mx-auto shadow-lg font-odesans-medium text-lg">
+            <Link href="/welcome" className="text-white text-center bg-black/40 px-5 py-2 rounded-md border-2 border-white/10 w-2/3 mx-auto shadow-lg font-roxale text-lg">
               Log Out
             </Link>
           </div>
 
           {/* Main Content */}
           <div className="w-full">
-            <div className="py-3 border-b-2 border-white/10 text-center text-5xl  text-white font-odesans-semibold">
+            <div className="py-3 border-b-2 border-white/10 text-center text-5xl  text-white font-roxale">
               Recycle It
             </div>
             <div className="flex px-4 mt-3">
@@ -184,7 +184,7 @@ const DashboardPage = () => {
                     alt=""
                     className="opacity-10 absolute "
                   />
-                  <h1 className=" text-5xl font-odesans-medium absolute  ">Warehouse</h1>
+                  <h1 className=" text-5xl font-roxale absolute  ">Warehouse</h1>
                 </div>
               </Link>
               <Link href="/admin/home/wishlist" className="w-1/3 p-4">
@@ -194,7 +194,7 @@ const DashboardPage = () => {
                     alt=""
                     className="opacity-30 absolute"
                   />
-                  <p className=" text-5xl font-odesans-medium absolute">Wishlist</p>
+                  <p className=" text-5xl font-roxale absolute">Wishlist</p>
                 </div>
               </Link>
               <Link href="/admin/home/wastebought" className="w-1/3 p-4">
@@ -214,7 +214,7 @@ const DashboardPage = () => {
                     alt=""
                     className="opacity-30 absolute"
                   />
-                  <h1 className=" text-5xl absolute font-odesans-medium">Booking</h1>
+                  <h1 className=" text-5xl absolute font-roxale">Booking</h1>
                 </div>
               </Link>
               <Link href="/admin/home/earning" className="w-1/3 p-4">
@@ -230,7 +230,7 @@ const DashboardPage = () => {
                     alt=""
                     className="opacity-30 absolute"
                   />
-                  <p className=" text-5xl font-odesans-medium absolute">FAQ</p>
+                  <p className=" text-5xl font-roxale absolute">FAQ</p>
                 </div>
               </Link>
             </div>
@@ -247,7 +247,7 @@ const DashboardPage = () => {
                 alt="Profile"
                 className="w-10 h-10 rounded-full border-2 border-white/20 my-auto"
               />
-              <div className="py-3 border-white/10 text-center text-3xl text-white font-odesans-semibold">
+              <div className="py-3 border-white/10 text-center text-3xl text-white font-roxale">
                 Recycle It
               </div>
               <Link href="/welcome" className="my-auto">
@@ -266,7 +266,7 @@ const DashboardPage = () => {
                     alt=""
                     className="opacity-10 absolute"
                   />
-                  <h1 className=" text-5xl absolute font-odesans-medium">Warehouse</h1>
+                  <h1 className=" text-5xl absolute font-roxale">Warehouse</h1>
                 </div>
               </Link>
               <Link href="/admin/home/wishlist" className="w-1/3 p-4">
@@ -276,7 +276,7 @@ const DashboardPage = () => {
                     alt=""
                     className="opacity-30 absolute"
                   />
-                  <p className=" text-5xl absolute font-odesans-medium">Wishlist</p>
+                  <p className=" text-5xl absolute font-roxale">Wishlist</p>
                 </div>
               </Link>
               <Link href="/admin/home/wastebought" className="w-1/3 p-4">
@@ -295,7 +295,7 @@ const DashboardPage = () => {
                     alt=""
                     className="opacity-30 absolute"
                   />
-                  <h1 className=" text-5xl absolute font-odesans-medium">Booking</h1>
+                  <h1 className=" text-5xl absolute font-roxale">Booking</h1>
                 </div>
               </Link>
               <Link href="/admin/home/earning" className="w-1/3 p-4">
@@ -311,7 +311,7 @@ const DashboardPage = () => {
                     alt=""
                     className="opacity-30 absolute"
                   />
-                  <p className=" text-5xl absolute font-odesans-medium">FAQ</p>
+                  <p className=" text-5xl absolute font-roxale">FAQ</p>
                 </div>
               </Link>
             </div>

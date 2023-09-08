@@ -5,13 +5,13 @@ const SuccessPage = () => {
   return (
     <div className="h-[100vh] flex flex-col items-center justify-center panel">
       <div className="bg-white/10 border-2 border-white/10 p-8 rounded-lg shadow-md">
-        <h1 className="font-odesans-semibold text-white text-3xl font-semibold mb-4">
+        <h1 className="font-roxale text-white text-3xl font-semibold mb-4">
           Congratulations!🎉
         </h1>
-        <p className="text-lg mb-4 text-white/70 font-odesans-medium">
+        <p className="text-lg mb-4 text-white/70 font-roxale">
           Your payment was successful
         </p>
-        <p className="text-md text-white/90 font-odesans-medium">
+        <p className="text-md text-white/90 font-roxale">
           You determine a big part of the future of this world.
         </p>
       </div>

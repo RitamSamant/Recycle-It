@@ -11,13 +11,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "odesans-light": ["Odesans-Light", "sans-serif"],
-        "odesans-medium": ["Odesans-Medium", "sans-serif"],
-        "odesans-semibold": ["Odesans-Semibold", "sans-serif"],
-        "odesans-bold": ["Odesans-Bold", "sans-serif"],
-        "garamond-regular": ["Garamond-Regular", "serif"],
-        "space-grostek": ["Space-Grostek", "sans-serif"],
         "technology": ["Technology", "serif"],
+        "artik": ["Artik", "serif"],
+        "roxale": ["Roxale", "serif"]
       },
     },
     screens: {

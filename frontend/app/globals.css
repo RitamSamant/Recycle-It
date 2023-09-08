@@ -6,6 +6,9 @@ body {
   font-family: Odesans-Medium;
   background-color: #faf3f0;
 }
+* {
+  scroll-behavior: smooth;
+}
 
 @font-face {
   font-family: Odesans-Light;
@@ -54,12 +57,25 @@ body {
 }
 @font-face {
   font-family: Technology;
-  src: url("../public//fonts/Technology-Bold.ttf");
+  src: url("../public/fonts/Technology-Bold.ttf");
   font-weight: 700;
   font-style: normal;
   font-display: block;
 }
-
+@font-face {
+  font-family: Artik;
+  src: url("../public/fonts/Artik-Regular.ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: Roxale;
+  src: url("../public/fonts/RoxaleStory-Regular.ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
 @keyframes conveyorBelt {
   from {
     transform: translateX(-100%);

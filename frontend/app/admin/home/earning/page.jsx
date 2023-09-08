@@ -66,15 +66,15 @@ const PreviousOrdersPage = () => {
                 alt="Profile"
                 className="w-16 h-16 rounded-full border-2 border-white/20 mx-auto"
               />
-              <p className="text-white/30 font-odesans-medium mt-1 text-center">
+              <p className="text-white/30 font-roxale mt-1 text-center">
                 @johndoe
               </p>
               <div>
-                <p className="font-odesans-medium mt-5 text-lg text-center">
+                <p className="font-roxale mt-5 text-lg text-center">
                   John Doe
                 </p>
                 <div className="flex flex-col">
-                  <button className="px-5 rounded-full border-2 border-white/10 font-odesans-medium mt-2">
+                  <button className="px-5 rounded-full border-2 border-white/10 font-roxale mt-2">
                     Edit
                   </button>
                   <Link
@@ -91,7 +91,7 @@ const PreviousOrdersPage = () => {
           {/* Main */}
           <div className="p-8 w-full">
             <div className="flex justify-between">
-              <h2 className="text-3xl font-odesans-semibold text-white my-auto">
+              <h2 className="text-3xl font-roxale text-white my-auto">
                 Total Waste Sold
               </h2>
               <Link href="/admin/notifications">
@@ -121,19 +121,19 @@ const PreviousOrdersPage = () => {
                   key={order.id}
                   className="bg-white/10 border-2 border-white/10 hover:border-white/30 transition duration-500 cursor pointer py-4 shadow-md rounded-md flex space-x-4 cursor-pointer"
                 >
-                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
+                  <div className="w-1/4 text-left ml-5 text-white font-roxale">
                     {order.id}
                   </div>
-                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
+                  <div className="w-1/4 text-left ml-5 text-white font-roxale">
                     {order.items}
                   </div>
-                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
+                  <div className="w-1/4 text-left ml-5 text-white font-roxale">
                     {order.date}
                   </div>
-                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
+                  <div className="w-1/4 text-left ml-5 text-white font-roxale">
                   ₹{order.price}
                   </div>
-                  <div className="w-1/4 text-left ml-5 text-white font-odesans-medium">
+                  <div className="w-1/4 text-left ml-5 text-white font-roxale">
                     {order.status}
                   </div>
                 </div>
@@ -145,7 +145,7 @@ const PreviousOrdersPage = () => {
         <div className="flex panel scroll min-h-screen">
           <div className="lg:p-8 w-full">
             <div className="flex justify-between border-b-2 border-white/10 px-3 py-4">
-              <h2 className="text-2xl font-odesans-semibold text-white my-auto">
+              <h2 className="text-2xl font-roxale text-white my-auto">
                 Total Products Sold
               </h2>
               <Link href="/admin/notifications">
@@ -172,16 +172,16 @@ const PreviousOrdersPage = () => {
                   key={order.id}
                   className="bg-white/10 border-2 border-white/10 hover:border-white/30 transition duration-500 cursor pointer py-4 px-4 shadow-md rounded-md flex space-x-4 cursor-pointer text-sm justify-between"
                 >
-                  <div className="w-1/4 text-white text-center font-odesans-medium">
+                  <div className="w-1/4 text-white text-center font-roxale">
                     {order.items}
                   </div>
-                  <div className="w-1/4 text-white text-center font-odesans-medium">
+                  <div className="w-1/4 text-white text-center font-roxale">
                     {order.date}
                   </div>
-                  <div className="w-1/4 text-white text-center font-odesans-medium">
+                  <div className="w-1/4 text-white text-center font-roxale">
                   ₹{order.price}
                   </div>
-                  <div className="w-1/4 text-white text-center font-odesans-medium">
+                  <div className="w-1/4 text-white text-center font-roxale">
                     {order.status}
                   </div>
                 </div>

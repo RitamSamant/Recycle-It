@@ -1,31 +1,33 @@
+"use client"
+
 import React from "react";
 import Image from "next/image";
-import bgImg from "../../public/images/whyus/original-809307633422f0dcc7294c9ab065663b.png";
+import bg from "../../public/images/whyus/pexels-shvets-production-7512950-1.webp"
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const WhyUs = () => {
+  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   return (
-    <div>
+    <section id="process">
       <div className="phone:py-12 lg:py-20">
         <div className="phone:w-11/12 lg:w-5/6 mx-auto text-center">
-          <h2 className="phone:text-3xl lg:text-5xl font-odesans-semibold mb-8 text-right">
-            Why Choose Us
-          </h2>
           <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12 justify-between">
-            <div className="">
-              <Image
-                src={bgImg}
+            {isAboveSmallScreens ? (<Image
+                src={bg}
                 alt="Recycle"
-                width={400}
-                height={300}
-                className="rounded-lg shadow-md"
-              />
-            </div>
-            <div className="lg:flex gap-5">
-              <p className="text-3xl font-odesans-semibold text-purple-500 my-auto">
+                width={1000}
+                height={1000}
+                className="rounded-lg shadow-md phone:h-[20rem] lg:w-[25rem] lg:h-[30rem] object-cover"
+              />) : (<></>)}
+            <div className="lg:flex gap-5 my-auto">
+              <p className="phone:text-4xl lg:text-3xl font-artik text-purple-500 my-auto text-center">
                 What Sets Up Apart
               </p>
-              <div className="lg:p-5 phone:mt-5 lg:mt-0 font-garamond-regular lg:text-xl flex flex-col phone:gap-2 lg:gap-3 phone:text-center lg:text-right lg:border-l-4 lg:border-purple-200 lg:pl-5">
-
+              <div className="lg:p-5 phone:mt-10 lg:mt-0 font-roxale lg:text-xl flex flex-col phone:gap-2 lg:gap-3 phone:text-center lg:text-right lg:border-l-4 lg:border-purple-200 lg:pl-5">
+              {isAboveSmallScreens ?
+                (<h2 className="phone:text-2xl lg:text-5xl font-artik phone:mb-0 lg:mb-8 phone:text-center lg:text-right">
+                    Why Choose Us
+                </h2>) : (<></>)}
                 <p>Experienced team dedicated to recycling excellence.</p>
                 <p>
                   State-of-the-art recycling facilities for optimal efficiency.
@@ -38,7 +40,7 @@ const WhyUs = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

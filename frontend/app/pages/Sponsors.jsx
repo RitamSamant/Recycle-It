@@ -15,6 +15,7 @@ import Reebok from "../../public/images/sponsor/Reebok.svg"
 import Salvatore from "../../public/images/sponsor/Salvatore.svg"
 import Valentino from "../../public/images/sponsor/Valentino.svg"
 import Image from 'next/image';
+import Marquee from "react-fast-marquee";
 
 const ourSponsors = [
   Adidas,
@@ -38,17 +39,17 @@ const Sponsors = () => {
   return (
     <div className="w-full bg-[#FFD966]/90">
       <div className="w-5/6 mx-auto phone:py-5 lg:py-16">
-        <h1 className="phone:text-2xl lg:text-5xl font-odesans-semibold mb-8">Our Sponsors</h1>
+        <h1 className="phone:text-2xl lg:text-5xl font-artik mb-8">Our Partners</h1>
         <div className="overflow-hidden">
-        <div
-            className="conveyor-container flex space-x-4 conveyorContainer"
+        <Marquee
+            className=""
           >
             {ourSponsors.map((sponsor, index) => (
               <div key={index} className="">
-                <Image src={sponsor} alt={`Sponsor ${index}`} className='min-w-[40px] min-h-[40px]'/>
+                <Image src={sponsor} alt={`Sponsor ${index}`} className='phone:h-12 phone:w-12 lg:h-24 lg:w-24'/>
               </div>
             ))}
-          </div>
+          </Marquee>
         </div>
       </div>
     </div>

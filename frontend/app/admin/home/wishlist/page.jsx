@@ -169,7 +169,7 @@ const Page = () => {
       <Link href="/admin/home">
         <Image src={left} alt="" className="phone:w-9 phone:h-9 lg:w-12 lg:h-12 my-auto"/>
       </Link>
-      <h1 className="phone:text-3xl lg:text-5xl font-odesans-semibold text-white">
+      <h1 className="phone:text-3xl lg:text-5xl font-roxale text-white">
         Recycle It
       </h1>
       <Link href="/admin/notifications">
@@ -188,10 +188,10 @@ const Page = () => {
             <div className="my-5 flex flex-col justify-between phone:gap-7 lg:gap-0">
               <div className="">
                 <div className="flex my-auto justify-between w-full">
-                  <div className="font-odesans-semibold text-3xl text-white break-words">
+                  <div className="font-roxale text-3xl text-white break-words">
                     {items.type}
                   </div>
-                  <div className="font-odesans-medium text-white text-xl bg-black/40 border-2 rounded-full border-white/10 w-10 h-10 items-center flex justify-center">
+                  <div className="font-roxale text-white text-xl bg-black/40 border-2 rounded-full border-white/10 w-10 h-10 items-center flex justify-center">
                       {productOccurrences[items.type] || 0}
                   </div>
                   <Toaster
@@ -199,7 +199,7 @@ const Page = () => {
                     reverseOrder={false}
                   />
                 </div>
-                <p className="font-odesans-medium text-gray-300">
+                <p className="font-roxale text-gray-300">
                   {items.desc}
                 </p>
               </div>
@@ -219,7 +219,7 @@ const Page = () => {
                       -
                     </button>
                   </div>
-                <p className="phone:text-2xl lg:text-3xl font-odesans-semibold text-white my-auto">
+                <p className="phone:text-2xl lg:text-3xl font-roxale text-white my-auto">
                   Price: ₹{items.price * (productOccurrences[items.type] || 0)}
                 </p>
                 <Toaster
@@ -227,7 +227,7 @@ const Page = () => {
                   reverseOrder={false}
                 />
                 <button onClick={()=>{saveProducts(items)}} className="">
-                  <button onClick={() =>handleCheckout(items.type)} className={`font-odesans-medium rounded-lg shadow-lg my-auto w-full py-2 px-8 ${
+                  <button onClick={() =>handleCheckout(items.type)} className={`font-roxale rounded-lg shadow-lg my-auto w-full py-2 px-8 ${
                     isButtonLaoding ? 'bg-gray-300/10 cursor-not-allowed border border-black/10' : 'bg-black text-white'
                   }`} disabled={isButtonLaoding}>
                     Buy Now
