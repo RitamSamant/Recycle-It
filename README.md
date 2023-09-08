@@ -54,11 +54,6 @@ Our innovative project focuses on addressing the issue of non-biodegradable wast
 
 </br>
 
-## 🔗 Quine
-[![RitamSamant's GitHub | Stats](https://stats.quine.sh/RitamSamant/github?theme=dark)](https://quine.sh?utm_source=widgets&utm_campaign=RitamSamant)
-
-</br>
-
 ## ⚽ Team dotSlashByte
 - [Ritam Samanta](https://github.com/RitamSamant)
 - [Anurag Das](https://github.com/oeuvars)
