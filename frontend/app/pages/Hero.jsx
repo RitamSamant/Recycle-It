@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import bg from "../../public/images/hero/Recycle_It.webp"
+import bg from "../../public/images/hero//recycle-it3-64fb7ee23147d.webp"
 import Link from 'next/link'
 
 const Hero = () => {
@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="">
         <Image src={bg} alt="" className="py-10 lg:h-full phone:h-[20rem] object-cover"/>
         <Link href="/welcome" className="transition hover:text-[#fefae0] duration-500 ease-in-out rounded-lg font-roxale lg:text-3xl text-white flex mx-auto lg:-mt-32 phone:-mt-20">
-        <div className="flex mx-auto bg-black/30 rounded-xl py-2 px-8 backdrop-blur">
+        <div className="flex mx-auto bg-black/30 phone:rounded-md lg:rounded-xl phone:py-1 lg:py-2 phone:px-5 lg:px-8 backdrop-blur">
           Be a Part
         </div>
       </Link>

@@ -76,19 +76,6 @@ body {
   font-style: normal;
   font-display: block;
 }
-@keyframes conveyorBelt {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
-
-.conveyor-container {
-  display: flex;
-  animation: conveyorBelt 10s linear infinite;
-}
 
 .card {
   background-image: radial-gradient(

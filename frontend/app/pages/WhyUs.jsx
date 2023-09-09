@@ -1,52 +1,46 @@
 "use client"
 
 import React from "react";
-import Image from "next/image";
-import bg from "../../public/images/whyus/philip-strong-iOBTE2xsYko-unsplash.png"
-import useMediaQuery from "../../hooks/useMediaQuery";
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useRef } from "react";
 
 const WhyUs = () => {
-  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+  const x = useTransform(scrollYProgress, [0.1, 1], ["0%", "-80%"]);
+
   return (
     <section id="process">
       <div className="phone:py-12 lg:py-20">
-        <div className="phone:w-11/12 lg:w-5/6 mx-auto text-center">
-          <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12 justify-between">
-            {isAboveSmallScreens ? (<Image
-                src={bg}
-                alt="Recycle"
-                width={1000}
-                height={1000}
-                className="rounded-lg shadow-md phone:h-[20rem] lg:w-[25rem] lg:h-[30rem] object-cover"
-              />) : (<></>)}
+        <div className="mx-auto text-center">
             <div className="lg:flex gap-5 my-auto">
-              <p className="phone:text-4xl lg:text-3xl font-artik text-purple-500 my-auto text-center">
-                What Sets Us Apart
-              </p>
-              <div>
-              {isAboveSmallScreens ? (<></>) : (<Image src={bg}
-                alt="Recycle"
-                width={1000}
-                height={1000}
-                className="rounded-lg shadow-md phone:h-[20rem] lg:w-[25rem] lg:h-[30rem] object-cover mt-10"
-              />)}
-              </div>
-
-              <div className="lg:p-5 phone:mt-10 lg:mt-0 font-roxale lg:text-xl flex flex-col phone:gap-2 lg:gap-3 phone:text-center lg:text-right lg:border-l-4 lg:border-purple-200 lg:pl-5">
-              {isAboveSmallScreens ?
-                (<h2 className="phone:text-2xl lg:text-5xl font-artik phone:mb-0 lg:mb-8 phone:text-center lg:text-right">
-                    Why Choose Us
-                </h2>) : (<></>)}
-                <p>Experienced team dedicated to recycling excellence.</p>
-                <p>
-                  State-of-the-art recycling facilities for optimal efficiency.
-                </p>
-                <p>Environmentally-friendly processes that minimize waste.</p>
-                <p>Transparent tracking of your recycled materials.</p>
-                <p>Contribute to a greener and cleaner planet.</p>
-              </div>
+                <section ref={targetRef} className="relative w-[95%] mx-auto lg:h-[150vh]">
+                <h2 className="phone:text-3xl lg:text-5xl font-artik phone:mb-0 lg:mb-8 text-center">
+                  Why Choose Us
+                </h2>
+                  <div className="sticky lg:h-screen phone:py-10 lg:py-0 top-0 flex items-center overflow-hidden">
+                    <motion.div style={{ x }} className="flex gap-4 font-roxale text-xl">
+                      <div className="card phone:w-[20rem] phone:h-[20rem] lg:w-[30rem] lg:h-[30rem] rounded-xl flex justify-center items-center">
+                        Experienced team dedicated to recycling excellence.
+                      </div>
+                      <div className="card phone:w-[20rem] phone:h-[20rem] lg:w-[30rem] lg:h-[30rem] rounded-xl flex justify-center items-center">
+                        State-of-the-art recycling facilities for optimal efficiency.
+                      </div>
+                      <div className="card phone:w-[20rem] phone:h-[20rem] lg:w-[30rem] lg:h-[30rem] rounded-xl flex justify-center items-center">
+                        Environmentally-friendly processes that minimize waste.
+                      </div>
+                      <div className="card phone:w-[20rem] phone:h-[20rem] lg:w-[30rem] lg:h-[30rem] rounded-xl flex justify-center items-center">
+                        Transparent tracking of your recycled materials.
+                      </div>
+                      <div className="card phone:w-[20rem] phone:h-[20rem] lg:w-[30rem] lg:h-[30rem] rounded-xl flex justify-center items-center">
+                        Contribute to a greener and cleaner planet.
+                      </div>
+                    </motion.div>
+                  </div>
+                </section>
             </div>
-          </div>
         </div>
       </div>
     </section>
