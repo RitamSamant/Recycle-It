@@ -1,0 +1,22 @@
+FROM node:16-alpine as node-build
+
+WORKDIR /frontend
+
+COPY package*.json ./
+
+RUN yarn
+
+COPY ./ ./
+
+RUN yarn run build
+
+
+FROM nginx:1.23.3-alpine
+
+WORKDIR /usr/share/nginx/html
+
+RUN rm -rf ./*
+
+COPY --from=node-build /frontend/build ./
+
+ENTRYPOINT [ "nginx","-g","daemon off;" ]
