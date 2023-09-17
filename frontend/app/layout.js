@@ -1,4 +1,6 @@
 import './globals.css'
+import { DM_Sans } from 'next/font/google'
+const dmSans = DM_Sans({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Recycle It',
@@ -11,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="subpixel-antialiased">{children}</body>
+      <body className={dmSans.className}>{children}</body>
     </html>
   )
 }

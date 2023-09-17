@@ -1,50 +1,83 @@
 "use client"
 
-import React from "react";
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
-const WhyUs = () => {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-  const x = useTransform(scrollYProgress, [0.1, 1], ["0%", "-80%"]);
+const HowWeDo = () => {
+
+   const triggerRef = useRef(null);
+   const sectionRef = useRef(null);
+
+   gsap.registerPlugin(ScrollTrigger);
+
+   useEffect (() => {
+      const pin = gsap.fromTo(sectionRef.current, {
+         translateX: 0
+      }, {
+         translateX: "-300vw",
+         ease: "none",
+         duration: 1,
+         scrollTrigger: {
+            trigger: triggerRef.current,
+            start: "top top",
+            end: "2000px top",
+            scrub: 0.6,
+            pin: true
+         }
+      })
+
+      return () => {
+         pin.kill()
+      }
+   }, [])
 
   return (
-    <section id="process">
-      <div className="phone:py-12 lg:py-20">
-        <div className="mx-auto text-center">
-            <div className="lg:flex gap-5 my-auto">
-                <section ref={targetRef} className="relative w-[95%] mx-auto lg:h-[150vh]">
-                <h2 className="phone:text-3xl lg:text-5xl font-artik phone:mb-0 lg:mb-8 text-center">
-                  Why Choose Us
-                </h2>
-                  <div className="sticky lg:h-screen phone:py-10 lg:py-0 top-0 flex items-center overflow-hidden">
-                    <motion.div style={{ x }} className="flex gap-4 font-roxale text-xl">
-                      <div className="card phone:w-[20rem] phone:h-[20rem] lg:w-[30rem] lg:h-[30rem] rounded-xl flex justify-center items-center">
-                        Experienced team dedicated to recycling excellence.
-                      </div>
-                      <div className="card phone:w-[20rem] phone:h-[20rem] lg:w-[30rem] lg:h-[30rem] rounded-xl flex justify-center items-center">
-                        State-of-the-art recycling facilities for optimal efficiency.
-                      </div>
-                      <div className="card phone:w-[20rem] phone:h-[20rem] lg:w-[30rem] lg:h-[30rem] rounded-xl flex justify-center items-center">
-                        Environmentally-friendly processes that minimize waste.
-                      </div>
-                      <div className="card phone:w-[20rem] phone:h-[20rem] lg:w-[30rem] lg:h-[30rem] rounded-xl flex justify-center items-center">
-                        Transparent tracking of your recycled materials.
-                      </div>
-                      <div className="card phone:w-[20rem] phone:h-[20rem] lg:w-[30rem] lg:h-[30rem] rounded-xl flex justify-center items-center">
-                        Contribute to a greener and cleaner planet.
-                      </div>
-                    </motion.div>
-                  </div>
-                </section>
+    <section className='overflow-hidden mt-20'>
+      <h1 className='font-artik phone:text-2xl lg:text-5xl text-center mb-3'>
+         How We Do
+      </h1>
+      <p className='text-gray-700 text-center phone:text-sm lg:text-xl phone:px-10 lg:px-0'>
+         We carefully sort through the projects and analyze them in the order of real-world use, practicality, and usability.
+      </p>
+      <div ref={triggerRef}>
+         <div ref={sectionRef} className='h-[100vh] w-[400vw] flex flex-row relative'>
+            <div className='h-[100vh] w-[100vw] flex justify-center items-center'>
+               <div className='lg:flex w-[90%] p-7'>
+                  <h1 className='phone:text-5xl lg:text-7xl font-artik text-center'>1</h1>
+                  <h1 className='phone:text-3xl lg:text-7xl text-5xl my-auto font-roxale text-center p-2'>
+                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, cum!
+                  </h1>
+               </div>
             </div>
-        </div>
+            <div className='h-[100vh] w-[100vw] flex justify-center items-center'>
+               <div className='lg:flex w-[90%] p-7'>
+                  <h1 className='phone:text-5xl lg:text-7xl font-artik text-center'>2</h1>
+                  <h1 className='phone:text-3xl lg:text-7xl text-5xl my-auto font-roxale text-center p-2'>
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, assumenda!
+                  </h1>
+               </div>
+            </div>
+            <div className='h-[100vh] w-[100vw] flex justify-center items-center'>
+               <div className='lg:flex w-[90%] p-7'>
+                  <h1 className='phone:text-5xl lg:text-7xl font-artik text-center'>3</h1>
+                  <h1 className='phone:text-3xl lg:text-7xl text-5xl my-auto font-roxale text-center p-2'>
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, assumenda!
+                  </h1>
+               </div>
+            </div>
+            <div className='h-[100vh] w-[100vw] flex justify-center items-center'>
+               <div className='lg:flex w-[90%] p-7'>
+                  <h1 className='phone:text-5xl lg:text-7xl font-artik text-center'>4</h1>
+                  <h1 className='phone:text-3xl lg:text-7xl text-5xl my-auto font-roxale text-center p-2'>
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, assumenda!
+                  </h1>
+               </div>
+            </div>
+         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default WhyUs;
+export default HowWeDo

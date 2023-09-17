@@ -1,21 +1,29 @@
+"use client"
+
 import React from "react";
-import contact2 from "../../public/images/contact/contact2.webp";
+import contact2 from "../../public/images/contact/contact.webp";
 import Image from "next/image";
 import flower from "../../public/images/contact/flower.svg"
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const Contact = () => {
+  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
   return (
     <section id="connect" className="bg-[#fefae0]/70 overflow-x-hidden">
-      <div className=" justify-between mx-auto items-center">
+      <div className=" justify-between mx-auto items-center phone:w-[95%] lg:w-[75%] mb-5">
         <div className="flex mx-auto justify-center py-10">
           <h1 className="font-artik phone:text-3xl lg:text-5xl my-auto phone:px-5 lg:px-0">
             Contact Us
           </h1>
           <Image src={flower} alt="" className="phone:w-8 phone:h-8 lg:w-12 lg:h-12 phone:my-auto"/>
         </div>
-        <div className="grid lg:grid-cols-[3fr_2fr]">
-          <Image src={contact2} alt="" className="" />
-          <div className="relative card shadow-lg py-10 lg:w-full phone:w-11/12 phone:mx-auto phone:px-5 lg:px-8 phone:my-8 lg:my-0">
+        <div className="grid lg:grid-cols-[1fr_3fr] lg:shadow-[0_10px_50px_0px_rgba(0,0,0,0.1)]">
+          {isAboveSmallScreens ? (
+            <Image src={contact2} alt="" className="phone:h-[15rem] lg:h-[72vh] lg:w-[28rem] object-cover rounded-l-md" />
+          ):(
+            <></>
+          )}
+          <div className="relative card py-10 w-full phone:mx-auto phone:px-5 lg:px-8 lg:my-0 phone:rounded-md lg:rounded-none lg:rounded-r-md">
             <h1 className="phone:text-2xl lg:text-3xl font-artik text-fuchsia-900 mb-6">
               Let&apos;s talk business
             </h1>
@@ -64,7 +72,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="bg-fuchsia-900 text-white rounded-md py-2 px-4 font-roxale mx-auto"
+                className="bg-fuchsia-900 text-white rounded-md py-2 px-4 phone:text-sm lg:text-base mx-auto"
               >
                 Send Message
               </button>
@@ -72,9 +80,9 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="bg-pink-100/90 py-5 rounded-md">
+      <div className="bg-pink-100/90 phone:py-7 lg:py-5 rounded-md">
         <div className="phone:w-11/12 lg:w-5/6 mx-auto flex justify-between phone:px-2 lg:px-0">
-          <h1 className="font-artik lg:text-2xl text-fuchsia-700 opacity-70">©Recycle It</h1>
+          <h1 className="phone:text-xl lg:text-2xl font-artik text-fuchsia-700 opacity-70">©Recycle It</h1>
           <div className="flex font-roxale phone:text-xs lg:text-lg phone:gap-2 lg:gap-5 opacity-80 text-fuchsia-950">
             <p className="my-auto">Privacy Policy</p>
             <p className="my-auto">About</p>

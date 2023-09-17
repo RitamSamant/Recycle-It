@@ -15,7 +15,7 @@ const Hero = () => {
           {/* <Image src={lotus} alt="" className="phone:w-9 phone:h-9 lg:w-20 lg:h-20 mb-auto" /> */}
         </div>
 
-        <p className="font-roxale lg:text-xl text-center phone:w-11/12 lg:w-2/5 mx-auto phone:mt-7 lg:mt-10">
+        <p className="phone:text-sm lg:text-xl text-neutral-700 text-center phone:w-11/12 lg:w-2/5 mx-auto phone:mt-7 lg:mt-10">
           Championing A Greener Future by Embracing Recycling and Harnessing
           the Potential of Recycled Products to Safeguard Our Planet&apos;s Health
           and Promote Sustainable Prosperity.

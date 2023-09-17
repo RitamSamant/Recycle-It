@@ -37,12 +37,12 @@ const ourSponsors = [
 
 const Sponsors = () => {
   return (
-    <div className="w-full bg-[#FFD966]/70">
+    <div className="w-full bg-[#ffe186]">
       <div className="w-5/6 mx-auto phone:py-10 lg:py-16">
         <h1 className="phone:text-2xl lg:text-5xl font-artik mb-8">Our Partners</h1>
         <div className="overflow-hidden">
         <Marquee
-            className=""
+            className="" gradient gradientColor={[255, 225, 134]}
           >
             {ourSponsors.map((sponsor, index) => (
               <div key={index} className="">

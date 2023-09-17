@@ -1,7 +1,5 @@
-import Image from 'next/image'
 import Navbar from './pages/Navbar'
 import Hero from './pages/Hero'
-import Process from './pages/Process'
 import WhyUs from './pages/WhyUs'
 import Sponsors from './pages/Sponsors'
 import Benefits from './pages/Benefits'

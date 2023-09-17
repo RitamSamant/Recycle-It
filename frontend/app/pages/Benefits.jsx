@@ -32,7 +32,7 @@ const Benefits = () => {
             </div>
             Working With Us
           </h1>
-          <p className="font-roxale lg:text-xl text-center phone:w-5/6 lg:w-2/5 mx-auto">
+          <p className="phone:text-sm text-neutral-700 lg:text-xl text-center phone:w-5/6 lg:w-2/5 mx-auto">
             Efficient waste management for environmental responsibility, cost
             savings, regulatory compliance, and a healthier, sustainable future.
             Partner with us today.
@@ -41,7 +41,7 @@ const Benefits = () => {
         <div className="relative mt-16">
           <SiteBlob2 />
         </div>
-        <div className="space-y-4 card rounded-xl p-5 lg:w-[30%] phone:w-5/6 phone:mx-auto mx-auto font-roxale lg:text-lg mt-5">
+        <div className="space-y-4 card rounded-xl p-5 lg:w-[30%] phone:w-5/6 phone:mx-auto mx-auto phone:text-sm mt-5">
           {benefitsList.map((benefit, index) => (
             <div className="flex justify-between" key={index}>
               <div className="text-left my-auto">{benefit}</div>
