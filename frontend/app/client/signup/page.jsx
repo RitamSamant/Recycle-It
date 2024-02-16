@@ -59,9 +59,9 @@ const SignupPage = () => {
    }
   }
   return (
-    <div className="flex items-center justify-center h-screen bg-[#C4D7B2]">
-      <div className="signup lg:p-8 p-5 shadow-md rounded-lg lg:w-1/4 w-[87%]">
-        <h2 className="text-teal-800 font-roxale text-4xl mb-4 text-center">Sign Up</h2>
+    <div className="flex items-center justify-center h-screen bg-neutral-800">
+      <div className="bg-white/20 lg:p-8 p-5 shadow-md rounded-lg lg:w-1/4 w-[87%]">
+        <h2 className="text-neutral-200 font-roxale text-4xl mb-4 text-center">Sign Up</h2>
         <form>
           <div className="mb-4">
             <label htmlFor="username" className="block font-roxale mb-1">
@@ -71,7 +71,7 @@ const SignupPage = () => {
               type="text"
               id="username"
               name="username"
-              className="w-full px-3 py-2 border rounded-md bg-white/40 outline-none font-roxale"
+              className="w-full px-3 py-2 rounded-md bg-white/40 outline-none font-roxale"
               required
               onChange={(e)=>{Setuser({...user,username:e.target.value})}}
             />
@@ -84,7 +84,7 @@ const SignupPage = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full px-3 py-2 border rounded-md bg-white/40 outline-none font-roxale"
+              className="w-full px-3 py-2 rounded-md bg-white/40 outline-none font-roxale"
               required
               onChange={(e)=>{Setuser({...user,email:e.target.value})}}
             />
@@ -97,7 +97,7 @@ const SignupPage = () => {
               type="password"
               id="password"
               name="password"
-              className="w-full px-3 py-2 border rounded-md bg-white/40 outline-none font-roxale"
+              className="w-full px-3 py-2 rounded-md bg-white/40 outline-none font-roxale"
               required
               onChange={(e)=>{Setuser({...user,password:e.target.value})}}
             />
@@ -110,7 +110,7 @@ const SignupPage = () => {
               type="text"
               id="address"
               name="address"
-              className="w-full px-3 py-2 border rounded-md bg-white/40 outline-none font-roxale"
+              className="w-full px-3 py-2 rounded-md bg-white/40 outline-none font-roxale"
               required
               onChange={(e)=>{Setuser({...user,address:e.target.value})}}
             />
@@ -123,7 +123,7 @@ const SignupPage = () => {
               type="text"
               id="bankAccount"
               name="bankAccount"
-              className="w-full px-3 py-2 border rounded-md bg-white/40 outline-none font-roxale"
+              className="w-full px-3 py-2 rounded-md bg-white/40 outline-none font-roxale"
               required
               onChange={(e)=>{Setuser({...user,bankAccount:e.target.value})}}
             />
@@ -137,8 +137,8 @@ const SignupPage = () => {
               type="submit"
               className={`w-full text-lg font-roxale py-2 rounded-md mt-5 ${
                 isSigningUp
-                  ? 'bg-gray-300/10 cursor-not-allowed border border-black/10'
-                  : 'bg-emerald-700 text-white'
+                  ? 'bg-gray-300/10 cursor-not-allowed border-black/10'
+                  : 'bg-neutral-800 text-white'
               }`}
               onClick={handleClick}
               disabled={isSigningUp}

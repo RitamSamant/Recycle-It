@@ -38,39 +38,39 @@ const HowWeDo = () => {
          How We Do
       </h1>
       <p className='text-gray-700 text-center phone:text-sm lg:text-xl phone:px-10 lg:px-0'>
-         We carefully sort through the projects and analyze them in the order of real-world use, practicality, and usability.
+         We carefully sort through the recycling materials and analyze them to ensure proper processing and reuse.
       </p>
       <div ref={triggerRef}>
-         <div ref={sectionRef} className='h-[100vh] w-[400vw] flex flex-row relative'>
+         <div ref={sectionRef} className='h-[100vh] w-[400vw] flex flex-row relative font-playfair'>
             <div className='h-[100vh] w-[100vw] flex justify-center items-center'>
                <div className='lg:flex w-[90%] p-7'>
-                  <h1 className='phone:text-5xl lg:text-7xl font-artik text-center'>1</h1>
+                  <h1 className='phone:text-5xl lg:text-7xl text-center'>1</h1>
                   <h1 className='phone:text-3xl lg:text-7xl text-5xl my-auto font-roxale text-center p-2'>
-                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, cum!
+                     Collecting recyclables from households and businesses.
                   </h1>
                </div>
             </div>
             <div className='h-[100vh] w-[100vw] flex justify-center items-center'>
                <div className='lg:flex w-[90%] p-7'>
-                  <h1 className='phone:text-5xl lg:text-7xl font-artik text-center'>2</h1>
+                  <h1 className='phone:text-5xl lg:text-7xl text-center'>2</h1>
                   <h1 className='phone:text-3xl lg:text-7xl text-5xl my-auto font-roxale text-center p-2'>
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, assumenda!
+                     Sorting materials into different categories such as glass, paper, plastic, and metal.
                   </h1>
                </div>
             </div>
             <div className='h-[100vh] w-[100vw] flex justify-center items-center'>
                <div className='lg:flex w-[90%] p-7'>
-                  <h1 className='phone:text-5xl lg:text-7xl font-artik text-center'>3</h1>
+                  <h1 className='phone:text-5xl lg:text-7xl text-center'>3</h1>
                   <h1 className='phone:text-3xl lg:text-7xl text-5xl my-auto font-roxale text-center p-2'>
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, assumenda!
+                     Processing recyclables through cleaning, shredding, melting, or other methods.
                   </h1>
                </div>
             </div>
             <div className='h-[100vh] w-[100vw] flex justify-center items-center'>
                <div className='lg:flex w-[90%] p-7'>
-                  <h1 className='phone:text-5xl lg:text-7xl font-artik text-center'>4</h1>
+                  <h1 className='phone:text-5xl lg:text-7xl text-center'>4</h1>
                   <h1 className='phone:text-3xl lg:text-7xl text-5xl my-auto font-roxale text-center p-2'>
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, assumenda!
+                     Repurposing materials into new products or packaging.
                   </h1>
                </div>
             </div>

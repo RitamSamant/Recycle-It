@@ -1,35 +1,21 @@
 import Image from "next/image";
 import React from "react";
-import bg from "../../public/images/hero//recycle-it3-64fb7ee23147d.webp"
+import bg from "../../public/images/hero/bg.webp"
 import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section id="hero" className="bg-[#fefae0]/70 phone:pt-24 lg:pt-40">
-      <div className="mx-auto">
-        <div className="flex justify-center phone:gap-5 lg:gap-52">
-          {/* <Image src={flower} alt="" className="phone:w-9 phone:h-9 lg:w-20 lg:h-20 phone:mb-auto lg:mb-0" /> */}
-            <h1 className="font-artik phone:text-3xl lg:text-6xl text-center my-auto">
-              Recycle It
-            </h1>
-          {/* <Image src={lotus} alt="" className="phone:w-9 phone:h-9 lg:w-20 lg:h-20 mb-auto" /> */}
-        </div>
-
-        <p className="phone:text-sm lg:text-xl text-neutral-700 text-center phone:w-11/12 lg:w-2/5 mx-auto phone:mt-7 lg:mt-10">
-          Championing A Greener Future by Embracing Recycling and Harnessing
-          the Potential of Recycled Products to Safeguard Our Planet&apos;s Health
-          and Promote Sustainable Prosperity.
-        </p>
+    <section id="hero" className="h-screen relative">
+      <Image src={bg} alt="" className="h-screen absolute object-cover -z-10 opacity-90"/>
+      <div className="z-10 flex flex-col h-screen items-center justify-center">
+        <h1 className="text-7xl font-playfair text-neutral-800">Recycle It</h1>
+        <p className="text-neutral-900 mt-10 w-[40%] text-center font-medium">Championing A Greener Future by Embracing Recycling and Harnessing the Potential of Recycled Products to Safeguard Our Planet's Health and Promote Sustainable Prosperity.</p>
+        <Link href="/welcome" className="mt-7">
+          <div className="bg-neutral-800 hover:bg-neutral-900 transition duration-500 ease-in-out px-7 py-2 text-center backdrop-blur-md rounded text-stone-50">
+            Get Started
+          </div>
+        </Link>
       </div>
-      <div className="">
-        <Image src={bg} alt="" className="py-10 lg:h-full phone:h-[20rem] object-cover"/>
-        <Link href="/welcome" className="transition hover:text-[#fefae0] duration-500 ease-in-out rounded-lg font-roxale lg:text-3xl text-white flex mx-auto lg:-mt-32 phone:-mt-20">
-        <div className="flex mx-auto bg-black/30 phone:rounded-md lg:rounded-xl phone:py-1 lg:py-2 phone:px-5 lg:px-8 backdrop-blur">
-          Be a Part
-        </div>
-      </Link>
-      </div>
-
     </section>
   );
 };

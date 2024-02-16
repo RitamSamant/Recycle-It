@@ -60,9 +60,9 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="bg-[#DBC4F0] flex items-center justify-center h-screen">
-      <div className="card lg:p-8 p-5 shadow-md rounded-lg lg:w-1/4 w-[87%]">
-        <h2 className="text-fuchsia-800 font-roxale text-4xl mb-4 text-center">Log In</h2>
+    <div className="bg-neutral-800 flex items-center justify-center h-screen">
+      <div className="bg-white/20 lg:p-8 p-5 shadow-md rounded-lg lg:w-1/4 w-[87%]">
+        <h2 className="text-neutral-200 font-roxale text-4xl mb-4 text-center">Log In</h2>
         <form>
           <div className="mb-4">
             <label htmlFor="buisnessEmail" className="block font-roxale mb-1">
@@ -72,7 +72,7 @@ const LoginPage = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full px-3 py-2 border rounded-md bg-white/40 text-black outline-none font-roxale"
+              className="w-full px-3 py-2 rounded-md bg-white/40 text-black outline-none font-roxale"
               required
               onChange={(e)=>{Setuser({...user,buisnessEmail:e.target.value})}}
             />
@@ -85,7 +85,7 @@ const LoginPage = () => {
               type="password"
               id="password"
               name="password"
-              className="w-full px-3 py-2 border rounded-md bg-white/40 text-black outline-none font-roxale"
+              className="w-full px-3 py-2 rounded-md bg-white/40 text-black outline-none font-roxale"
               required
               onChange={(e)=>{Setuser({...user,password:e.target.value})}}
             />
@@ -100,7 +100,7 @@ const LoginPage = () => {
               className={`w-full py-2 rounded-md font-roxale text-lg mt-4 ${
                 isLoggingIn
                   ? 'bg-gray-300/10 cursor-not-allowed border border-black/10'
-                  : 'bg-fuchsia-800 text-white'
+                  : 'bg-neutral-800 text-white'
               }`}
               onClick={handleClick}
               disabled={isLoggingIn}

@@ -10,8 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         "technology": ["Technology", "serif"],
-        "artik": ["Artik", "serif"],
-        "roxale": ["Roxale", "serif"]
+        "playfair": ["Playfair Display", "serif"],
       },
     },
     screens: {

@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import contact2 from "../../public/images/contact/contact.webp";
+import contact2 from "../../public/images/contact/grain.webp";
 import Image from "next/image";
 import flower from "../../public/images/contact/flower.svg"
 import useMediaQuery from "../../hooks/useMediaQuery";
@@ -12,18 +12,12 @@ const Contact = () => {
     <section id="connect" className="bg-[#fefae0]/70 overflow-x-hidden">
       <div className=" justify-between mx-auto items-center phone:w-[95%] lg:w-[75%] mb-5">
         <div className="flex mx-auto justify-center py-10">
-          <h1 className="font-artik phone:text-3xl lg:text-5xl my-auto phone:px-5 lg:px-0">
+          <h1 className="font-playfair phone:text-3xl lg:text-5xl my-auto phone:px-5 lg:px-0">
             Contact Us
           </h1>
-          <Image src={flower} alt="" className="phone:w-8 phone:h-8 lg:w-12 lg:h-12 phone:my-auto"/>
         </div>
-        <div className="grid lg:grid-cols-[1fr_3fr] lg:shadow-[0_10px_50px_0px_rgba(0,0,0,0.1)]">
-          {isAboveSmallScreens ? (
-            <Image src={contact2} alt="" className="phone:h-[15rem] lg:h-[72vh] lg:w-[28rem] object-cover rounded-l-md" />
-          ):(
-            <></>
-          )}
-          <div className="relative card py-10 w-full phone:mx-auto phone:px-5 lg:px-8 lg:my-0 phone:rounded-md lg:rounded-none lg:rounded-r-md">
+        <div className="">
+          <div className="relative border border-neutral-400 py-10 w-full phone:mx-auto phone:px-5 lg:px-8 lg:my-0 rounded-xl">
             <h1 className="phone:text-2xl lg:text-3xl font-artik text-fuchsia-900 mb-6">
               Let&apos;s talk business
             </h1>
